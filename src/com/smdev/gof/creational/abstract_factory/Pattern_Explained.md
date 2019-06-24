@@ -1,11 +1,11 @@
-# GoF Design Patterns -> Creational Design Patterns -> Abstract Factory
+# GoF Design Patterns -> Creational Design Patterns -> Abstract Factory aka "Factory of Factories"
 
 - Example_1 - Full example, with the best practises applied to it
 - Example_2 - Lombok implementation of the Builder Pattern (very easy to use)
 
 ## What problems does it solve? Why to use it?
-Abstract Factory “provides an interface for creating families of related or dependent objects 
-without specifying their concrete classes”. In other words, this model allows us to create objects 
+Abstract Factory also known as "Factory of Factories" provides an interface for creating families of related or dependent objects 
+without specifying their concrete classes. In other words, this model allows us to create objects 
 that follow a general pattern.
 
 ## When to use it?
