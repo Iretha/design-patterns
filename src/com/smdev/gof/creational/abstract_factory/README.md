@@ -61,9 +61,9 @@ public class FactoryMaker {
 
     public static UIFactory getFactory(String choice) {
         UIFactory factory = null;
-        if (choice.equals(AndroidUIFactory.TYPE)) {
+        if (choice.equals("Android")) {
             factory = new AndroidUIFactory();
-        } else if (choice.equals(SwiftUIFactory.TYPE)) {
+        } else if (choice.equals("Swift")) {
             factory = new SwiftUIFactory();
         }
         return factory;
