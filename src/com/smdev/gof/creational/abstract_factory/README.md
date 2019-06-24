@@ -16,7 +16,7 @@ that follow a general pattern.
 
 ## Pros:
 - Client does't know the concrete classes
-- Easy to add/ support for new families
+- Easy to extend/ add support for new families
 
 ## Cons:
 - To support new features (properties, methods and etc.), we have to add them to the generic classes
