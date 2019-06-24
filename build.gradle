@@ -1,0 +1,30 @@
+apply plugin: 'java'
+
+group = 'com.smdev.gof'
+version = '0.0.1'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            java.srcDir file('src')
+        }
+    }
+
+    test {
+        java {
+            java.srcDir file('test')
+        }
+    }
+}
+
+dependencies {
+    // Lombok
+    annotationProcessor('org.projectlombok:lombok:1.18.8')
+    compileOnly('org.projectlombok:lombok:1.18.8')
+}
