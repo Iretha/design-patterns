@@ -71,6 +71,30 @@ public class FactoryMaker {
 }
 ```
 
+OR We can use enumeration to return the factory, which is needed
+
+```java
+public enum Platform {
+    ANDROID,
+    SWIFT;
+
+    public UIFactory getFactory() {
+        UIFactory factory = null;
+        switch (this) {
+            case ANDROID:
+                factory = new AndroidUIFactory();
+                break;
+            case SWIFT:
+                factory = new SwiftUIFactory();
+                break;
+            default:
+                break;
+        }
+        return factory;
+    }
+}
+```
+
 5). Example usage
 ```java
 public class _Main {
@@ -85,6 +109,29 @@ public class _Main {
 
         InputText input = factory.createInput();
         input.setValue("Hello, " + type);
+
+        Button button = factory.createButton();
+        button.click();
+
+        input.submit();
+    }
+}
+```
+
+OR if we use ENUM
+```java
+public class _Main {
+
+    public static void main(String[] args) {
+        initApp(Platform.ANDROID);
+        initApp(Platform.SWIFT);
+    }
+
+    private static void initApp(Platform platform) {
+        UIFactory factory = platform.getFactory();
+
+        InputText input = factory.createInput();
+        input.setValue("Hello, " + platform.name());
 
         Button button = factory.createButton();
         button.click();

@@ -6,8 +6,6 @@ import com.smdev.gof.creational.abstract_factory.example_1.InputText;
 
 public class AndroidUIFactory extends UIFactory {
 
-    public static final String TYPE = "Android";
-
     @Override
     protected Button createButton() {
         return new AndroidButton();

@@ -3,15 +3,15 @@ package com.smdev.gof.creational.abstract_factory.example_1;
 public class _Main {
 
     public static void main(String[] args) {
-        initApp("Android");
-        initApp("Swift");
+        initApp(Platform.ANDROID);
+        initApp(Platform.SWIFT);
     }
 
-    private static void initApp(String type){
-        UIFactory factory = FactoryMaker.getFactory(type);
+    private static void initApp(Platform platform) {
+        UIFactory factory = platform.getFactory();
 
         InputText input = factory.createInput();
-        input.setValue("Hello, " + type);
+        input.setValue("Hello, " + platform.name());
 
         Button button = factory.createButton();
         button.click();
