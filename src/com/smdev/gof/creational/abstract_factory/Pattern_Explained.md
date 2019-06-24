@@ -1,6 +1,6 @@
 # GoF Design Patterns -> Creational Design Patterns -> Abstract Factory aka "Factory of Factories"
 
-- Example_1 - Full example
+- Example_1 - Example that demonstrates 
 
 ## What problems does it solve? Why to use it?
 Abstract Factory also known as "Factory of Factories" provides an interface for creating families of related or dependent objects 
@@ -14,19 +14,25 @@ that follow a general pattern.
 
 ## Pros:
 - Client does't know the concrete classes
+- Easy to add/ support for new families
 
 ## Cons:
-- To support the new type of objects will require changing the AbstractFactory class and all of its subclasses.
+- To support new features (properties, methods and etc.), we have to add them to the generic classes
+and implement them for each family
 
 ## How can be improved
 
 ## Examples from Java API
-- TODO
-- newInstance() of javax.xml.parsers.DocumentBuilderFactory class.
+Recognizeable by creational methods returning the factory itself which in turn can be used to create another abstract/interface type
+```
+- javax.xml.parsers.DocumentBuilderFactory#newInstance()
+- javax.xml.transform.TransformerFactory#newInstance()
+- javax.xml.xpath.XPathFactory#newInstance()
+```
 
 ## Examples
 
-### Example 1 - Full Example - How to implement it?
+### Example 1 - How to implement it?
 Let's say, we want to build some user interface, which consists of a text field and a button.
 We may run our application in android mode or in swift mode, which will be determined at runtime.
 

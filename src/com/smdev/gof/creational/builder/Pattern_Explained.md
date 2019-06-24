@@ -32,6 +32,15 @@ this means that the data will be always in a consistent state
 and no one will use the constructors directly. 
 - Do not add setters to the "Car" class, so that no one can set the values directly
 ## Examples from Java API
+Recognizeable by creational methods returning the instance itself
+```
+java.lang.StringBuilder#append() (unsynchronized)
+java.lang.StringBuffer#append() (synchronized)
+java.nio.ByteBuffer#put() (also on CharBuffer, ShortBuffer, IntBuffer, LongBuffer, FloatBuffer and DoubleBuffer)
+javax.swing.GroupLayout.Group#addComponent()
+All implementations of java.lang.Appendable
+java.util.stream.Stream.Builder
+```
 ### Java 8:
 #### Calendar 
 ```
