@@ -1,6 +1,8 @@
-# GoF Design Patterns -> Creational Design Patterns -> Abstract Factory aka "Factory of Factories"
+# Abstract Factory aka. "Factory of Factories"
 
-- Example_1 - Example that demonstrates 
+GoF Design Patterns -> Creational Design Patterns
+
+- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/gof/creational/abstract_factory) - Example that demonstrates 
 
 ## What problems does it solve? Why to use it?
 Abstract Factory also known as "Factory of Factories" provides an interface for creating families of related or dependent objects 

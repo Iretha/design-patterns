@@ -1,7 +1,9 @@
-# GoF Design Patterns -> Creational Design Patterns -> Builder Pattern
+#  Builder Pattern
 
-- Example_1 - Full example, with the best practises applied to it
-- Example_2 - Lombok implementation of the Builder Pattern (very easy to use)
+GoF Design Patterns -> Creational Design Patterns
+
+- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/gof/creational/builder) - Full example, with the best practises applied to it
+- [Example_2](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/gof/creational/builder) - Lombok implementation of the Builder Pattern (very easy to use)
 
 ## What problems does it solve? Why to use it?
 To write readable, maintainable, clean and understandable code 
