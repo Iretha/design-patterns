@@ -7,37 +7,22 @@ object-oriented programming, and the remaining chapters describing 23 classic so
 
 ## [Creational Design Patterns (5)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational)
 
-### Abstract Factory aka "Factory of Factories"
-* Designed to create families of objects without specifying their concrete classes
-* The type will be determined at runtime.
+### Summary
+Creational Design Patterns have to deal with object creation/ instantiation. They reduce complexity and hide 
+from client how the object is created. The client is entirely decoupled from the actual initialization process
+and the implementation could be easily replaced if necessary.
 
-[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational/abstract_factory)
+### Consider applying creational patterns when:
+- A system should be independent of how its objects and products are created.
+- A set of related objects is designed to be used together.
+- Hiding the implementations of a class library or product, revealing only their interfaces.
+- Constructing different representation of independent complex objects.
+- A class wants its subclass to implement the object it creates.
+- The class instantiations are specified at run-time.
+- There must be a single instance and client can access this instance at all times.
+- Instance should be extensible without being modified.
 
-### Builder Pattern
-* Designed to improve the readability of the code when we have to build complex objects with a lot of optional fields
-* Designed to ensure that the objects is always in a consistent state
-
-[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational/builder)
-
-### Factory Method
-* Defines the interface, but lets subclasses to decide which concrete class to instantiate
-* Refers to the newly created object through a common interface
-* "Creation through inheritance"
-
-[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational/factory_method)
-
-### Prototype
-* Faster object creation, when creating a new object is an expensive operation i.e. includes db calls with a lot or large data
-* "Creation through delegation"
-
-[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational/prototype)
-
-### Singleton
-* When we want to limit the object creation to only one instance
-* When we want to control the access to that instance in serial way via the provided entry/ access point
-
-[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational/singleton)
-
+### [List of Creational Design Patterns (5)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational)
 
 ## Structural Design Patterns (7)
 ## Behavioral Design Patterns (11)
