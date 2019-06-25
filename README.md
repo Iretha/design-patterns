@@ -1,11 +1,18 @@
 # GoF Design Patterns (23)
 
-Design Patterns: Elements of Reusable Object-Oriented Software (1994) is a software engineering book describing software design patterns. 
-The book was written by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides (the "Gang of Four"),[1] with a foreword by 
-Grady Booch. The book is divided into two parts, with the first two chapters exploring the capabilities and pitfalls of 
-object-oriented programming, and the remaining chapters describing 23 classic software design patterns. 
+A design pattern is reusable solution of a commonly occurring problem (usually in software design). 
 
-## [Creational Design Patterns (5)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational)
+Design Patterns got very popular when the book "Design Patterns: Elements of Reusable Object-Oriented Software (1994)" 
+was published. The book was written by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides (known as the "Gang of Four" / GoF).
+The book is divided into two parts, with the first two chapters exploring the capabilities and pitfalls of 
+object-oriented programming, and the remaining chapters describing 23 classic software design patterns.
+
+Design patterns were originally grouped into the categories: 
+- creational patterns 
+- structural patterns  
+- behavioral patterns
+
+## [GoF Creational Design Patterns (5)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational)
 
 ### Summary
 Creational Design Patterns have to deal with object creation/ instantiation. They reduce complexity and hide 
@@ -22,7 +29,7 @@ and the implementation could be easily replaced if necessary.
 - There must be a single instance and client can access this instance at all times.
 - Instance should be extensible without being modified.
 
-### [List of Creational Design Patterns (5)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational)
+### [GoF Creational Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational)
 
 ## Structural Design Patterns (7)
 ## Behavioral Design Patterns (11)
