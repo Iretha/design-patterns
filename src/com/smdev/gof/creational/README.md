@@ -18,3 +18,10 @@
 * "Creation through inheritance"
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational/factory_method)
+
+### Prototype
+* Faster object creation, when creating a new object is an expensive operation i.e. includes db calls with a lot or large data
+* "Creation through copy"
+
+[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational/prototype)
+
