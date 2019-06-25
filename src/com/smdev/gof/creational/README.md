@@ -11,3 +11,10 @@
 * Designed to ensure that the objects is always in a consistent state
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational/builder)
+
+### Factory Method
+* Defines the interface, but lets subclasses to decide which concrete class to instantiate
+* Refers to the newly created object through a common interface
+* "Creation through inheritance"
+
+[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational/factory_method)
