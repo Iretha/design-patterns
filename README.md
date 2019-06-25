@@ -32,6 +32,12 @@ object-oriented programming, and the remaining chapters describing 23 classic so
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational/prototype)
 
+### Singleton
+* When we want to limit the object creation to only one instance
+* When we want to control the access to that instance in serial way via the provided entry/ access point
+
+[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational/singleton)
+
 
 ## Structural Design Patterns (7)
 ## Behavioral Design Patterns (11)
