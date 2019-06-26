@@ -51,7 +51,9 @@ and the implementation could be easily replaced if necessary.
 
 
 ## Useful Links
-[Wikipedia: Design Patters](https://en.wikipedia.org/wiki/Software_design_pattern)
+[Design Patterns: Elements of Reusable Object-Oriented Software - The Book](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/ref=sr_1_1?keywords=Design+Patterns%3A+Elements+of+Reusable+Object-Oriented+Software&qid=1561537399&s=books&sr=1-1)
+
+[Wikipedia: Design Pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
 
 [Wikipedia: Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns)
 
