@@ -29,7 +29,7 @@ and the implementation could be easily replaced if necessary.
 - There must be a single instance and client can access this instance at all times.
 - Instance should be extensible without being modified.
 
-### [GoF Creational Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational)
+#### [GoF Creational Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational)
 
 
 ## [GoF Structural Design Patterns (7)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural)
@@ -38,7 +38,7 @@ and the implementation could be easily replaced if necessary.
 
 ### Consider applying structural patterns when:
 
-### [GoF Structural Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural)
+#### [GoF Structural Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural)
 
 
 ## [GoF Behavioral Design Patterns (11)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral)
@@ -47,7 +47,7 @@ and the implementation could be easily replaced if necessary.
 
 ### Consider applying behavioral patterns when:
 
-### [GoF Behavioral Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral)
+#### [GoF Behavioral Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral)
 
 
 ## Useful Links
