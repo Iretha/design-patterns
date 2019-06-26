@@ -53,9 +53,10 @@ We produce cars and buses. Both can be ordered with a manual or an automatic gea
 If we don't use any pattern, we would need the following classes - CarWithManualGear, CarWithAutomaticGear, BusWithManualGear and BusWithAutomaticGear.
 When implementing the classes, we would duplicate some functionality in order to handle the gear.
 
-In case we decide to apply the Bridge Pattern, we will separate in two different hierarchies - gear and vehicle:
+In case we decide to apply the Bridge Pattern, we will separate them in two different hierarchies - gear and vehicle:
 
 1). The "gear" package:
+
 1.1). Gear Interface
 ```java
 public interface Gear {
@@ -94,6 +95,7 @@ public class AutomaticGear implements Gear {
 }
 ```
 2). The "vehicle" package:
+
 2.1). Generic Vehicle
 ```java
 public class Vehicle {
