@@ -31,5 +31,26 @@ and the implementation could be easily replaced if necessary.
 
 ### [GoF Creational Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational)
 
-## Structural Design Patterns (7)
-## Behavioral Design Patterns (11)
+
+## [GoF Structural Design Patterns (7)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural)
+
+### Summary
+
+### Consider applying structural patterns when:
+
+### [GoF Structural Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural)
+
+
+## [GoF Behavioral Design Patterns (11)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral)
+
+### Summary
+
+### Consider applying behavioral patterns when:
+
+### [GoF Behavioral Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral)
+
+
+## Useful Links
+[Wikipedia: Design Patters](https://en.wikipedia.org/wiki/Software_design_pattern)
+[Wikipedia: Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns)
+[StackOverflow: Design Patterns in Java API/ Java Core](https://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns-in-javas-core-libraries)
