@@ -1,4 +1,4 @@
-# Structural Design Patterns (5)
+# Structural Design Patterns (7)
 
 ### Adapter
 * The adapter pattern makes two incompatible interfaces compatible without changing their existing code.
@@ -15,4 +15,11 @@ and use the functionality you need referring the abstraction (interface), not th
 * Reduces the number of sub classes
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural/bridge)
+
+### Composite
+* The pattern could be used to implement a tree-like, hierarchical structure of elements, that have same behavior. 
+* Client knows only about the general behavior off all components and treats them the same way.
+* It is hard to restrict the components of the composite
+
+[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural/composite)
 
