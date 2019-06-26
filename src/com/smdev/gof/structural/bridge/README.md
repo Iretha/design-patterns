@@ -30,6 +30,8 @@ Concepts:
 - Cleaner code
 - Improved Extensibility
 - Loosely coupled
+- Easy to test and mock
+- Can be developed independently
 
 ## Cons:
 - Increased complexity due to over use of composition (HAS-A relation)

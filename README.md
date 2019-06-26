@@ -52,5 +52,7 @@ and the implementation could be easily replaced if necessary.
 
 ## Useful Links
 [Wikipedia: Design Patters](https://en.wikipedia.org/wiki/Software_design_pattern)
+
 [Wikipedia: Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns)
+
 [StackOverflow: Design Patterns in Java API/ Java Core](https://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns-in-javas-core-libraries)
