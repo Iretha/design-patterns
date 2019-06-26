@@ -60,7 +60,8 @@ When we implement an ObjectAdapter, our Adapter should "have a" Sony TV as insta
 
 Now, let's implement it:
 
-1). Create the TARGET or the new interface, that out Client uses. This is a generic interface to control remote devices.
+1). Create RemoteDevice interface. This is the TARGET interface, that out Client uses. 
+In the terms in Java, this is a generic interface to represent remote devices, which can be controlled remotely by our remote control.
 ```java
 public interface RemoteDevice {
 
@@ -69,24 +70,8 @@ public interface RemoteDevice {
     void turnOff();
 }
 ```
-2). Next Step is to create a device, which is currently working with our remote control and doesn't need adapting.
-We will use it for illustration purposes only.
-```java
-public class TvLg implements RemoteDevice {
-
-    @Override
-    public void turnOn() {
-        System.out.println("TV LG is turned on!");
-    }
-
-    @Override
-    public void turnOff() {
-        System.out.println("TV LG is turned off!");
-    }
-}
-```
-3). We need our RemoteControl as well. This is the actual CLIENT, who uses the TARGET interface.
-The remote control (client) can connect to a remote device (target) and can turn the device on/off and disconnect from it.
+2). We need our RemoteControl as well. This is the CLIENT, who uses the TARGET interface (RemoteDevice).
+The remote control (client) can connect to a remote device (target) and can turn the device on/off or disconnect from it.
 ```java
 public class RemoteControl {
 
@@ -121,7 +106,23 @@ public class RemoteControl {
     }
 }
 ```
-4). We also have a Sang TV (adaptee), which we want to adapt to use the universal remote control.
+3). Next Step is to create the device (TvLg), which is currently working with our remote control and doesn't need to be adapted.
+We will use it for illustration purposes only.
+```java
+public class TvLg implements RemoteDevice {
+
+    @Override
+    public void turnOn() {
+        System.out.println("TV LG is turned on!");
+    }
+
+    @Override
+    public void turnOff() {
+        System.out.println("TV LG is turned off!");
+    }
+}
+```
+4). We also have a Sang TV (adaptee), which we want to adapt, so that we can use it with the universal remote control.
 ```java
 public class TvSang {
 
@@ -150,7 +151,7 @@ public class TvSangClassAdapter extends TvSang implements RemoteDevice {
     }
 }
 ```
-6). We also have a Sony TV (adaptee), which we want to adapt to use the universal remote control.
+6). We also have a Sony TV (adaptee), which we want to adapt, so that we can use it with the universal remote control.
 ```java
 public class TvSony {
 
@@ -164,8 +165,8 @@ public class TvSony {
 }
 ```
 5). We need an adapter to control the Sony TV with our remote control. 
-This is an object adapter that uses composition ("has-a" relationship) to adapt to the target interface.
-The adapter receives the device to adapt in it's constructor; 
+This is an object adapter, that uses composition ("has-a" relationship) to adapt to the target interface.
+The adapter receives the device instance to adapt in it's constructor; 
 ```java
 public class TvSonyObjectAdapter implements RemoteDevice {
 
