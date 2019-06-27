@@ -102,18 +102,30 @@ public class MushroomDecorator extends AbstractDecorator {
 ```
 5). Add some more decorators of your choice. You can see the full example with more decorators in github
 
-6). Create a client for demonstration purposes
+6). Later you can even extend with packaging and home delivery by adding more decorators
+
+7). Create a client for demonstration purposes
 ```java
 public class _Main {
 
     public static void main(String[] args) {
 
-        Product pizza1 = new ItalianDoughDecorator(new TomatoSouceDecorator(new SalamiDecorator(new MushroomDecorator(new CheeseDecorator(new Pizza())))));
+        Product pizza1 = new ItalianDoughDecorator(new TomatoSouceDecorator(new SalamiDecorator(new MushroomDecorator(new CheeseDecorator(new BbqSouceDecorator(new Pizza()))))));
         System.out.println("=> Total Price: " + pizza1.getPrice());
         System.out.println("");
 
         Product pizza2 = new RegularDoughDecorator(new TomatoSouceDecorator(new MushroomDecorator(new MushroomDecorator(new CheeseDecorator(new BbqSouceDecorator(new Pizza()))))));
         System.out.println("=> Total Price: " + pizza2.getPrice());
+        System.out.println("");
+
+
+        Product pizzaForHome = new PackageDecorator(pizza1);
+        System.out.println("=> Total Price: " + pizzaForHome.getPrice());
+        System.out.println("");
+
+
+        Product pizzaForHomeWithDelivery = new DeliveryDecorator(new PackageDecorator(pizza2));
+        System.out.println("=> Total Price: " + pizzaForHomeWithDelivery.getPrice());
         System.out.println("");
     }
 }
@@ -125,7 +137,8 @@ Adding TomatoSouceDecorator
 Adding SalamiDecorator
 Adding MushroomDecorator
 Adding CheeseDecorator
-=> Total Price: 9.26
+Adding BbqSouceDecorator
+=> Total Price: 10.01
 
 Adding RegularDoughDecorator
 Adding TomatoSouceDecorator
@@ -134,6 +147,25 @@ Adding MushroomDecorator
 Adding CheeseDecorator
 Adding BbqSouceDecorator
 => Total Price: 5.82
+
+Adding PackageDecorator
+Adding ItalianDoughDecorator
+Adding TomatoSouceDecorator
+Adding SalamiDecorator
+Adding MushroomDecorator
+Adding CheeseDecorator
+Adding BbqSouceDecorator
+=> Total Price: 10.81
+
+Adding DeliveryDecorator
+Adding PackageDecorator
+Adding RegularDoughDecorator
+Adding TomatoSouceDecorator
+Adding MushroomDecorator
+Adding MushroomDecorator
+Adding CheeseDecorator
+Adding BbqSouceDecorator
+=> Total Price: 12.42
 ```
 
 ### Example 2 

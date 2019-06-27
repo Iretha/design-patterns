@@ -1,6 +1,7 @@
-package com.smdev.gof.structural.decorator.example_1.decor;
+package com.smdev.gof.structural.decorator.example_1.decor.food;
 
 import com.smdev.gof.structural.decorator.example_1.Product;
+import com.smdev.gof.structural.decorator.example_1.decor.AbstractDecorator;
 
 public class CheeseDecorator extends AbstractDecorator {
 
