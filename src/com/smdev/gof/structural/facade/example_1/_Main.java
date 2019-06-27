@@ -14,5 +14,6 @@ public class _Main {
         // Alice Young
         PaymentServicesFacade paymentServices2 = new PaymentServicesFacadeImpl(new Customer("Alice Young"));
         paymentServices2.payGasBillToProvider1("ACVVVS");
+        paymentServices2.payGasBillToProvider1("YYRSG2sh");
     }
 }
