@@ -35,8 +35,7 @@ or you want to create an immutable object (Builder)
 
 ### Summary
 Structural Design Patterns have to deal with the relations between components and objects. 
-They simplify the structure by identifying the relationships
-They ease the design by identifying a simple way to realize relationships among entities.
+They simplify the structure by identifying the relationships and ease the design by identifying a simple way to realize relationships among entities.
 
 ### Consider applying structural patterns when:
 - Need to adapt incompatible interfaces (Adapter)
