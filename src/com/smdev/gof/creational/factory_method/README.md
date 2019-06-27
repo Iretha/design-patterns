@@ -1,4 +1,4 @@
-# Factory Method
+# The Factory Method Design Pattern
 
 GoF Design Patterns -> Creational Design Patterns
 

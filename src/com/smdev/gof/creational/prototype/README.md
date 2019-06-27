@@ -1,4 +1,4 @@
-# Prototype
+# The Prototype Design Pattern
 
 GoF Design Patterns -> Creational Design Patterns
 

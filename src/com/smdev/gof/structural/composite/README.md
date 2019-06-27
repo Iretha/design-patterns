@@ -1,4 +1,4 @@
-# Composite
+# The Composite Design Pattern
 
 GoF Design Patterns -> Structural Design Patterns
 

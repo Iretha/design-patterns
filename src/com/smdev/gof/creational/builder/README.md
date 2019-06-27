@@ -1,4 +1,4 @@
-#  Builder Pattern
+# The Builder Design Pattern
 
 GoF Design Patterns -> Creational Design Patterns
 
@@ -16,7 +16,7 @@ Very useful when you need to implement an immutable class.
 - If you want to pass the optional arguments in any order
 - If you don't have all the values when the object is instantiated
 - If you need to construct immutable class with a large number of arguments
-- If you want to guarantee a consistent state of the objects, because all required fileds are in the constructor
+- If you want to guarantee a consistent state of the objects, because all required fields are in the constructor
 - If you want to have only 1 state of the object
 
 ## Pros:

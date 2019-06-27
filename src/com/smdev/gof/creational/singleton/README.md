@@ -1,4 +1,4 @@
-# Singleton
+# The Singleton Design Pattern
 
 GoF Design Patterns -> Creational Design Patterns
 

@@ -1,4 +1,4 @@
-# Abstract Factory aka. "Factory of Factories"
+# The Abstract Factory Design Pattern aka. "Factory of Factories"
 
 GoF Design Patterns -> Creational Design Patterns
 
