@@ -7,7 +7,7 @@ public class _Main {
         PaymentServicesFacade paymentServices1 = new PaymentServicesFacadeImpl(new Customer("Jon Snow"));
         paymentServices1.payElectricityBill("BN123/20");
         paymentServices1.payGasBillToProvider2("233834esd4rcWQWFG3");
-        paymentServices1.payElectricityBill("122398");
+        paymentServices1.payPhoneBill("122398");
 
         System.out.println("");
 
