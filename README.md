@@ -20,14 +20,13 @@ from client how the object is created. The client is entirely decoupled from the
 and the implementation could be easily replaced if necessary.
 
 ### Consider applying creational patterns when:
-- A system should be independent of how its objects and products are created.
-- A set of related objects is designed to be used together.
-- Hiding the implementations of a class library or product, revealing only their interfaces.
-- Constructing different representation of independent complex objects.
-- A class wants its subclass to implement the object it creates.
-- The class instantiations are specified at run-time.
-- There must be a single instance and client can access this instance at all times.
-- Instance should be extensible without being modified.
+- A set of related objects / families is designed to be used together 
+or the system should be independent of how its objects and products are created (Abstract Factory)
+- You need to ensure that there is only one state of the object, you have many optional constructor args 
+or you want to create an immutable object (Builder)
+- The subclass should decide which concrete class it should use (Factory Method)
+- When creating a new object is an expensive operation (Prototype)
+- When you want to have only one entry point to something and to coordinate actions across the system. (Singleton)
 
 #### [GoF Creational Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational)
 
@@ -35,8 +34,16 @@ and the implementation could be easily replaced if necessary.
 ## [GoF Structural Design Patterns (7)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural)
 
 ### Summary
+Structural Design Patterns have to deal with the relations between components and objects. 
+They simplify the structure by identifying the relationships
+They ease the design by identifying a simple way to realize relationships among entities.
 
 ### Consider applying structural patterns when:
+- Need to adapt incompatible interfaces (Adapter)
+- You have to deal with two different hierarchies (Bridge)
+- You have tree-like structure with same general behavior (Composite)
+- You need to add/ remove behavior at runtime (Decorator)
+- You need to simplify and hide complexity (Facade)
 
 #### [GoF Structural Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural)
 
@@ -56,5 +63,11 @@ and the implementation could be easily replaced if necessary.
 [Wikipedia: Design Pattern](https://en.wikipedia.org/wiki/Software_design_pattern)
 
 [Wikipedia: Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns)
+
+[Wikipedia: Creational Design Patterns](https://en.wikipedia.org/wiki/Creational_pattern)
+
+[Wikipedia: Structural Design Patterns](https://en.wikipedia.org/wiki/Structural_pattern)
+
+[Wikipedia: Behavioral Design Patterns](https://en.wikipedia.org/wiki/Behavioral_pattern)
 
 [StackOverflow: Design Patterns in Java API/ Java Core](https://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns-in-javas-core-libraries)
