@@ -23,3 +23,9 @@ and use the functionality you need referring the abstraction (interface), not th
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural/composite)
 
+### Decorator
+* This is another way of adding additional behavior to objects instead of subclassing them.
+* The additional behavior can be added or removed at runtime.
+
+[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural/decorator)
+
