@@ -70,6 +70,10 @@ You may make any combination you want. Instead of having so many concrete classe
 you can implement the Decorator pattern and enable the features at runtime, based on the user input.
 
 ### Facade
+- Provides simple interface for client and hides complexity
+- Reduces dependencies if used for modules/ subsystems
+
+I.e. JDBC driver uses facade to hide complexity of creating connection to different database servers.
 
 ### Flyweight
 

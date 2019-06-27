@@ -29,3 +29,9 @@ and use the functionality you need referring the abstraction (interface), not th
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural/decorator)
 
+### Facade
+* Provides simple interface for client and hides complexity
+* Reduces dependencies if used for modules/ subsystems
+
+[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural/facade)
+
