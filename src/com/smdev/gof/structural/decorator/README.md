@@ -100,10 +100,29 @@ public class MushroomDecorator extends AbstractDecorator {
 
 }
 ```
-5). Add some more decorators of your choice. You can see the full example with more decorators in github
+5). Add some more decorators of your choice. You can see the full example with more decorators in github.
 
 6). Later you can even extend with packaging and home delivery by adding more decorators
+```java
+public class DeliveryDecorator extends AbstractDecorator {
 
+    public DeliveryDecorator(Product base) {
+        super(base);
+    }
+
+    @Override
+    public double getPrice() {
+        double price = 0;
+        double basePrice = super.getPrice();
+        if(basePrice > 10){
+            price = basePrice; // free delivery for orders over 10 bucks
+        }else{
+            price = 5.8 + basePrice;
+        }
+        return price;
+    }
+}
+```
 7). Create a client for demonstration purposes
 ```java
 public class _Main {
