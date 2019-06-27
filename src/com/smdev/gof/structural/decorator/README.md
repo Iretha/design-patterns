@@ -87,7 +87,7 @@ public abstract class AbstractDecorator implements Product {
 ```
 4). Create some concrete decorators i.e. MushroomDecorator, which will add mushrooms to the base
 ```java
-public class MushroomDecorator extends AbstractDecorator implements Product {
+public class MushroomDecorator extends AbstractDecorator {
 
     public MushroomDecorator(Product base) {
         super(base);
