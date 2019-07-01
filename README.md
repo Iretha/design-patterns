@@ -43,6 +43,7 @@ They simplify the structure by identifying the relationships and ease the design
 - You have tree-like structure with same general behavior (Composite)
 - You need to add/ remove behavior at runtime (Decorator)
 - You need to simplify and hide complexity (Facade)
+- You have objects that share same data and you need to lower application memory usage (Flyweight)
 
 #### [GoF Structural Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural)
 
