@@ -9,13 +9,13 @@ public class Landmark {
     @Getter
     private Country country;
 
-    private String name;
+    private String landmarkName;
 
-    private String description;
+    private String landmarkDescription;
 
-    public Landmark(String countryName, String name, String description) {
+    public Landmark(String countryName, String landmarkName, String landmarkDescription) {
         this.country = CountryFactory.createCountry(countryName);
-        this.name = name;
-        this.description = description;
+        this.landmarkName = landmarkName;
+        this.landmarkDescription = landmarkDescription;
     }
 }
