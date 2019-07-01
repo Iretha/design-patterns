@@ -35,3 +35,9 @@ and use the functionality you need referring the abstraction (interface), not th
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural/facade)
 
+### Flyweight
+* Lowers the memory usage of your application by decreasing duplicated data (even object instances)
+* Used for caching
+
+[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural/flyweight)
+

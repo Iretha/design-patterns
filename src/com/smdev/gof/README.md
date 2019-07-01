@@ -76,6 +76,10 @@ you can implement the Decorator pattern and enable the features at runtime, base
 I.e. JDBC driver uses facade to hide complexity of creating connection to different database servers.
 
 ### Flyweight
+- Lowers the memory usage of your application by decreasing duplicated data (even object instances)
+- Used for caching
+
+I.e. When you have some immutable objects that can be reused by other objects or if some objects share common data
 
 ### Proxy
 
