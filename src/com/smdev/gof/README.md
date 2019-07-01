@@ -82,6 +82,10 @@ I.e. JDBC driver uses facade to hide complexity of creating connection to differ
 I.e. When you have some immutable objects that can be reused by other objects or if some objects share common data
 
 ### Proxy
+* To control or manage access to the protected object
+* To cache or log requests/ responses
+
+I.e. When you want to 
 
 ## GoF Behavioral Design Patterns (11)
 

@@ -44,9 +44,9 @@ They simplify the structure by identifying the relationships and ease the design
 - You need to add/ remove behavior at runtime (Decorator)
 - You need to simplify and hide complexity (Facade)
 - You have objects that share same data and you need to lower application memory usage (Flyweight)
+- You have to protect some object by controlling or managing access to it; to cache or log requests/ responses (Proxy)
 
 #### [GoF Structural Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural)
-
 
 ## [GoF Behavioral Design Patterns (11)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral)
 

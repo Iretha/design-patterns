@@ -41,3 +41,12 @@ and use the functionality you need referring the abstraction (interface), not th
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural/flyweight)
 
+### Proxy
+* To check user privileges/ permissions and restrict access
+* To add logging
+* To cache objects
+* To lock/ unlock object
+* To route/ forward request, based on some rules
+
+[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural/proxy)
+
