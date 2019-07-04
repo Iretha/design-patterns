@@ -89,9 +89,15 @@ I.e. When you want to protect or hide something "behind a wall".
 
 ## GoF Behavioral Design Patterns (11)
 
-### Chain of responsibility
+### Chain of Responsibility
 * Decouples Sender & Receiver
 * Chain can be "modified" at runtime by changing the members
 * Does not guarantee that the request will be handled
 
 I.e. When you have multiple handlers and they do not have specific priority.
+
+### Command
+* When you need to decouple the Invoker and the Receiver and let them "talk" via commands
+* The only handler is the Receiver (the only one, who knows hot to perform the commands)
+
+I.e. When you have a Remote Control (the invoker) that controls a TV (the receiver = the only handler)

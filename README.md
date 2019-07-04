@@ -51,11 +51,17 @@ They simplify the structure by identifying the relationships and ease the design
 ## [GoF Behavioral Design Patterns (11)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral)
 
 ### Summary
+Behavioral design patterns are design patterns that identify common communication patterns between objects. 
+By doing so, these patterns increase flexibility in carrying out this communication.
 
 ### Consider applying behavioral patterns when:
+- You have multiple handlers with no specific priority and they should handle requests, based on some rules or forward them (Chain of Responsibility)
+
+
+
+
 
 #### [GoF Behavioral Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral)
-
 
 ## Useful Links
 [Design Patterns: Elements of Reusable Object-Oriented Software - The Book](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/ref=sr_1_1?keywords=Design+Patterns%3A+Elements+of+Reusable+Object-Oriented+Software&qid=1561537399&s=books&sr=1-1)
