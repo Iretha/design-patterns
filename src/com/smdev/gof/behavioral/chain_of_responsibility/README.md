@@ -27,11 +27,10 @@ If it cannot proceed the request, it passes it to the next one.
 - Hard to "follow" the chain = the logic (when debugging or when trying to follow the logic behind the implementation)
 
 ## Examples from Java API
-Servlet Filters in Java that allow multiple filters to process an HTTP request
 Recognizable by behavioral methods which (indirectly) invokes the same method in another implementation of same abstract/interface type in a queue
 ```
 java.util.logging.Logger#log()
-javax.servlet.Filter#doFilter()
+javax.servlet.Filter#doFilter() - Servlet Filters in Java that allow multiple filters to process an HTTP request
 ```
 ## Examples
 - To handle requests
@@ -116,7 +115,7 @@ public class CoinHandler50c extends AbstractCoinHandler {
     @Override
     public boolean put(Coin coin) {
         if (coin.getDiameter() == 2.15 && coin.getWeight() == 11.34) {
-            System.out.println("50 Cents (" + coin.toString() + ") accepted by " + getClass().getSimpleName());
+            System.out.println("50 Cents " + coin.toString() + " accepted by " + getClass().getSimpleName());
             return true;
         }
         return getNextHandler() != null ? getNextHandler().put(coin) : false;
@@ -176,5 +175,5 @@ Output:
 25 Cents Coin(diameter=1.75, weight=5.67) accepted by CoinHandler25c
 1 Dollar Coin(diameter=2.58, weight=22.68) accepted by CoinHandler1d
 Coin(diameter=1.35, weight=2.268) not accepted! Please, insert another coin!
-50 Cents (Coin(diameter=2.15, weight=11.34)) accepted by CoinHandler50c
+50 Cents Coin(diameter=2.15, weight=11.34) accepted by CoinHandler50c
 ```

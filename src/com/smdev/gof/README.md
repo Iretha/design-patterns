@@ -85,7 +85,13 @@ I.e. When you have some immutable objects that can be reused by other objects or
 * To control or manage access to the protected object
 * To cache or log requests/ responses
 
-I.e. When you want to 
+I.e. When you want to protect or hide something "behind a wall".
 
 ## GoF Behavioral Design Patterns (11)
 
+### Chain of responsibility
+* Decouples Sender & Receiver
+* Chain can be "modified" at runtime by changing the members
+* Does not guarantee that the request will be handled
+
+I.e. When you have multiple handlers and they do not have specific priority.
