@@ -1,4 +1,4 @@
-# The Command Design Pattern (COR)
+# The Command Design Pattern 
 
 GoF Design Patterns -> Behavioral Design Patterns
 

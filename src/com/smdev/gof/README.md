@@ -101,3 +101,10 @@ I.e. When you have multiple handlers and they do not have specific priority.
 * The only handler is the Receiver (the only one, who knows hot to perform the commands)
 
 I.e. When you have a Remote Control (the invoker) that controls a TV (the receiver = the only handler)
+
+### Iterator
+* When you need to traverse some custom collection of elements sequentially, based on specific business logic
+* If you need more complex way to traverse elements, than the provided inner iterators
+
+I.e when you need to traverse only the elements that have some specific value, assigned to a property. If you
+have a collection of books and you want to traverse only the books, that belong to the Mystery genre.

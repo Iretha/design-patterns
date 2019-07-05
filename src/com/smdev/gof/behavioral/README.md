@@ -13,3 +13,9 @@
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/command)
 
+### Iterator
+* When you need to traverse some custom collection of elements sequentially, based on specific business logic
+* If you need more complex way to traverse elements, than the provided inner iterators
+
+[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/iterator)
+
