@@ -120,3 +120,8 @@ have a collection of books and you want to traverse only the books, that belong 
 * If you need to centralize the communication between components
 
 I.e when a change in one component, leads to changes/ updates in other components.
+
+### Memento
+* If you need to restore previous state of an object
+
+I.e you have a version control system that should be capable of restoring the version to some specific commit

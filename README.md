@@ -60,6 +60,7 @@ By doing so, these patterns increase flexibility in carrying out this communicat
 - When you have multiple outputs of the same thing or you want to create a domain language to support simple searches like "find dogs where breed eq german_shepherd and gender eq female" (Interpreter)
 - When you need to traverse some custom collection of elements sequentially, based on some business rule (Iterator)
 - When a change in one component leads to changes/ updates in other components (Mediator)
+- When you have to implement revert/ undo/ restore/ rollback to some previous state (Memento) 
 
 
 

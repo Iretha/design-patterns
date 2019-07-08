@@ -30,3 +30,8 @@
 * If you need to centralize the communication between components
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/mediator)
+
+### Memento
+* If you need to restore the state of an objects
+
+[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/memento)
