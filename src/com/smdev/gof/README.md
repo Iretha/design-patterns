@@ -102,6 +102,12 @@ I.e. When you have multiple handlers and they do not have specific priority.
 
 I.e. When you have a Remote Control (the invoker) that controls a TV (the receiver = the only handler)
 
+### Interpreter
+* To build a language with a simple grammar (simple search engines)
+* To produce different outputs of the same thing
+
+I.e. when you have some domain and you want to create a domain language to support simple searches like "find dogs where breed eq german_shepard and gender eq female"
+
 ### Iterator
 * When you need to traverse some custom collection of elements sequentially, based on some business rule
 * If you need more complex way to traverse elements, than the provided inner iterators

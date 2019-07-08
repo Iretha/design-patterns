@@ -6,7 +6,7 @@ GoF Design Patterns -> Behavioral Design Patterns
 
 ## What problems does it solve? Why to use it?
 The interpreter pattern is a design pattern that specifies how to evaluate sentences in some custom language. 
-The basic idea is to have a class for each symbol. The symbols are separated by another symbol i.e. "one plus two multiplied-by three".
+The basic idea is to have a class for each symbol. The symbols are separated by another symbol i.e. "one plus two multiplied-by three", separated by spaces.
 The syntax tree of a sentence in the language can be represented via the composite pattern.
 
 Glossary:
@@ -21,7 +21,7 @@ Glossary:
 - Prefix - the operator precedes the left and the right expression + 5 1
 
 ## When to use it?
-- To build a simple grammar as an abstract syntax tree like structure and run the evaluation
+- To build a simple grammar as an abstract syntax tree-like structure and run the evaluation
 - To produce different outputs (like file formats etc)
 - To create simple language processors
 - To create simple domain-specific search engines
@@ -77,7 +77,6 @@ public class Dog {
     }
 }
 ```
-
 2). We need the expression interface
 ```java
 public interface Expression {
