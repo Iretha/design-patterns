@@ -4,11 +4,7 @@ import java.util.List;
 
 public interface Expression {
 
-    void parse();
+    void readArgs();
 
     List<Dog> evaluate() throws Exception;
-
-    boolean isTerminal();
-
-    List<Expression> getChildren();
 }

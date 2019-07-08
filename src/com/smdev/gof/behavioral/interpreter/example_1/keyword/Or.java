@@ -1,35 +1,24 @@
 package com.smdev.gof.behavioral.interpreter.example_1.keyword;
 
 import com.smdev.gof.behavioral.interpreter.example_1.Context;
-import com.smdev.gof.behavioral.interpreter.example_1.AbstractExpressionNonTerminal;
-import com.smdev.gof.behavioral.interpreter.example_1.Expression;
 import com.smdev.gof.behavioral.interpreter.example_1.Dog;
+import com.smdev.gof.behavioral.interpreter.example_1.NonTerminalExpression;
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-public class Or extends AbstractExpressionNonTerminal {
+public class Or extends NonTerminalExpression {
 
     public Or(Context context) {
         super(context);
     }
 
     @Override
-    public void parse() {
-        parseChildren();
+    public void readArgs() {
+        readChildArgs();
     }
 
     @Override
     public List<Dog> evaluate() throws Exception {
-        Set<Dog> result = new HashSet<>(getContext().getData());
-
-        List<Expression> children = getChildren();
-        for (Expression ch : children) {
-            result.addAll(ch.evaluate()); // keep only common elements
-        }
-        return new ArrayList<>(result);
+        return uniteSubResults();
     }
-
 }

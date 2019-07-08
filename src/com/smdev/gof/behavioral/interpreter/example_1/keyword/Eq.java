@@ -1,14 +1,14 @@
 package com.smdev.gof.behavioral.interpreter.example_1.keyword;
 
 import com.smdev.gof.behavioral.interpreter.example_1.Context;
-import com.smdev.gof.behavioral.interpreter.example_1.AbstractExpressionTerminal;
 import com.smdev.gof.behavioral.interpreter.example_1.Dog;
+import com.smdev.gof.behavioral.interpreter.example_1.TerminalExpression;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Eq extends AbstractExpressionTerminal {
+public class Eq extends TerminalExpression {
 
     private String fieldName;
     private String searchedValue;
@@ -18,7 +18,7 @@ public class Eq extends AbstractExpressionTerminal {
     }
 
     @Override
-    public void parse() {
+    public void readArgs() {
         this.fieldName = getContext().getArgs().pollFirst();
         this.searchedValue = getContext().getArgs().pollFirst();
     }
@@ -41,6 +41,4 @@ public class Eq extends AbstractExpressionTerminal {
         }
         return filtered;
     }
-
-
 }

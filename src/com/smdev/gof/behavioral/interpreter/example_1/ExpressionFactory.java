@@ -1,6 +1,5 @@
 package com.smdev.gof.behavioral.interpreter.example_1;
 
-import com.smdev.gof.behavioral.interpreter.example_1.Context;
 import com.smdev.gof.behavioral.interpreter.example_1.keyword.And;
 import com.smdev.gof.behavioral.interpreter.example_1.keyword.Or;
 import com.smdev.gof.behavioral.interpreter.example_1.keyword.Eq;

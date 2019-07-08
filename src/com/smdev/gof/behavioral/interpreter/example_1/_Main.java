@@ -8,7 +8,6 @@ import java.util.Map;
 public class _Main {
 
     public static void main(String[] args) {
-
         Map<String, List<Dog>> data = new HashMap<>();
         List<Dog> dogs = new ArrayList<>();
         dogs.add(new Dog("Ruby", "german_shepard", "female", 5));
@@ -23,6 +22,7 @@ public class _Main {
         data.put("dogs", dogs);
 
         try {
+            evaluate(data, "find dogs");
             evaluate(data, "find dogs where gender eq male");
             evaluate(data, "find dogs where breed eq german_shepard and gender eq female");
             evaluate(data, "find dogs where breed eq german_shepard or breed eq bulldog and gender eq female");
