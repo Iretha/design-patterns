@@ -47,16 +47,15 @@ java.lang.reflect.Method#invoke()
 We are going to create a demo of "Google Drive"- like app. You can connect to a cloud account
 and synchronize a folder between multiple devices.
 
-1).Create an abstract mediator
+1). Create an abstract mediator
 ```java
 public interface Mediator {
 
-    boolean connect(String account, Colleague colleague);
+    void connect(String account, Colleague colleague);
 
-    boolean disconnect(String account, Colleague colleague);
+    void disconnect(String account, Colleague colleague);
 
     void synchronize(String account);
-
 }
 ```
 2). Create an abstract colleague
@@ -111,6 +110,7 @@ public abstract class Colleague {
 }
 ```
 3). Create multiple concrete colleagues
+
 3.1). Android Client
 ```java
 public class ClientAndroid extends Colleague {
@@ -145,7 +145,7 @@ public class MediatorCloud implements Mediator {
     private Map<String, List<Colleague>> connectedDevices = new HashMap<>();
 
     @Override
-    public boolean connect(String account, Colleague device) {
+    public void connect(String account, Colleague device) {
         List<Colleague> devices = this.connectedDevices.get(account);
         if (devices == null) {
             devices = new ArrayList<>();
@@ -158,17 +158,15 @@ public class MediatorCloud implements Mediator {
         }
 
         synchronize(account);
-        return true;
     }
 
     @Override
-    public boolean disconnect(String account, Colleague device) {
+    public void disconnect(String account, Colleague device) {
         List<Colleague> devices = this.connectedDevices.get(account);
         if (devices != null && devices.contains(device)) {
             devices.remove(device);
             System.out.println(device.getLabel()+ " disconnected from " + account);
         }
-        return false;
     }
 
     @Override

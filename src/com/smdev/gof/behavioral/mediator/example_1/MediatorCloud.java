@@ -7,7 +7,7 @@ public class MediatorCloud implements Mediator {
     private Map<String, List<Colleague>> connectedDevices = new HashMap<>();
 
     @Override
-    public boolean connect(String account, Colleague device) {
+    public void connect(String account, Colleague device) {
         List<Colleague> devices = this.connectedDevices.get(account);
         if (devices == null) {
             devices = new ArrayList<>();
@@ -20,17 +20,15 @@ public class MediatorCloud implements Mediator {
         }
 
         synchronize(account);
-        return true;
     }
 
     @Override
-    public boolean disconnect(String account, Colleague device) {
+    public void disconnect(String account, Colleague device) {
         List<Colleague> devices = this.connectedDevices.get(account);
         if (devices != null && devices.contains(device)) {
             devices.remove(device);
             System.out.println(device.getLabel()+ " disconnected from " + account);
         }
-        return false;
     }
 
     @Override
