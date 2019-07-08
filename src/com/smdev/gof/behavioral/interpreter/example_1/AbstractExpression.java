@@ -1,6 +1,5 @@
-package com.smdev.gof.behavioral.interpreter.example_1.expression;
+package com.smdev.gof.behavioral.interpreter.example_1;
 
-import com.smdev.gof.behavioral.interpreter.example_1.Context;
 import lombok.Getter;
 
 public abstract class AbstractExpression implements Expression {

@@ -1,11 +1,11 @@
-package com.smdev.gof.behavioral.interpreter.example_1.model;
+package com.smdev.gof.behavioral.interpreter.example_1;
 
 import lombok.Getter;
 import lombok.ToString;
 
 @ToString
 @Getter
-public class Dog implements Entry {
+public class Dog {
 
     private String name;
     private String breed;
