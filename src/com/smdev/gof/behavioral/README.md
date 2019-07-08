@@ -25,3 +25,8 @@
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/iterator)
 
+### Mediator
+* If you need to refactor some tight coupled components, that interact together
+* If you need to centralize the communication between components
+
+[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/mediator)

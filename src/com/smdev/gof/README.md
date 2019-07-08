@@ -114,3 +114,9 @@ I.e. when you have some domain and you want to create a domain language to suppo
 
 I.e when you need to traverse only the elements that have some specific value, assigned to a property. If you
 have a collection of books and you want to traverse only the books, that belong to the Mystery genre.
+
+### Mediator
+* If you need to refactor some tight coupled components, that interact together
+* If you need to centralize the communication between components
+
+I.e when a change in one component, leads to changes/ updates in other components.
