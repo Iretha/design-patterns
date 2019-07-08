@@ -10,11 +10,11 @@ public class _Main {
     public static void main(String[] args) {
         Map<String, List<Dog>> data = new HashMap<>();
         List<Dog> dogs = new ArrayList<>();
-        dogs.add(new Dog("Ruby", "german_shepard", "female", 5));
-        dogs.add(new Dog("Bobby", "german_shepard", "male", 3));
-        dogs.add(new Dog("Rusty", "german_shepard", "male", 1));
-        dogs.add(new Dog("Sara", "german_shepard", "female", 2));
-        dogs.add(new Dog("Diva", "german_shepard", "female", 7));
+        dogs.add(new Dog("Ruby", "german_shepherd", "female", 5));
+        dogs.add(new Dog("Bobby", "german_shepherd", "male", 3));
+        dogs.add(new Dog("Rusty", "german_shepherd", "male", 1));
+        dogs.add(new Dog("Sara", "german_shepherd", "female", 2));
+        dogs.add(new Dog("Diva", "german_shepherd", "female", 7));
         dogs.add(new Dog("Lila", "bulldog", "female", 8));
         dogs.add(new Dog("Lilo", "bulldog", "male", 12));
         dogs.add(new Dog("Viva", "pug", "female", 8));
@@ -24,8 +24,8 @@ public class _Main {
         try {
             evaluate(data, "find dogs");
             evaluate(data, "find dogs where gender eq male");
-            evaluate(data, "find dogs where breed eq german_shepard and gender eq female");
-            evaluate(data, "find dogs where breed eq german_shepard or breed eq bulldog and gender eq female");
+            evaluate(data, "find dogs where breed eq german_shepherd and gender eq female");
+            evaluate(data, "find dogs where breed eq german_shepherd or breed eq bulldog and gender eq female");
         } catch (Exception e) {
             e.printStackTrace();
         }

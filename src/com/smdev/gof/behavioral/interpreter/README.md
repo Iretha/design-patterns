@@ -54,8 +54,8 @@ Here are some example searches we are going to implement:
 ```
 - find dogs
 - find dogs where gender eq male
-- find dogs where breed eq german_shepard and gender eq female
-- find dogs where breed eq german_shepard or breed eq bulldog and gender eq female
+- find dogs where breed eq german_shepherd and gender eq female
+- find dogs where breed eq german_shepherd or breed eq bulldog and gender eq female
 
 ```        
 1). We need to create the domain specific object - Dog.java 
@@ -409,11 +409,11 @@ public class _Main {
     public static void main(String[] args) {
         Map<String, List<Dog>> data = new HashMap<>();
         List<Dog> dogs = new ArrayList<>();
-        dogs.add(new Dog("Ruby", "german_shepard", "female", 5));
-        dogs.add(new Dog("Bobby", "german_shepard", "male", 3));
-        dogs.add(new Dog("Rusty", "german_shepard", "male", 1));
-        dogs.add(new Dog("Sara", "german_shepard", "female", 2));
-        dogs.add(new Dog("Diva", "german_shepard", "female", 7));
+        dogs.add(new Dog("Ruby", "german_shepherd", "female", 5));
+        dogs.add(new Dog("Bobby", "german_shepherd", "male", 3));
+        dogs.add(new Dog("Rusty", "german_shepherd", "male", 1));
+        dogs.add(new Dog("Sara", "german_shepherd", "female", 2));
+        dogs.add(new Dog("Diva", "german_shepherd", "female", 7));
         dogs.add(new Dog("Lila", "bulldog", "female", 8));
         dogs.add(new Dog("Lilo", "bulldog", "male", 12));
         dogs.add(new Dog("Viva", "pug", "female", 8));
@@ -423,8 +423,8 @@ public class _Main {
         try {
             evaluate(data, "find dogs");
             evaluate(data, "find dogs where gender eq male");
-            evaluate(data, "find dogs where breed eq german_shepard and gender eq female");
-            evaluate(data, "find dogs where breed eq german_shepard or breed eq bulldog and gender eq female");
+            evaluate(data, "find dogs where breed eq german_shepherd and gender eq female");
+            evaluate(data, "find dogs where breed eq german_shepherd or breed eq bulldog and gender eq female");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -442,15 +442,15 @@ public class _Main {
 Output:
 ```
 ------ Expression to evaluate: find dogs gender eq male
-[Dog(name=Bobby, breed=german_shepard, gender=male, age=3), Dog(name=Rusty, breed=german_shepard, gender=male, age=1), Dog(name=Lilo, breed=bulldog, gender=male, age=12)]
+[Dog(name=Bobby, breed=german_shepherd, gender=male, age=3), Dog(name=Rusty, breed=german_shepherd, gender=male, age=1), Dog(name=Lilo, breed=bulldog, gender=male, age=12)]
 
 ------ Expression to evaluate: find dogs where gender eq male
-[Dog(name=Bobby, breed=german_shepard, gender=male, age=3), Dog(name=Rusty, breed=german_shepard, gender=male, age=1), Dog(name=Lilo, breed=bulldog, gender=male, age=12)]
+[Dog(name=Bobby, breed=german_shepherd, gender=male, age=3), Dog(name=Rusty, breed=german_shepherd, gender=male, age=1), Dog(name=Lilo, breed=bulldog, gender=male, age=12)]
 
------- Expression to evaluate: find dogs where breed eq german_shepard and gender eq female
-[Dog(name=Sara, breed=german_shepard, gender=female, age=2), Dog(name=Ruby, breed=german_shepard, gender=female, age=5), Dog(name=Diva, breed=german_shepard, gender=female, age=7)]
+------ Expression to evaluate: find dogs where breed eq german_shepherd and gender eq female
+[Dog(name=Sara, breed=german_shepherd, gender=female, age=2), Dog(name=Ruby, breed=german_shepherd, gender=female, age=5), Dog(name=Diva, breed=german_shepherd, gender=female, age=7)]
 
------- Expression to evaluate: find dogs where breed eq german_shepard or breed eq bulldog and gender eq female
-[Dog(name=Sara, breed=german_shepard, gender=female, age=2), Dog(name=Viva, breed=pug, gender=female, age=8), Dog(name=Ruby, breed=german_shepard, gender=female, age=5), Dog(name=Lila, breed=bulldog, gender=female, age=8), Dog(name=Diva, breed=german_shepard, gender=female, age=7)]
+------ Expression to evaluate: find dogs where breed eq german_shepherd or breed eq bulldog and gender eq female
+[Dog(name=Sara, breed=german_shepherd, gender=female, age=2), Dog(name=Viva, breed=pug, gender=female, age=8), Dog(name=Ruby, breed=german_shepherd, gender=female, age=5), Dog(name=Lila, breed=bulldog, gender=female, age=8), Dog(name=Diva, breed=german_shepherd, gender=female, age=7)]
 
 ```

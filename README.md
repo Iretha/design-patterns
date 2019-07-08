@@ -57,7 +57,7 @@ By doing so, these patterns increase flexibility in carrying out this communicat
 ### Consider applying behavioral patterns when:
 - You have multiple handlers with no specific priority and they should handle requests, based on some rules or forward them (Chain of Responsibility)
 - When you have many options handled by a single handler (Command)
-- When you have multiple outputs of the same thing ot you want to create a domain language to support simple searches like "find dogs where breed eq german_shepard and gender eq female" (Interpreter)
+- When you have multiple outputs of the same thing or you want to create a domain language to support simple searches like "find dogs where breed eq german_shepherd and gender eq female" (Interpreter)
 - When you need to traverse some custom collection of elements sequentially, based on some business rule (Iterator)
 
 

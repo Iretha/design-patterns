@@ -2,7 +2,7 @@
 
 ### Chain Of Responsibility
 * Decouples Sender & Receiver
-* Chain can be "modified" at runtime by chnaging the members
+* Chain can be "modified" at runtime by changing the members
 * Does not guarantee that the request will be handled
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/chain_of_responsibility)
@@ -18,7 +18,6 @@
 * To produce different outputs of the same thing
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/interpreter)
-
 
 ### Iterator
 * When you need to traverse some custom collection of elements sequentially, based on specific business rule
