@@ -6,7 +6,7 @@ public interface Expression {
 
     void parse();
 
-    List<Dog> evaluate(List<Dog> unfiltered) throws Exception;
+    List<Dog> evaluate() throws Exception;
 
     boolean isTerminal();
 

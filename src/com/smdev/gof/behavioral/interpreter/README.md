@@ -9,7 +9,6 @@ The interpreter pattern is a design pattern that specifies how to evaluate sente
 The basic idea is to have a class for each symbol. The symbols are separated by another symbol i.e. "one plus two multiplied-by three".
 The syntax tree of a sentence in the language can be represented via the composite pattern.
 
-
 Glossary:
 - Grammar - syntax or set of rules of the language
 - Expression - the expression you want to interpret
@@ -26,8 +25,6 @@ Glossary:
 - To produce different outputs (like file formats etc)
 - To create simple language processors
 - To create simple domain-specific search engines
-
-"find dogs where breed eq german_shepard and gender eq male"
 
 ## Pros:
 - You can define implementation for a language with simple grammar (syntax or rules)
@@ -50,3 +47,4 @@ All subclasses of javax.el.ELResolver
 ```
 ## Examples
 ### Example 1 - How to implement it?
+We are going to implement a domain-specific search engine.

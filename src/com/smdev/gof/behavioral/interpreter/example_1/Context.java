@@ -13,10 +13,13 @@ public class Context {
     private Deque<String> args = new LinkedList<>();
 
     @Getter
-    private Map<String, List<Dog>> data;
+    private Map<String, List<Dog>> database;
 
-    public Context(Map<String, List<Dog>> data, String expression) throws Exception {
-        this.data = data;
+    @Getter
+    private List<Dog> data = new ArrayList<>();
+
+    public Context(Map<String, List<Dog>> database, String expression) throws Exception {
+        this.database = database;
 
         interpret(expression);
     }
@@ -58,7 +61,7 @@ public class Context {
         while (!this.keywords.isEmpty()) {
             expression = getKeywords().pollFirst();
             expression.parse();
-            result = expression.evaluate(result);
+            result = expression.evaluate();
         }
         return result;
     }

@@ -24,14 +24,14 @@ public class Eq extends AbstractExpressionTerminal {
     }
 
     @Override
-    public List<Dog> evaluate(List<Dog> unfiltered) throws Exception {
+    public List<Dog> evaluate() throws Exception {
         if (this.fieldName == null) {
-            return unfiltered;
+            return getContext().getData();
         }
         List<Dog> filtered = new ArrayList<>();
         Field field = Dog.class.getDeclaredField(this.fieldName);
         field.setAccessible(true);
-        for (Dog e : unfiltered) {
+        for (Dog e : getContext().getData()) {
             Object value = field.get(e);
             if (this.searchedValue == null && value == null) {
                 filtered.add(e);

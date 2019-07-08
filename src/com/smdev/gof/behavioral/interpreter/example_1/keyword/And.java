@@ -22,12 +22,12 @@ public class And extends AbstractExpressionNonTerminal {
     }
 
     @Override
-    public List<Dog> evaluate(List<Dog> unfiltered) throws Exception {
-        Set<Dog> result = new HashSet<>(unfiltered);
+    public List<Dog> evaluate() throws Exception {
+        Set<Dog> result = new HashSet<>(getContext().getData());
 
         List<Expression> children = getChildren();
         for (Expression ch : children) {
-            result.retainAll(ch.evaluate(unfiltered)); // keep only common elements for all children
+            result.retainAll(ch.evaluate()); // keep only common elements for all children
         }
         return new ArrayList<>(result);
     }
