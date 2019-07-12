@@ -127,6 +127,6 @@ I.e when a change in one component, leads to changes/ updates in other component
 I.e you have a version control system that should be capable of restoring the version to some specific commit
 
 ### Observer / Subscribe-Publish 
-* If you need to notify multiple observers, when something changes/ happens
+* If you need to notify multiple observers (subscribers), if something changes/ happens
 
 I.e If you own a media channel and people can subscribe to topics and receive news or updates on the topics

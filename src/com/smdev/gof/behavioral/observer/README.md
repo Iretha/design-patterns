@@ -1,4 +1,4 @@
-# The Observer Design Pattern aka Publish/ Subscribe
+# The Observer Design Pattern aka (Publish - Subscribe Pattern)
 
 GoF Design Patterns -> Behavioral Design Patterns
 
@@ -17,16 +17,16 @@ Glossary:
 - Publisher - initiator of the updates/ changes of the subject
 
 ## When to use it?
-When many entities need to receive notifications when an object has changed.
+When many entities need to receive notifications when an object has changed or something happened.
 
 ## Pros:
-- subjects and observers are independent and don't know each other (loose coupling)
-- subjects and observers can be added or removed without further changes
-- you can add/ remove subjects and observers at anytime even at runtime
-- you can send data to many "receivers"
+- Subjects and observers are independent and don't "know" each other (loose coupling)
+- Subjects and observers can be added or removed without further changes
+- Subjects and observers can be added or removed at anytime even at runtime
+- You can send data to many "receivers"
 
 ## Cons:
-- the order, in which the observers get notified is not very precise
+- The order, in which the observers get notified is not very precise
 
 ## Examples from Java API
 - Java in-built implementation of the Observer pattern through inheritance (java.util.Observable class and java.util.Observer). 
