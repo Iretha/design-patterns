@@ -35,3 +35,8 @@
 * If you need to restore the state of an objects
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/memento)
+
+### Observer / Subscribe-Publish 
+* If you need to notify multiple observers, when something changes
+
+[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/observer)

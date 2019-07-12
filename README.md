@@ -61,7 +61,7 @@ By doing so, these patterns increase flexibility in carrying out this communicat
 - When you need to traverse some custom collection of elements sequentially, based on some business rule (Iterator)
 - When a change in one component leads to changes/ updates in other components (Mediator)
 - When you have to implement revert/ undo/ restore/ rollback to some previous state (Memento) 
-
+- When you need to notify multiple observers, when something changes/ happens (Observer)
 
 
 
