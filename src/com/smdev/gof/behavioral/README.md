@@ -40,3 +40,16 @@
 * If you need to notify multiple observers, when something changes
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/observer)
+
+### State
+* When an object has different states and has absolutely different behavior in each of the states (like metamorphosis or transformation)
+* When objects transforms into another object, when something changes/ happens (like when an egg hatches and becomes a bird)
+
+[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/state)
+
+### Strategy
+* If you have many classes with similar behavior, you can extract the "behaviour"/ algorithm in separate class and reuse it
+* If you want to "switch" the behavior
+* If you have an objects that can "act" differently
+
+[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/strategy)

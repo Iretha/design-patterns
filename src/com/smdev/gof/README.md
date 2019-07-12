@@ -130,3 +130,17 @@ I.e you have a version control system that should be capable of restoring the ve
 * If you need to notify multiple observers (subscribers), if something changes/ happens
 
 I.e If you own a media channel and people can subscribe to topics and receive news or updates on the topics
+
+### State
+* When an object has different states and has absolutely different behavior in each of the states (like metamorphosis or transformation)
+* When objects transforms into another object, when something changes/ happens 
+
+I.e like when an egg hatches and becomes a bird
+
+### Strategy
+* If you have many classes with similar behavior, you can extract the "behaviour"/ algorithm in separate class and reuse it
+* If you want to "switch" the behavior
+* If you have an objects that can "act" differently
+
+I.e. you want to create an universal chat app, that can send messages via different service providers: sms, email, facebook etc., 
+you can easy create different send strategies and later you can easy add or remove strategies.

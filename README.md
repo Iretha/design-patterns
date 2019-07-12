@@ -55,13 +55,15 @@ Behavioral design patterns are design patterns that identify common communicatio
 By doing so, these patterns increase flexibility in carrying out this communication.
 
 ### Consider applying behavioral patterns when:
-- You have multiple handlers with no specific priority and they should handle requests, based on some rules or forward them (Chain of Responsibility)
+- When you have multiple handlers with no specific priority and they should handle requests, based on some rules or forward them (Chain of Responsibility)
 - When you have many options handled by a single handler (Command)
 - When you have multiple outputs of the same thing or you want to create a domain language to support simple searches like "find dogs where breed eq german_shepherd and gender eq female" (Interpreter)
 - When you need to traverse some custom collection of elements sequentially, based on some business rule (Iterator)
 - When a change in one component leads to changes/ updates in other components (Mediator)
 - When you have to implement revert/ undo/ restore/ rollback to some previous state (Memento) 
 - When you need to notify multiple observers, when something changes/ happens (Observer)
+- When objects acts differently in different state and they should be transformed into new objects (State) /each state knows the next state, the client doesn't know them/
+- When you have many classes with same behavior (implement the same algorithm) or the behavior should be easily changed (Strategy) /the client should know the available strategies and to use them/
 
 
 
