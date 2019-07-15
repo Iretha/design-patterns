@@ -65,6 +65,7 @@ By doing so, these patterns increase flexibility in carrying out this communicat
 - When objects act differently (like different object) in different states and they should be transformed into new objects (State) /each state knows the next state, the client doesn't know them/
 - When you have many classes with the same behavior (implement the same algorithm) or the behavior should be easily changed (Strategy) /the client should know the available strategies and to use them/
 - When many classes share almost the same behavior or algorithm (Template Method)
+- When you don't want to change the code or you want the algorithm to be in a separate class (Visitor)
 
 #### [GoF Behavioral Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral)
 

@@ -60,3 +60,8 @@
 * When refactoring classes with duplicated code
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/template_method)
+
+### Visitor
+* To separate the algorithm from the object
+
+[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/visitor)

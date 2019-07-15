@@ -135,7 +135,7 @@ I.e If you own a media channel and people can subscribe to topics and receive ne
 * When an object has different states and has absolutely different behavior in each of the states (like metamorphosis or transformation)
 * When objects transforms into another object, when something changes/ happens 
 
-I.e like when an egg hatches and becomes a bird
+I.e it's more like a transformation (an object transforms into another object) or like when an egg hatches and becomes a bird
 
 ### Strategy
 * If you have many classes with similar behavior, you can extract the "behaviour"/ algorithm in separate class and reuse it
@@ -151,3 +151,8 @@ you can easy create different send strategies and later you can easy add or remo
 * When refactoring classes with duplicated code
 
 I.e. when classes have very similar behavior
+
+### Visitor
+* To separate the algorithm from the object
+
+I.e when you don't want to change the existing code to implement the algorithm withing the class, but rather you want it in a different class
