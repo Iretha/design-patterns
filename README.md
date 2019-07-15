@@ -8,18 +8,13 @@ The book is divided into two parts, with the first two chapters exploring the ca
 object-oriented programming, and the remaining chapters describing 23 classic software design patterns.
 
 Design patterns were originally grouped into the categories: 
-- creational patterns 
-- structural patterns  
-- behavioral patterns
+## [Creational Design Patterns (5)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational)
 
-## [GoF Creational Design Patterns (5)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational)
-
-### Summary
 Creational Design Patterns have to deal with object creation/ instantiation. They reduce complexity and hide 
 from client how the object is created. The client is entirely decoupled from the actual initialization process
 and the implementation could be easily replaced if necessary.
 
-### Consider applying creational patterns when:
+**Consider applying creational patterns when:**
 - A set of related objects / families is designed to be used together 
 or the system should be independent of how its objects and products are created (Abstract Factory)
 - You need to ensure that there is only one state of the object, you have many optional constructor args 
@@ -28,16 +23,11 @@ or you want to create an immutable object (Builder)
 - When creating a new object is an expensive operation (Prototype)
 - When you want to have only one entry point to something and to coordinate actions across the system. (Singleton)
 
-#### [GoF Creational Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational)
-
-
-## [GoF Structural Design Patterns (7)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural)
-
-### Summary
+## [Structural Design Patterns (7)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural)
 Structural Design Patterns have to deal with the relations between components and objects. 
 They simplify the structure by identifying the relationships and ease the design by identifying a simple way to realize relationships among entities.
 
-### Consider applying structural patterns when:
+**Consider applying structural patterns when:**
 - Need to adapt incompatible interfaces (Adapter)
 - You have to deal with two different hierarchies (Bridge)
 - You have tree-like structure with same general behavior (Composite)
@@ -46,15 +36,12 @@ They simplify the structure by identifying the relationships and ease the design
 - You have objects that share same data and you need to lower application memory usage (Flyweight)
 - You have to protect some object by controlling or managing access to it; to cache or log requests/ responses (Proxy)
 
-#### [GoF Structural Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural)
-
 ## [GoF Behavioral Design Patterns (11)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral)
 
-### Summary
 Behavioral design patterns are design patterns that identify common communication patterns between objects. 
 By doing so, these patterns increase flexibility in carrying out this communication.
 
-### Consider applying behavioral patterns when:
+**Consider applying behavioral patterns when:**
 - When you have multiple handlers with no specific priority and they should handle requests, based on some rules or forward them (Chain of Responsibility)
 - When you have many options handled by a single handler (Command)
 - When you have multiple outputs of the same thing or you want to create a domain language to support simple searches like "find dogs where breed eq german_shepherd and gender eq female" (Interpreter)
@@ -66,8 +53,6 @@ By doing so, these patterns increase flexibility in carrying out this communicat
 - When you have many classes with the same behavior (implement the same algorithm) or the behavior should be easily changed (Strategy) /the client should know the available strategies and to use them/
 - When many classes share almost the same behavior or algorithm (Template Method)
 - When you don't want to change the code or you want the algorithm to be in a separate class (Visitor)
-
-#### [GoF Behavioral Design Patterns with Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral)
 
 ## Useful Links
 [Design Patterns: Elements of Reusable Object-Oriented Software - The Book](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/ref=sr_1_1?keywords=Design+Patterns%3A+Elements+of+Reusable+Object-Oriented+Software&qid=1561537399&s=books&sr=1-1)
