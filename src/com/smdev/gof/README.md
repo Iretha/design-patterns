@@ -144,3 +144,10 @@ I.e like when an egg hatches and becomes a bird
 
 I.e. you want to create an universal chat app, that can send messages via different service providers: sms, email, facebook etc., 
 you can easy create different send strategies and later you can easy add or remove strategies.
+
+### Template Method
+* When multiple classes have similar behavior with slight differences
+* When multiple classes share almost same algorithm
+* When refactoring classes with duplicated code
+
+I.e. when classes have very similar behavior

@@ -27,4 +27,7 @@ dependencies {
     // Lombok
     annotationProcessor('org.projectlombok:lombok:1.18.8')
     compileOnly('org.projectlombok:lombok:1.18.8')
+
+    //Apache
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.8.1'
 }

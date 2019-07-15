@@ -53,3 +53,10 @@
 * If you have an objects that can "act" differently
 
 [Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/strategy)
+
+### Template Method
+* When multiple classes have similar behavior with slight differences
+* When multiple classes share almost same algorithm
+* When refactoring classes with duplicated code
+
+[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral/template_method)
