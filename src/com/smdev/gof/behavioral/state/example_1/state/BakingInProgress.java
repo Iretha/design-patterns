@@ -1,8 +1,16 @@
-package com.smdev.gof.behavioral.state.example_1;
+package com.smdev.gof.behavioral.state.example_1.state;
 
-public class BakingInProgress implements OrderState {
+import com.smdev.gof.behavioral.state.example_1.OrderContext;
+import com.smdev.gof.behavioral.state.example_1.OrderState;
+
+public class BakingInProgress extends AbstractState {
+
+    public BakingInProgress() {
+        super("Baking In Progress");
+    }
+
     @Override
     public OrderState next(OrderContext context) {
-        return new AwaitingDelivery();
+        return new ForDelivery();
     }
 }

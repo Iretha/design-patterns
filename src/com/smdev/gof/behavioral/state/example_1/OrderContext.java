@@ -1,20 +1,36 @@
 package com.smdev.gof.behavioral.state.example_1;
 
-public class PizzaOrderContext {
+import com.smdev.gof.behavioral.state.example_1.state.OrderReceived;
+import lombok.Getter;
+import lombok.ToString;
 
+@ToString
+public class OrderContext {
+
+    @Getter
     private String client;
-    private String clientPhoneNo;
+
+    @Getter
     private String deliveryAddress;
 
-    private PizzaState pizzaState;
+    private OrderState state;
 
-    public PizzaOrderContext(String client, String clientPhoneNo, String deliveryAddress) {
+    public OrderContext(String client, String deliveryAddress) {
         this.client = client;
-        this.clientPhoneNo = clientPhoneNo;
         this.deliveryAddress = deliveryAddress;
+
+        this.state = new OrderReceived();
+
+        System.out.println("Order Received: " + this);
     }
 
-    public void order() {
-        this.pizzaState = new PizzaOrderConfirmed(this);
+    public void next() {
+        OrderState nextState = this.state.next(this);
+        if (nextState != null) {
+            this.state = nextState;
+            System.out.println("Next: " + this);
+        } else {
+            System.out.println("Order completed!");
+        }
     }
 }

@@ -1,8 +1,17 @@
-package com.smdev.gof.behavioral.state.example_1;
+package com.smdev.gof.behavioral.state.example_1.state;
 
-public class Delivered implements OrderState {
+import com.smdev.gof.behavioral.state.example_1.OrderContext;
+import com.smdev.gof.behavioral.state.example_1.OrderState;
+
+public class Delivered extends AbstractState {
+
+    public Delivered() {
+        super("Delivered To Address");
+    }
+
     @Override
     public OrderState next(OrderContext context) {
+        System.out.println("Delivered to " + context.getClient() + ": address=" + context.getDeliveryAddress());
         // the final state
         return null;
     }

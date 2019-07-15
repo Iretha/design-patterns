@@ -3,9 +3,9 @@ package com.smdev.gof.behavioral.state.example_1.state;
 import com.smdev.gof.behavioral.state.example_1.OrderContext;
 import com.smdev.gof.behavioral.state.example_1.OrderState;
 
-public class AwaitingBaking extends AbstractState {
+public class ForBaking extends AbstractState {
 
-    public AwaitingBaking() {
+    public ForBaking() {
         super("For Baking");
     }
 

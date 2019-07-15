@@ -11,6 +11,6 @@ public class AssemblyInProgress extends AbstractState {
 
     @Override
     public OrderState next(OrderContext context) {
-        return new AwaitingBaking();
+        return new ForBaking();
     }
 }
