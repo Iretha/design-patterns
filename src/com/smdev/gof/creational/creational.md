@@ -3,6 +3,7 @@ layout: default
 title: Creational Design Patterns
 nav_order: 100
 has_children: true
+permalink: /creational
 ---
 
 # Creational Design Patterns
@@ -31,6 +32,16 @@ Later we will add some more useful patterns to this list.
 * Prototype (GoF)
 * Singleton (GoF)
 * Object Pool (TODO)
+
+**Consider applying creational patterns when:**
+- A set of related objects / families is designed to be used together 
+or the system should be independent of how its objects and products are created (Abstract Factory)
+- You need to ensure that there is only one state of the object, you have many optional constructor args 
+or you want to create an immutable object (Builder)
+- The subclass should decide which concrete class it should use (Factory Method)
+- When creating a new object is an expensive operation (Prototype)
+- When you want to have only one entry point to something and to coordinate actions across the system. (Singleton)
+
 
 ### Abstract Factory aka "Factory of Factories"
 * Designed to create families of objects without specifying their concrete classes

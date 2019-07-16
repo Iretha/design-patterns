@@ -3,9 +3,20 @@ layout: default
 title: Structural Design Patterns
 nav_order: 200
 has_children: true
+permalink: /structural
 ---
 
 # Structural Design Patterns (7)
+
+**Consider applying structural patterns when:**
+- Need to adapt incompatible interfaces (Adapter)
+- You have to deal with two different hierarchies (Bridge)
+- You have tree-like structure with same general behavior (Composite)
+- You need to add/ remove behavior at runtime (Decorator)
+- You need to simplify and hide complexity (Facade)
+- You have objects that share same data and you need to lower application memory usage (Flyweight)
+- You have to protect some object by controlling or managing access to it; to cache or log requests/ responses (Proxy)
+
 
 ### Adapter
 * The adapter pattern makes two incompatible interfaces compatible without changing their existing code.
