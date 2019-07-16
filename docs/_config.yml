@@ -37,3 +37,5 @@ ga_tracking: UA-43962081-5
 
 plugins:
   - jekyll-seo-tag
+
+remote_theme: pmarsceill/just-the-docs
