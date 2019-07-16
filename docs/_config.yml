@@ -39,3 +39,4 @@ plugins:
   - jekyll-seo-tag
 
 remote_theme: pmarsceill/just-the-docs
+theme: jekyll-theme-cayman
