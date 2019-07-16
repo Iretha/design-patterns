@@ -3,10 +3,10 @@ layout: default
 title: Useful Links
 nav_order: 9999999
 description: ""
-permalink: /links
+permalink: /resources
 ---
 
-# Useful Links
+# Resources
 
 [Design Patterns: Elements of Reusable Object-Oriented Software - The Book](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/ref=sr_1_1?keywords=Design+Patterns%3A+Elements+of+Reusable+Object-Oriented+Software&qid=1561537399&s=books&sr=1-1)
 

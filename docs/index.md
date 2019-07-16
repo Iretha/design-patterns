@@ -18,10 +18,10 @@ Each design pattern offers a reusable solution for a for common (repeatable) des
 
 The design patterns got very popular when the book "Design Patterns: Elements of Reusable Object-Oriented Software (1994)" was published. 
 The four authors of the book (Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides) are known as the Gang of Four (GoF) 
-and the patterns they describe are known as "GoF Design Patterns". 
+and the 23 classic software design patterns they describe are known as "GoF Design Patterns". 
 
 ## GoF Design Patterns
-The GoF Design Patterns are mostly *fundamental*. They are one of the most popular and the most widely used design patterns. 
+The 23 GoF Design Patterns are mostly *fundamental*. They are one of the most popular and the most widely used design patterns. 
 The fundamental patterns are divided into 3 categories:
 
 * [Creational Design Patterns](/design-patterns/creational)

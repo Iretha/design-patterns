@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Old Summary
-nav_order: 2
+nav_order: 99999990
 description: "Learn Design Patterns and start writing high quality code"
 permalink: /gof
 ---
