@@ -18,7 +18,12 @@
 *.iml
 *.ipr
 /out/
-/docs/
+
+### OTHER
+*.zip
+/docs0/
+/docs1/
+/docs2/
 
 ### NetBeans ###
 /nbproject/private/
