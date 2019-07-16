@@ -16,7 +16,7 @@
 title: Design Patterns
 description: A place to collect information about design patterns
 baseurl: "/design-patterns/" # the subpath of your site, e.g. /blog
-url: "http://iretha.github.io/ebook-design-patterns" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://iretha.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"]
@@ -27,7 +27,7 @@ search_enabled: true
 # Aux links for the upper right navigation
 aux_links:
   "Design Patterns on GitHub":
-    - "//github.com/Iretha/ebook-design-patterns"
+    - "//github.com/Iretha/design-patterns"
 
 # Color scheme currently only supports "dark" or nil (default)
 color_scheme: nil
@@ -39,4 +39,3 @@ plugins:
   - jekyll-seo-tag
 
 remote_theme: pmarsceill/just-the-docs
-theme: just-the-docs
