@@ -29,11 +29,11 @@ search_enabled: true
 
 #Aux links for the upper right navigation
 aux_links:
-"Design Patterns on GitHub":
- - "//github.com/Iretha/design-patterns"
+    "Design Patterns on GitHub":
+    - "//github.com/Iretha/design-patterns"
 
 # Color scheme currently only supports "dark" or nil (default)
-#color_scheme: nil
+color_scheme: nil
 
 # Google Analytics Tracking (optional)
 #ga_tracking: UA-43962081-5
