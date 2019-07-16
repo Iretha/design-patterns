@@ -3,6 +3,7 @@ layout: default
 title: Builder
 parent: Creational Design Patterns
 nav_order: 1010
+permalink: /creational/builder
 ---
 
 

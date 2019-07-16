@@ -1,12 +1,3 @@
----
-layout: default
-title: Old Summary
-nav_order: 99999990
-description: "Learn Design Patterns and start writing high quality code"
-permalink: /gof
----
-
-
 # GoF Design Patterns (23)
 
 A design pattern is reusable solution of a commonly occurring problem (usually in software design). 

@@ -3,6 +3,7 @@ layout: default
 title: Prototype
 parent: Creational Design Patterns
 nav_order: 1030
+permalink: /creational/prototype
 ---
 
 # The Prototype Design Pattern

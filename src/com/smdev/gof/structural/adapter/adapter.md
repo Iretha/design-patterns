@@ -3,6 +3,7 @@ layout: default
 title: Adapter
 parent: Structural Design Patterns
 nav_order: 2000
+permalink: /structural/adapter
 ---
 
 # The Adapter Design Pattern

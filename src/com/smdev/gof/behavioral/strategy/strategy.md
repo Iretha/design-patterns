@@ -3,6 +3,7 @@ layout: default
 title: Strategy
 parent: Behavioral Design Patterns
 nav_order: 3080
+permalink: /behavioral/strategy
 ---
 
 # The Strategy Design Pattern (Policy Pattern)

@@ -3,6 +3,7 @@ layout: default
 title: Proxy
 parent: Structural Design Patterns
 nav_order: 2060
+permalink: /structural/proxy
 ---
 
 # The Proxy Design Pattern

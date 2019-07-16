@@ -3,6 +3,7 @@ layout: default
 title: Observer
 parent: Behavioral Design Patterns
 nav_order: 3060
+permalink: /behavioral/observer
 ---
 
 # The Observer Design Pattern aka (Publish - Subscribe Pattern)

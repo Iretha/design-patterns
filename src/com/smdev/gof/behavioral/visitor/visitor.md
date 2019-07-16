@@ -3,6 +3,7 @@ layout: default
 title: Visitor
 parent: Behavioral Design Patterns
 nav_order: 3100
+permalink: /behavioral/visitor
 ---
 
 # The Visitor Design Pattern

@@ -3,6 +3,7 @@ layout: default
 title: Chain Of Responsibility
 parent: Behavioral Design Patterns
 nav_order: 3000
+permalink: /behavioral/chain-of-responsibility
 ---
 
 # The Chain Of Responsibility Design Pattern (COR)

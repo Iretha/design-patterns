@@ -3,6 +3,7 @@ layout: default
 title: Flyweight
 parent: Structural Design Patterns
 nav_order: 2050
+permalink: /structural/flyweight
 ---
 
 # The Flyweight Design Pattern

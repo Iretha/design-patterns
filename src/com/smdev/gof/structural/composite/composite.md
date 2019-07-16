@@ -3,6 +3,7 @@ layout: default
 title: Composite
 parent: Structural Design Patterns
 nav_order: 2020
+permalink: /structural/composite
 ---
 
 # The Composite Design Pattern

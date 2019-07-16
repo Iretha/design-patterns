@@ -3,6 +3,7 @@ layout: default
 title: Mediator
 parent: Behavioral Design Patterns
 nav_order: 3040
+permalink: /behavioral/mediator
 ---
 
 # The Mediator Design Pattern 

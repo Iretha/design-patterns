@@ -3,6 +3,7 @@ layout: default
 title: Decorator
 parent: Structural Design Patterns
 nav_order: 2030
+permalink: /structural/decorator
 ---
 
 # The Decorator Design Pattern

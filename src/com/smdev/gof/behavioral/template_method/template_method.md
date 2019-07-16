@@ -3,6 +3,7 @@ layout: default
 title: Template Method
 parent: Behavioral Design Patterns
 nav_order: 3090
+permalink: /behavioral/template-method
 ---
 
 

@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Cheat List
+title: Cheat Sheet
 nav_order: 999999999
 description: "Learn Design Patterns and start writing high quality code"
+permalink: /cheat-sheet
 ---
 
 # GoF Design Patterns Cheat List

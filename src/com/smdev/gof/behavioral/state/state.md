@@ -3,6 +3,7 @@ layout: default
 title: State
 parent: Behavioral Design Patterns
 nav_order: 3070
+permalink: /behavioral/state
 ---
 
 # The State Design Pattern

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Useful Links
+title: Resources
 nav_order: 9999999
 description: ""
 permalink: /resources

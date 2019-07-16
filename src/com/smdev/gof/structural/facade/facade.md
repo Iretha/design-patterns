@@ -3,6 +3,7 @@ layout: default
 title: Facade
 parent: Structural Design Patterns
 nav_order: 2040
+permalink: /structural/facade
 ---
 
 # The Facade Design Pattern

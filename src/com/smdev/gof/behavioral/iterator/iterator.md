@@ -3,6 +3,7 @@ layout: default
 title: Iterator
 parent: Behavioral Design Patterns
 nav_order: 3030
+permalink: /behavioral/iterator
 ---
 
 

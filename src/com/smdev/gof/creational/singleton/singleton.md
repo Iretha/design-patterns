@@ -3,6 +3,7 @@ layout: default
 title: Singleton
 parent: Creational Design Patterns
 nav_order: 1040
+permalink: /creational/singleton
 ---
 
 

@@ -3,6 +3,7 @@ layout: default
 title: Abstract Factory
 parent: Creational Design Patterns
 nav_order: 1000
+permalink: /creational/abstract-factory
 ---
 
 # The Abstract Factory Design Pattern aka. "Factory of Factories"

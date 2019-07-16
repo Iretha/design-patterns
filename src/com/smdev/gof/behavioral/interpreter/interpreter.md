@@ -3,6 +3,7 @@ layout: default
 title: Interpreter
 parent: Behavioral Design Patterns
 nav_order: 3020
+permalink: /behavioral/interpreter
 ---
 
 # The Interpreter Design Pattern 

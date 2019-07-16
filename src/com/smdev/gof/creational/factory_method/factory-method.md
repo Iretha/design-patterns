@@ -3,6 +3,7 @@ layout: default
 title: Factory Method
 parent: Creational Design Patterns
 nav_order: 1020
+permalink: /creational/factory-method
 ---
 
 # The Factory Method Design Pattern

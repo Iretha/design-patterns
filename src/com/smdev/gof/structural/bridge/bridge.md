@@ -3,6 +3,7 @@ layout: default
 title: Bridge
 parent: Structural Design Patterns
 nav_order: 2010
+permalink: /structural/bridge
 ---
 
 

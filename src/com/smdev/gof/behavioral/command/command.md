@@ -3,6 +3,7 @@ layout: default
 title: Command
 parent: Behavioral Design Patterns
 nav_order: 3010
+permalink: /behavioral/command
 ---
 
 # The Command Design Pattern 

@@ -3,6 +3,7 @@ layout: default
 title: Memento
 parent: Behavioral Design Patterns
 nav_order: 3050
+permalink: /behavioral/memento
 ---
 
 
