@@ -3,7 +3,6 @@ layout: default
 title: Behavioral Design Patterns
 nav_order: 300
 has_children: true
-permalink: /behavioral
 ---
 
 # Behavioral Design Patterns (11)

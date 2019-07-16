@@ -1,3 +1,11 @@
+---
+layout: default
+title: Iterator
+parent: Behavioral Design Patterns
+nav_order: 3030
+---
+
+
 # The Iterator Design Pattern 
 
 GoF Design Patterns -> Behavioral Design Patterns

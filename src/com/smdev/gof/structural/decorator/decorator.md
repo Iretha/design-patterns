@@ -1,3 +1,10 @@
+---
+layout: default
+title: Decorator
+parent: Structural Design Patterns
+nav_order: 2030
+---
+
 # The Decorator Design Pattern
 
 GoF Design Patterns -> Structural Design Patterns

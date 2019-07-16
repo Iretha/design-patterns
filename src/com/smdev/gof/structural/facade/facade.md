@@ -1,3 +1,10 @@
+---
+layout: default
+title: Facade
+parent: Structural Design Patterns
+nav_order: 2040
+---
+
 # The Facade Design Pattern
 
 GoF Design Patterns -> Structural Design Patterns

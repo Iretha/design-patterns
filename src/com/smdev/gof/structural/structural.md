@@ -3,7 +3,6 @@ layout: default
 title: Structural Design Patterns
 nav_order: 200
 has_children: true
-permalink: /structural
 ---
 
 # Structural Design Patterns (7)

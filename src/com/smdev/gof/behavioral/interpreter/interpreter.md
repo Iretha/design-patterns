@@ -1,3 +1,10 @@
+---
+layout: default
+title: Interpreter
+parent: Behavioral Design Patterns
+nav_order: 3020
+---
+
 # The Interpreter Design Pattern 
 
 GoF Design Patterns -> Behavioral Design Patterns

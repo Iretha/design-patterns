@@ -1,3 +1,10 @@
+---
+layout: default
+title: Mediator
+parent: Behavioral Design Patterns
+nav_order: 3040
+---
+
 # The Mediator Design Pattern 
 
 GoF Design Patterns -> Behavioral Design Patterns

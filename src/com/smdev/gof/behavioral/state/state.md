@@ -1,3 +1,10 @@
+---
+layout: default
+title: State
+parent: Behavioral Design Patterns
+nav_order: 3070
+---
+
 # The State Design Pattern
 
 GoF Design Patterns -> Behavioral Design Patterns

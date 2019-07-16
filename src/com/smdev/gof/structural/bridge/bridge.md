@@ -1,3 +1,11 @@
+---
+layout: default
+title: Bridge
+parent: Structural Design Patterns
+nav_order: 2010
+---
+
+
 # The Bridge Design Pattern
 
 GoF Design Patterns -> Structural Design Patterns

@@ -1,3 +1,10 @@
+---
+layout: default
+title: Composite
+parent: Structural Design Patterns
+nav_order: 2020
+---
+
 # The Composite Design Pattern
 
 GoF Design Patterns -> Structural Design Patterns

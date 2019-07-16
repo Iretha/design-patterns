@@ -1,3 +1,11 @@
+---
+layout: default
+title: Memento
+parent: Behavioral Design Patterns
+nav_order: 3050
+---
+
+
 # The Memento Design Pattern 
 
 GoF Design Patterns -> Behavioral Design Patterns

@@ -1,3 +1,10 @@
+---
+layout: default
+title: Chain Of Responsibility
+parent: Behavioral Design Patterns
+nav_order: 3000
+---
+
 # The Chain Of Responsibility Design Pattern (COR)
 
 GoF Design Patterns -> Behavioral Design Patterns

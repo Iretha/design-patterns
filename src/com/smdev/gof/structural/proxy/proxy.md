@@ -1,3 +1,10 @@
+---
+layout: default
+title: Proxy
+parent: Structural Design Patterns
+nav_order: 2060
+---
+
 # The Proxy Design Pattern
 
 GoF Design Patterns -> Structural Design Patterns

@@ -1,3 +1,10 @@
+---
+layout: default
+title: Visitor
+parent: Behavioral Design Patterns
+nav_order: 3100
+---
+
 # The Visitor Design Pattern
 
 GoF Design Patterns -> Behavioral Design Patterns

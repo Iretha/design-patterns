@@ -1,3 +1,10 @@
+---
+layout: default
+title: Adapter
+parent: Structural Design Patterns
+nav_order: 2000
+---
+
 # The Adapter Design Pattern
 
 GoF Design Patterns -> Structural Design Patterns

@@ -1,3 +1,10 @@
+---
+layout: default
+title: Flyweight
+parent: Structural Design Patterns
+nav_order: 2050
+---
+
 # The Flyweight Design Pattern
 
 GoF Design Patterns -> Structural Design Patterns

@@ -3,7 +3,6 @@ layout: default
 title: Creational Design Patterns
 nav_order: 100
 has_children: true
-permalink: /creational
 ---
 
 # Creational Design Patterns

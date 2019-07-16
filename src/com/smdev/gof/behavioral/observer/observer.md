@@ -1,3 +1,10 @@
+---
+layout: default
+title: Observer
+parent: Behavioral Design Patterns
+nav_order: 3060
+---
+
 # The Observer Design Pattern aka (Publish - Subscribe Pattern)
 
 GoF Design Patterns -> Behavioral Design Patterns

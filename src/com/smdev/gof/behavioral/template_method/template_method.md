@@ -1,3 +1,11 @@
+---
+layout: default
+title: Template Method
+parent: Behavioral Design Patterns
+nav_order: 3090
+---
+
+
 # The Template Method Design Pattern
 
 GoF Design Patterns -> Behavioral Design Patterns

@@ -1,3 +1,10 @@
+---
+layout: default
+title: Command
+parent: Behavioral Design Patterns
+nav_order: 3010
+---
+
 # The Command Design Pattern 
 
 GoF Design Patterns -> Behavioral Design Patterns

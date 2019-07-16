@@ -1,3 +1,10 @@
+---
+layout: default
+title: Strategy
+parent: Behavioral Design Patterns
+nav_order: 3080
+---
+
 # The Strategy Design Pattern (Policy Pattern)
 
 GoF Design Patterns -> Behavioral Design Patterns
