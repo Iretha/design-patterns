@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Introduction
-nav_order: 2
+nav_order: 0
 description: "Learn Design Patterns and start writing high quality code"
 permalink: /
 ---
