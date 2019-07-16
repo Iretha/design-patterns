@@ -30,7 +30,7 @@ remote_theme: pmarsceill/just-the-docs
 # Aux links for the upper right navigation
   #aux_links:
   #  "Design Patterns on GitHub":
-    - "//github.com/Iretha/design-patterns"
+  #  - "//github.com/Iretha/design-patterns"
 
 # Color scheme currently only supports "dark" or nil (default)
 #color_scheme: nil
