@@ -1,3 +1,11 @@
+---
+layout: default
+title: Builder
+parent: Creational Design Patterns
+nav_order: 1010
+---
+
+
 # The Builder Design Pattern
 
 GoF Design Patterns -> Creational Design Patterns

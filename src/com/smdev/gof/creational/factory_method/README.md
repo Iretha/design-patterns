@@ -1,3 +1,10 @@
+---
+layout: default
+title: Factory Method
+parent: Creational Design Patterns
+nav_order: 1020
+---
+
 # The Factory Method Design Pattern
 
 GoF Design Patterns -> Creational Design Patterns

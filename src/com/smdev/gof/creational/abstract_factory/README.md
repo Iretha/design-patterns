@@ -5,7 +5,6 @@ parent: Creational Design Patterns
 nav_order: 1000
 ---
 
-
 # The Abstract Factory Design Pattern aka. "Factory of Factories"
 
 GoF Design Patterns -> Creational Design Patterns

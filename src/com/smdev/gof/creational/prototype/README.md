@@ -1,3 +1,10 @@
+---
+layout: default
+title: Prototype
+parent: Creational Design Patterns
+nav_order: 1030
+---
+
 # The Prototype Design Pattern
 
 GoF Design Patterns -> Creational Design Patterns
