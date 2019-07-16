@@ -18,8 +18,8 @@ remote_theme: pmarsceill/just-the-docs
 
 title: Design Patterns
 description: A place to collect information about design patterns
-baseurl: "/design-patterns/" # the subpath of your site, e.g. /blog
-url: "http://iretha.github.io/design-patterns" # the base hostname & protocol for your site, e.g. http://example.com
+#baseurl: "/design-patterns/" # the subpath of your site, e.g. /blog
+#url: "http://iretha.github.io/design-patterns" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"]
