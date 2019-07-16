@@ -27,18 +27,23 @@ The Creational Design Patterns deal with the way objects are created/ instantiat
 There are 5 creational patterns introduced by GoF. 
 Later we will add some more useful patterns to this list.
 * [Abstract Factory (GoF)](/design-patterns/creational/abstract-factory)
+
 Designed to create families of objects without specifying their concrete classes
 
 * [Builder Pattern (GoF)](/design-patterns/creational/builder)
+
 Designed to build complex objects with a lot of optional fields
 
 * [Factory Method (GoF)](/design-patterns/creational/factory-method)
+
 Designed to let subclasses to decide which concrete class to instantiate
 
 * [Prototype (GoF)](/design-patterns/creational/prototype)
+
 Designed to create objects faster, when creating a new object is an expensive operation
 
 * [Singleton (GoF)](/design-patterns/creational/singleton)
+
 Designed to control the access to that instance in serial way via the provided entry/ access point
 
 * Object Pool (TODO)
