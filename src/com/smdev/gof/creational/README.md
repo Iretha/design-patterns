@@ -1,3 +1,12 @@
+---
+layout: default
+title: Creational Design Patterns
+parent: TODO
+nav_order: 100
+has_children: true
+permalink: /todo/1
+---
+
 # Creational Design Patterns (5)
 
 ### Abstract Factory aka "Factory of Factories"

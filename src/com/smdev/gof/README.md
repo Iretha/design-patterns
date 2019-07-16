@@ -1,3 +1,11 @@
+---
+layout: default
+title: Cheat List
+nav_order: 999999999
+description: "Learn Design Patterns and start writing high quality code"
+permalink: /cheat-list
+---
+
 # GoF Design Patterns Cheat List
 
 ## GoF Creational Design Patterns (5)

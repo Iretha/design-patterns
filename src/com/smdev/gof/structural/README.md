@@ -1,3 +1,12 @@
+---
+layout: default
+title: Creational Design Patterns
+parent: TODO
+nav_order: 300
+has_children: true
+permalink: /todo/3
+---
+
 # Structural Design Patterns (7)
 
 ### Adapter
