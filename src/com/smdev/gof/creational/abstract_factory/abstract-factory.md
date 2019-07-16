@@ -6,11 +6,14 @@ nav_order: 1000
 permalink: /creational/abstract-factory
 ---
 
-# The Abstract Factory Design Pattern aka. "Factory of Factories"
+# Abstract Factory also known as "Factory of Factories"
 
-GoF Design Patterns -> Creational Design Patterns
+The Abstract Factory Design Pattern is designed to create families of objects without specifying their concrete classes.
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/gof/creational/abstract_factory) - Example that demonstrates 
+---
+
+- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/gof/creational/abstract_factory)
 
 ## What problems does it solve? Why to use it?
 Abstract Factory also known as "Factory of Factories" provides an interface for creating families of related or dependent objects 
