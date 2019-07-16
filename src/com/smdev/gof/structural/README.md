@@ -1,10 +1,9 @@
 ---
 layout: default
-title: Creational Design Patterns
-parent: TODO
-nav_order: 300
+title: Structural Design Patterns
+nav_order: 200
 has_children: true
-permalink: /todo/3
+permalink: /structural
 ---
 
 # Structural Design Patterns (7)

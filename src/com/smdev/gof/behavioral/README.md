@@ -1,10 +1,9 @@
 ---
 layout: default
-title: Creational Design Patterns
-parent: TODO
-nav_order: 200
+title: Behavioral Design Patterns
+nav_order: 300
 has_children: true
-permalink: /todo/2
+permalink: /behavioral
 ---
 
 # Behavioral Design Patterns (11)
