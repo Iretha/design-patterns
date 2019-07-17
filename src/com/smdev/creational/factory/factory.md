@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Factory (not GoF)
-parent: Creational Design Patterns 
+parent: Creational Design Patterns
 nav_order: 1050
 permalink: /creational/factory
 ---
