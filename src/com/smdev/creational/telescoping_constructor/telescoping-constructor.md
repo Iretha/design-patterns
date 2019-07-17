@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Telescoping Constructor (Anti?) Pattern
+title: Telescoping Constructor
 parent: Creational Design Patterns
 nav_order: 1060
 permalink: /creational/telescoping-constructor
 ---
 
-# The Telescoping Constructor
+# The Telescoping Constructor (Anti?) Pattern
 
 It's not exactly pattern, but rather mechanism to provide default values or behavior when constructing objects. 
 
