@@ -40,13 +40,6 @@ When you pass a parameter to a creational method and the method returns instance
 that will be used to create instances of other types (the family objects). If you pass another parameter, 
 you will get another factory (for another family of objects).
 
-## Scenarios
-- If you want to provide some generic model of something, that may have different implementations
-- If you want to "change" the implementation of something with ease
-- If you want to "switch" between different implementations
-- If you want to support multiple platforms while keeping your code-base unified, but you still should have 
-different implementation for each OS 
-
 ## Examples from Java API
 ```
 - javax.xml.parsers.DocumentBuilderFactory#newInstance()
@@ -55,6 +48,24 @@ different implementation for each OS
 ```
 
 ## Examples
+* If you go to a general car distributor and you want to order a car. Based on the brand of the car, the distributor 
+will contact different factory to order the car for assembly and the car will be assembled with parts of different brands,
+depending on the factory and what parts they use. At the end, it's still a car. 
+
+* If you are building a house and you want wooden windows, you have to contact a factory, which produces wooden windows.
+If you want PVC windows, you will contact a different factory. 
+At the end, you will still get windows, but with different specifications. 
+
+* If you want to create a general API, that connects to a different data source and reads data. Depending on the input, 
+the implementation may differ.
+
+* If you want to create an app, that runs on different platforms. Depending on the platform (input), you need different
+implementation of the features.
+
+* If you want to create an API with "interchangeable" implementations and you want to "switch" between implementations easily.
+
+* If you want to choose the implementation at runtime, based on some configuration or user-input.
+
 ### Example 1
 [Source Code on Github](https://github.com/Iretha/design-patterns/tree/master/src/com/smdev/creational/abstract_factory)
 
