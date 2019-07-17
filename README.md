@@ -8,19 +8,19 @@ The book is divided into two parts, with the first two chapters exploring the ca
 object-oriented programming, and the remaining chapters describing 23 classic software design patterns.
 
 Design patterns were originally grouped into the categories: 
-## [GoF Creational Design Patterns (5)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/creational)
+## [GoF Creational Design Patterns (5)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/creational)
 
 Creational Design Patterns have to deal with object creation/ instantiation. They reduce complexity and hide 
 from client how the object is created. The client is entirely decoupled from the actual initialization process
 and the implementation could be easily replaced if necessary.
 
 
-## [GoF Structural Design Patterns (7)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/structural)
+## [GoF Structural Design Patterns (7)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/structural)
 Structural Design Patterns have to deal with the relations between components and objects. 
 They simplify the structure by identifying the relationships and ease the design by identifying a simple way to realize relationships among entities.
 
 
-## [GoF Behavioral Design Patterns (11)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/gof/behavioral)
+## [GoF Behavioral Design Patterns (11)](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/behavioral)
 
 Behavioral design patterns are design patterns that identify common communication patterns between objects. 
 By doing so, these patterns increase flexibility in carrying out this communication.
