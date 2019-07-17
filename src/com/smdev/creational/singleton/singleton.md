@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Singleton
+title: Singleton (GoF)
 parent: Creational Design Patterns
 nav_order: 1040
 permalink: /creational/singleton

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Abstract Factory
+title: Abstract Factory (GoF)
 parent: Creational Design Patterns
 nav_order: 1000
 permalink: /creational/abstract-factory

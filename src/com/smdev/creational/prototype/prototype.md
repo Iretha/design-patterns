@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Prototype
+title: Prototype (GoF)
 parent: Creational Design Patterns
 nav_order: 1030
 permalink: /creational/prototype

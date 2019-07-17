@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Builder
+title: Builder (GoF)
 parent: Creational Design Patterns
 nav_order: 1010
 permalink: /creational/builder

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Factory Method
+title: Factory Method (GoF)
 parent: Creational Design Patterns
 nav_order: 1020
 permalink: /creational/factory-method
