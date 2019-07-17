@@ -6,47 +6,40 @@ nav_order: 1040
 permalink: /creational/singleton
 ---
 
+# The Singleton Design Pattern (Cloneable)
 
-# The Singleton Design Pattern
+Designed to control the number of instances (only 1) ant the access to that instance in serial way via the provided entry/ access point
+{: .fs-6 .fw-300 }
 
-GoF Design Patterns -> Creational Design Patterns
+---
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/creational/singleton) 
-
-## What problems does it solve? Why to use it?
-- Restricts the instantiation of a class to one "single" instance. This is useful when exactly 
+## What problems does it solve?
+Restricts the instantiation of a class to one "single" instance. This is useful when exactly 
 one object is needed to coordinate actions across the system.
 
 ## When to use it?
-- We we need to be sure that there is only one instance of an object in the whole application and 
-provide global access/ entry point to it.
-- Singletons may often be modeled as a server within the application that accepts requests to send, 
-store, or retrieve data and configure the resource state.
+- To ensure that there is only one instance of an object in the whole application and you want to provide global access/ entry point to it.
 
 ## Pros:
-- Singleton encapsulates a unique resource and makes it readily available throughout the application. 
-- Singletons act as a control, ensuring orderly access to the shared resource.
+- To encapsulate a unique (shared) resource and make it available throughout the whole application
+- To control or to ensure serial access to a shared resource
 
 ## Cons:
 - When not used properly, provides unnecessary limitations
-- Sometimes Singletons are used to access global data (not correct!) and you give access of the clients to all
-data exposed in that Singleton
-- Singletons hinder unit testing - sometimes is impossible to test without writing a fully-functional class dedicated to the Singleton.
-- Singletons create hidden dependencies
+- Often Singletons are used to access global/ shared data and you give access of the clients to all data exposed in that Singleton
+- Singletons hinder unit testing - sometimes is impossible to test without writing a fully-functional class dedicated to the Singleton
+- Singletons may create hidden dependencies
 
 ## Implementation
 An implementation of the singleton pattern must:
 - ensure that only one instance of the singleton class ever exists; 
-- provide global access to that instance
+- provide global access to that instance;
 
 Typically, this is done by:
 - declaring all constructors of the class to be private; 
-- providing a static method that returns a reference to the instance
+- providing a static method that returns a reference to the instance;
 
-The instance is usually stored as a private static variable; the instance is created when the 
-variable is initialized, at some point before the static method is first called. The following is a sample
-implementation written in Java.
-
+The instance is usually stored as a private static variable;
 - Eager Initialization:
 ```java
 public final class Singleton {
@@ -59,7 +52,6 @@ public final class Singleton {
         return INSTANCE;
     }
 }
-
 ```
 - Lazy Initialization:
 ```java
@@ -83,17 +75,29 @@ public final class Singleton {
 }
 ```
 
+## How to recognize it?
+When you call a creational method and it returns the same instance (itself) every time.
+```
+see the examples above
+
+```
 ## Examples from Java API
-Recognizeable by creational methods returning the same instance (usually of itself) every time
 ```
 java.lang.Runtime#getRuntime()
 java.awt.Desktop#getDesktop()
 java.lang.System#getSecurityManager()
 ```
 
-## Examples
+## Scenarios
 
-### Example 1 - How to implement it?
+* Singletons are often modeled as a server that accepts requests to: send, store or retrieve data.
+
+* If you need to control the state of something in a serial way
+
+### Example 1
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/creational/singleton) 
+
 Let's say we have a single mobile device and we want to start some apps on it. 
 In this case we could use our Device as a Singleton object, because we have only one device.
 We can run on that device multiple mobile apps, but only one of them could be on focus at a time.

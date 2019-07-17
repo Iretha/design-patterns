@@ -44,7 +44,7 @@ Designed to create objects faster, when creating a new object is an expensive op
 
 * [Singleton (GoF)](/design-patterns/creational/singleton)
 
-Designed to control the access to that instance in serial way via the provided entry/ access point
+Designed to control the number of instances (only 1) ant the access to that instance in serial way via the provided entry/ access point
 
 * [Factory (Pattern?)](/design-patterns/creational/factory)
 

@@ -40,8 +40,18 @@ and based on the input, we need to return one of the sub-class.
 - Can be classed as an anti-pattern, when it is not correctly used
 
 ## How to recognize it?
-When you call a creational method and it returns an abstract or interface type
+When you call a creational method and it returns an abstract or interface type.
+```java
+public abstract class Vehicle {
 
+   public void drive() {
+      VehicleDriver driver = createDriverInstance();
+      driver.driveVehicle(this);
+   }
+
+   protected abstract VehicleDriver createDriverInstance();
+}
+```
 ## Examples from Java API
 ```
 java.util.Calendar#getInstance()

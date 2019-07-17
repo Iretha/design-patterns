@@ -39,7 +39,9 @@ this means that the data will be always in a consistent state
 
 ## How to recognize it?
 When you need to call a creational method, that returns the instance itself and you can chain the calls.
-
+```java
+Car car1 = Car.builder("EXAMPLE_VIN11").brand("FORD").model("KA").modelYear(2007).build();
+```
 ## How can be improved?
 - Make the constructors private - This will ensure that the objects will be build as you expect 
 and no one will use the constructors directly. 
@@ -116,10 +118,8 @@ public class Car {
 Naming convension is to append "Builder" to the object it builds. In our case "Car" -> "CarBuilder".
 ```java
 public class Car {
-
-
     static class CarBuilder {
-        
+       
     }
 }
 ```

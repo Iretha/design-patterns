@@ -40,7 +40,16 @@ to extends the clone method implementation as well
 
 ## How to recognize it?
 When a creational method returns a different instance of itself with almost the same values of the properties.
+```java
+public class Book implements Cloneable {
 
+    @Override
+    protected Book clone() throws CloneNotSupportedException {
+        Book nextEdition = new Book(this.isbn, this.author, this.editionNo + 1, this.illustrationsByPageNo, this.textByPageNo);
+        return nextEdition;
+    }
+}
+```
 ## Examples from Java API
 In Java, you can implement the Cloneable interface to achieve the prototype pattern.
 ```

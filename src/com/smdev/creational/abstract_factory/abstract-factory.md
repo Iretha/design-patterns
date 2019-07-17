@@ -35,12 +35,36 @@ The Abstract Factory uses [Factory](/design-patterns/creational/factory) to crea
 and add implementation for each family
 
 ## How to recognize it?
-When you pass a parameter to a creational method and the method returns instance of a factory,
+* When you pass a parameter to a creational method and the method returns instance of a factory,
 that will be used to create instances of other types (the family objects). If you pass another parameter, 
 you will get another factory (for another family of objects).
 
+* When you have a conditional logic t decide which factory to return.
+
 > If the concrete classes depend on some parameter (some user input/ some dynamic parameter/ some configuration setting),
 then check if it's not a factory.
+
+```java
+public enum Platform {
+    ANDROID,
+    SWIFT;
+
+    public UIFactory getFactory() {
+        UIFactory factory = null;
+        switch (this) {
+            case ANDROID:
+                factory = new AndroidUIFactory();
+                break;
+            case SWIFT:
+                factory = new SwiftUIFactory();
+                break;
+            default:
+                break;
+        }
+        return factory;
+    }
+}
+```
 
 ## Examples from Java API
 ```

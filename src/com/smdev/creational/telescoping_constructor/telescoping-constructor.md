@@ -27,7 +27,23 @@ If you need to provide default values or behavior when constructing objects.
 
 ## How to recognize it?
 When many constructors call other constructors (often with this(...)) and pass arguments.
+```java
+    public Dog(String name, String breed, int age) {
+        this.name = name;
+        this.breed = breed;
+        this.age = age;
 
+        this.registrationTime = new Date();
+    }
+
+    public Dog(String breed, int age) {
+        this("Unknown name", breed, age);
+    }
+
+    public Dog(String name) {
+        this(name, "Unknown breed", -1);
+    }
+```
 ## How can be improved?
 When too many args, then you should switch to the Builder Pattern.
 

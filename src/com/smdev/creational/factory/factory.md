@@ -41,6 +41,29 @@ and add implementation for each family
 When you pass a parameter to a creational method and the method returns a instance of an object.
 If you pass another parameter, you will get another instance (of another object).
 
+```java
+public final class VehicleFactory {
+    private VehicleFactory() {
+    }
+
+    public static Vehicle getInstance(VehicleType type, String modification) {
+        Vehicle vehicle = null;
+        switch (type) {
+            case CAR:
+                vehicle = new Car(modification);
+                break;
+            case TRUCK:
+                vehicle = new Truck(modification);
+                break;
+            default:
+                break;
+        }
+
+        System.out.println("Vehicle created: " + vehicle);
+        return vehicle;
+    }
+}
+```
 ## Scenarios
 - If you want to provide some generic model of something
 - If you want to "change" the implementation
