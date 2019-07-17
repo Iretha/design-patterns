@@ -1,4 +1,4 @@
-package com.smdev.creational.telescopic_constructor.example_1;
+package com.smdev.creational.telescoping_constructor.example_1;
 
 public class _Main {
 

@@ -19,7 +19,6 @@ The main purpose of the Factory is to encapsulate the instantiation logic and to
 The Factory uses "creation through delegation" method and provides an interface for creating objects without specifying 
 their concrete classes. In other words, this model allows us to create objects that follow a general pattern, 
 whereas the client uses the general contract.
-{: .fs-6 .fw-90 }
 
 ---
 

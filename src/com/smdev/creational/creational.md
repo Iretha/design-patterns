@@ -51,7 +51,7 @@ Designed to control the access to that instance in serial way via the provided e
 Designed to encapsulate the instantiation logic and to create objects without specifying their concrete classes.
 Some people argue if this is a pattern or not, but we will mention it, because it's widely used.
 
-* [Telescopic Constructor](/design-patterns/creational/telescopic-constructor)
+* [Telescoping Constructor](/design-patterns/creational/telescoping-constructor)
 
 When you need a mechanism to provide default values or behavior when constructing objects. 
 

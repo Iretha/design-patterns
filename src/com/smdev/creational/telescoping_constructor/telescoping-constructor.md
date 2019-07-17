@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Telescopic Constructor
+title: Telescoping Constructor
 parent: Creational Design Patterns
 nav_order: 1060
-permalink: /creational/telescopic-constructor
+permalink: /creational/telescoping-constructor
 ---
 
-# The Telescopic Constructor
+# The Telescoping Constructor
 
 It's not exactly pattern, but rather mechanism to provide default values or behavior when constructing objects. 
 
@@ -41,7 +41,7 @@ When too many args, then you should switch to the Builder Pattern.
 
 ### Example 1
 
-[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/creational/telescopic_constructor)
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/creational/telescoping_constructor)
 
 We want to implement a system, where you can register found/ lost dogs, so that owners can easily find them.
 Some dogs have tags with their name, breed, age, others don't. Sometimes you can recognize their breed or age, 

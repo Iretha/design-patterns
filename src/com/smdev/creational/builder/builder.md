@@ -8,7 +8,8 @@ permalink: /creational/builder
 
 # The Builder Design Pattern
 
-Designed to build complex objects with a lot of optional fields.
+Designed to build complex objects with a lot of optional fields 
+or to replace [Telescoping Constructors](/design-patterns/creational/telescoping-constructor) with too many args.
 {: .fs-6 .fw-300 }
 
 ---
@@ -53,23 +54,15 @@ javax.swing.GroupLayout.Group#addComponent()
 All implementations of java.lang.Appendable
 java.util.stream.Stream.Builder
 Quartz Scheduler uses JobBuilder and TriggerBuilder
-```
-### Java 8:
-#### Calendar 
-```
 Calendar cal = new Calendar.Builder()
     .setCalendarType("iso8601").setWeekDate(2013, 1, MONDAY).build();
     (since java 8)
-```
-#### Stream.Builder
-#### IntStream.Builder
-#### LongStream.Builder
-#### DoubleStream.Builder
 
-### Java 7:
-#### Locale
-```
-Locale aLocale = new Builder().setLanguage("sr").setScript("Latn").setRegion("RS").build();
+Stream.Builder
+IntStream.Builder
+LongStream.Builder
+DoubleStream.Builder
+Locale aLocale = new Builder().setLanguage("sr").setScript("Latn").setRegion("RS").build(); (since java 7)
 ```
 ### !!! Important
 - StringBuilder is close to, but does NOT implement a Builder Pattern - it's instantiated with new and 
