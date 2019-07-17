@@ -1,14 +1,19 @@
 ---
 layout: default
-title: Factory (not GoF)
+title: Factory
 parent: Creational Design Patterns
 nav_order: 1050
 permalink: /creational/factory
 ---
 
-# Abstract Factory (aka Kit, Factory of Factories)
+# Factory (Pattern or not a Pattern)
 
-The Factory Design Pattern is designed to create objects without specifying their concrete classes.
+People often argue about the Factory - is it a pattern or not? 
+Actually it doesn't matter how you call it. I would say it is a pattern, because it provides 
+"a reusable solution for a for common (repeatable) design problem", but it's not officially recognized as such.
+Many call it a technique to encapsulate the instantiation process. 
+
+The main purpose of the Factory is to encapsulate the instantiation logic and to create objects without specifying their concrete classes.
 {: .fs-6 .fw-300 }
 
 The Factory uses "creation through delegation" method and provides an interface for creating objects without specifying 
@@ -41,11 +46,6 @@ If you pass another parameter, you will get another instance (of another object)
 - If you want to provide some generic model of something
 - If you want to "change" the implementation
 - If you want to "switch" between different implementations
-
-## Examples from Java API
-```
-
-```
 
 ## Examples
 ### Example 1

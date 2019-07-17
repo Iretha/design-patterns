@@ -46,9 +46,10 @@ Designed to create objects faster, when creating a new object is an expensive op
 
 Designed to control the access to that instance in serial way via the provided entry/ access point
 
-* [Factory (not GoF)](/design-patterns/creational/factory)
+* [Factory](/design-patterns/creational/factory)
 
-Designed to create objects without specifying their concrete classes
+Designed to encapsulate the instantiation logic and to create objects without specifying their concrete classes.
+Some people argue if this is a pattern or not, but it's still a 
 
 * Object Pool (TODO)
 
@@ -60,3 +61,4 @@ or you want to create an immutable object (Builder)
 - The subclass should decide which concrete class it should use (Factory Method)
 - When creating a new object is an expensive operation (Prototype)
 - When you want to have only one entry point to something and to coordinate actions across the system. (Singleton)
+- When you don't want to expose the concrete classes to the client (Factory)
