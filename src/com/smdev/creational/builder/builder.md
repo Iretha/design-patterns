@@ -6,18 +6,16 @@ nav_order: 1010
 permalink: /creational/builder
 ---
 
-
 # The Builder Design Pattern
 
-GoF Design Patterns -> Creational Design Patterns
+Designed to build complex objects with a lot of optional fields.
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/creational/builder) - Full example, with the best practises applied to it
-- [Example_2](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/creational/builder) - Lombok implementation of the Builder Pattern (very easy to use)
+---
 
-## What problems does it solve? Why to use it?
-To write readable, maintainable, clean and understandable code 
-when you have to setup complex objects with a lot of fields. 
-Very useful when you need to implement an immutable class.
+## What problems does it solve? 
+To write readable, maintainable, clean and understandable code when you have to setup complex objects with a lot of fields. 
+Very useful when you need to implement an immutable class or if you need to ensure that the instance is in consistent state.
 
 ## When to use it?
 - If there are too many constructor arguments
@@ -38,12 +36,15 @@ this means that the data will be always in a consistent state
 - Double the number of lines of code for each attribute and for setting the values
 - Harder to extend - when you have to add new field, it requires more code to do it
 
-## How can be improved
+## How to recognize it?
+When you need to call a creational method, that returns the instance itself and you can chain the calls.
+
+## How can be improved?
 - Make the constructors private - This will ensure that the objects will be build as you expect 
 and no one will use the constructors directly. 
 - Do not add setters to the "Car" class, so that no one can set the values directly
+
 ## Examples from Java API
-Recognizeable by creational methods returning the instance itself
 ```
 java.lang.StringBuilder#append() (unsynchronized)
 java.lang.StringBuffer#append() (synchronized)
@@ -51,6 +52,7 @@ java.nio.ByteBuffer#put() (also on CharBuffer, ShortBuffer, IntBuffer, LongBuffe
 javax.swing.GroupLayout.Group#addComponent()
 All implementations of java.lang.Appendable
 java.util.stream.Stream.Builder
+Quartz Scheduler uses JobBuilder and TriggerBuilder
 ```
 ### Java 8:
 #### Calendar 
@@ -70,14 +72,36 @@ Calendar cal = new Calendar.Builder()
 Locale aLocale = new Builder().setLanguage("sr").setScript("Latn").setRegion("RS").build();
 ```
 ### !!! Important
-- StringBuilder is close to, but does NOT implement a Builder Pattern - it's instantiated with new, 
-does not serve the same purpose "to construct complex objects"
+- StringBuilder is close to, but does NOT implement a Builder Pattern - it's instantiated with new and 
+does not serve the same purpose "to construct complex objects".
 ```
 StringBuilder b = new StringBuilder();
 ```
-## Examples
+## Scenarios
+* If an object might be instantiated/ constructed in many different ways. 
 
-### Example 1 - Full Example - How to implement it?
+* If you have many optional parameters i.e. if you have some search criteria and you don't know what combination of fields 
+will be used by the client to do the search.
+
+* If you need to configure different jobs to run at specific day of the year/ at specific day of the week/ on a specific date 
+or combination of them. 
+
+* If the result should be immutable
+
+* If the result should be in a consistent state
+
+* If you start with a factory, but than you realize that there are to many permutations (combinations of constructor args)
+
+* If you need to implement an app for pizza delivery. There should be always dough (consistent state), 
+but you can always make your own combination of the other products or they depend on the recipe for the concrete pizza you ordered.
+
+* If you have too many constructors with different args and they get hard to read or args constantly increase (to avoid the so called
+Telescoping Constructor Pattern)
+
+### Example 1
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/creational/builder) - Full example, with the best practises applied to it
+
 1). Create your class i.e. "Car"
 ```java
 public class Car {
@@ -177,6 +201,8 @@ Each method should return the builder itself, so that you can chain them in any 
 10). Generate getters in you Car class in order to access field values
 
 ### Example 2 - Builder with Lombok
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/creational/builder) - Lombok implementation of the Builder Pattern (very easy to use)
 
 1). Create the class
 2). Add class fields

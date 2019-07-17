@@ -11,13 +11,12 @@ permalink: /creational/abstract-factory
 The Abstract Factory Design Pattern is designed to create families of objects without specifying their concrete classes.
 {: .fs-6 .fw-300 }
 
+---
+
 The Abstract Factory is also known as "Kit" or "Factory of Factories". It uses "creation through delegation" method and 
 provides an interface for creating families of related or dependent objects without specifying 
 their concrete classes. In other words, this model allows us to create objects that follow a general pattern.
-The Abstract Factory uses [Factory](/design-patterns/creational/factory) - to create the concrete factory.
-{: .fs-6 .fw-90 }
-
----
+The Abstract Factory uses [Factory](/design-patterns/creational/factory) to create the concrete factory.
 
 ## What problems does it solve? 
 - To construct a particular dependency at runtime, depending on some parameter or setting
@@ -35,10 +34,13 @@ The Abstract Factory uses [Factory](/design-patterns/creational/factory) - to cr
 - To add new features (members, methods and etc.) - we have to modify the generic classes
 and add implementation for each family
 
-## How to recognize it
+## How to recognize it?
 When you pass a parameter to a creational method and the method returns instance of a factory,
 that will be used to create instances of other types (the family objects). If you pass another parameter, 
 you will get another factory (for another family of objects).
+
+> If the concrete classes depend on some parameter (some user input/ some dynamic parameter/ some configuration setting),
+then check if it's not a factory.
 
 ## Examples from Java API
 ```
@@ -47,7 +49,7 @@ you will get another factory (for another family of objects).
 - javax.xml.xpath.XPathFactory#newInstance()
 ```
 
-## Examples
+## Scenarios
 * If you go to a general car distributor and you want to order a car. Based on the brand of the car, the distributor 
 will contact different factory to order the car for assembly and the car will be assembled with parts of different brands,
 depending on the factory and what parts they use. At the end, it's still a car. 
@@ -55,6 +57,10 @@ depending on the factory and what parts they use. At the end, it's still a car.
 * If you are building a house and you want wooden windows, you have to contact a factory, which produces wooden windows.
 If you want PVC windows, you will contact a different factory. 
 At the end, you will still get windows, but with different specifications. 
+
+* If you have to implement a document system and based on the user input (document type), 
+you should "calculate" and create a concrete instance of the document. The client doesn't need to know the concrete class of the 
+document, but it's status and the it's unique (registration) number.
 
 * If you want to create a general API, that connects to a different data source and reads data. Depending on the input, 
 the implementation may differ.
@@ -64,7 +70,9 @@ implementation of the features.
 
 * If you want to create an API with "interchangeable" implementations and you want to "switch" between implementations easily.
 
-* If you want to choose the implementation at runtime, based on some configuration or user-input.
+* If you want to choose the implementation at runtime, based on some configuration, user input or parameter.
+
+* If you have to proceed events, based on their type.
 
 ### Example 1
 [Source Code on Github](https://github.com/Iretha/design-patterns/tree/master/src/com/smdev/creational/abstract_factory)
