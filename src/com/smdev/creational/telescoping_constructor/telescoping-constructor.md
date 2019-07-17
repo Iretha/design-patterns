@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Telescoping Constructor
+title: Telescoping Constructor (Anti?) Pattern
 parent: Creational Design Patterns
 nav_order: 1060
 permalink: /creational/telescoping-constructor
@@ -30,10 +30,6 @@ When many constructors call other constructors (often with this(...)) and pass a
 
 ## How can be improved?
 When too many args, then you should switch to the Builder Pattern.
-
-## Examples from Java API
-```
-```
 
 ## Scenarios
 

@@ -1,9 +1,8 @@
 package com.smdev.creational.factory_method.example_1;
 
-public class CarDriver extends VehicleDriver {
-
+public class CarDriver implements VehicleDriver {
     @Override
-    public Vehicle getVehicle() {
-        return new Car();
+    public void driveVehicle(Vehicle vehicle) {
+        System.out.println("I'm a car driver, driving a " + vehicle);
     }
 }

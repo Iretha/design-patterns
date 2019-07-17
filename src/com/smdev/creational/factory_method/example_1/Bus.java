@@ -1,9 +1,13 @@
 package com.smdev.creational.factory_method.example_1;
 
-public class Bus implements Vehicle {
+import lombok.ToString;
+
+@ToString
+public class Bus extends Vehicle {
 
     @Override
-    public void drive() {
-        System.out.println("driving a bus!");
+    public VehicleDriver createDriverInstance() {
+        return new BusDriver();
     }
+
 }

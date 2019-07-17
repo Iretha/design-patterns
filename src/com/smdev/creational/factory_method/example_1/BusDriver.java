@@ -1,9 +1,8 @@
 package com.smdev.creational.factory_method.example_1;
 
-public class BusDriver extends VehicleDriver {
-
+public class BusDriver implements VehicleDriver {
     @Override
-    public Vehicle getVehicle() {
-        return new Bus();
+    public void driveVehicle(Vehicle vehicle) {
+        System.out.println("I'm a bus driver, driving a " + vehicle);
     }
 }

@@ -36,7 +36,7 @@ Designed to build complex objects with a lot of optional fields
 
 * [Factory Method (GoF)](/design-patterns/creational/factory-method)
 
-Designed to let subclasses to decide which concrete class to instantiate
+Designed to create objects without specifying their concrete classes. It let subclasses to decide which concrete class to instantiate.
 
 * [Prototype (GoF)](/design-patterns/creational/prototype)
 
