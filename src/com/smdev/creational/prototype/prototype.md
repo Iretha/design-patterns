@@ -32,9 +32,9 @@ This approach saves resources and time, especially when the object creation is a
 
 ## Cons:
 - Hard to extend, because you should be careful when adding new properties. Sometimes you may need
-to extends the clone method implementation as well
-- You should decide depending on business requirements what copy you need (shell/ deep)
-- Each subclass of Prototype must implement the clone() operation which may be difficult. 
+to extend the clone method implementation as well
+- You should decide depending on business requirements what copy you need (shell/ deep/ smth else)
+- Each subclass of Prototype must implement the clone() operation, which might be difficult
 - Implementing clone() can be difficult when not all members support the clone operation
 - Sometimes you can achieve circular references
 

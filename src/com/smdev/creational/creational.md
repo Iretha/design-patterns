@@ -51,11 +51,14 @@ Designed to control the number of instances (only 1) ant the access to that inst
 Designed to encapsulate the instantiation logic and to create objects without specifying their concrete classes.
 Some people argue if this is a pattern or not, but we will mention it, because it's widely used.
 
+* [Object Pool](/design-patterns/creational/object-pool)
+
+Designed to the performance by reusing the instances of stateless objects, that are otherwise expensive to create.
+
 * [Telescoping Constructor](/design-patterns/creational/telescoping-constructor)
 
 When you need a mechanism to provide default values or behavior when constructing objects. 
 
-* Object Pool (TODO)
 
 **Consider applying creational patterns when:**
 - A set of related objects / families is designed to be used together 

@@ -198,15 +198,19 @@ Each method should return the builder itself, so that you can chain them in any 
 [Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/creational/builder) - Lombok implementation of the Builder Pattern (very easy to use)
 
 1). Create the class
+
 2). Add class fields
+
 3). Add builder method - only if you have some required fields
+
 4). Add annotations:
+
 4.1). @Builder - Lombok will create a Builder for you. Change the name of the builder method to "hiddenBuilder" with "builderMethodName".
 We need this, because we have some required arguments that we want to pass, when creating Car object.
+
 4.2). @ToString - Lombok will override toString with all fields
+
 4.3). @Getter - Lombok will create Getter-s
-
-
 ```java
 import lombok.Builder;
 import lombok.Getter;

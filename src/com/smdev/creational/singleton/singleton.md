@@ -8,7 +8,8 @@ permalink: /creational/singleton
 
 # The Singleton Design Pattern (Cloneable)
 
-Designed to control the number of instances (only 1) ant the access to that instance in serial way via the provided entry/ access point
+Designed to limit the number of instances to 1 and to control the access to that instance 
+(in serial way via the provided entry/ access point).
 {: .fs-6 .fw-300 }
 
 ---

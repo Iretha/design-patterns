@@ -2,13 +2,13 @@
 layout: default
 title: Telescoping Constructor
 parent: Creational Design Patterns
-nav_order: 1060
+nav_order: 1099
 permalink: /creational/telescoping-constructor
 ---
 
 # The Telescoping Constructor (Anti?) Pattern
 
-It's not exactly pattern, but rather mechanism to provide default values or behavior when constructing objects. 
+It's not exactly pattern, but rather a mechanism to provide default values or behavior when constructing objects. 
 
 {: .fs-6 .fw-300 }
 

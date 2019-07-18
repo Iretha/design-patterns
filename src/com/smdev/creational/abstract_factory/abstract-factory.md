@@ -35,14 +35,11 @@ The Abstract Factory uses [Factory](/design-patterns/creational/factory) to crea
 and add implementation for each family
 
 ## How to recognize it?
-* When you pass a parameter to a creational method and the method returns instance of a factory,
-that will be used to create instances of other types (the family objects). If you pass another parameter, 
-you will get another factory (for another family of objects).
+* When you pass a parameter to a creational method and the method returns instance of a factory.
+And that factory will be used to create instances of other types (the family objects). 
+And if you pass another parameter, you will get another factory (for another family of objects).
 
-* When you have a conditional logic t decide which factory to return.
-
-> If the concrete classes depend on some parameter (some user input/ some dynamic parameter/ some configuration setting),
-then check if it's not a factory.
+* When you have a conditional logic to decide which factory to return.
 
 ```java
 public enum Platform {
@@ -97,6 +94,9 @@ implementation of the features.
 * If you want to choose the implementation at runtime, based on some configuration, user input or parameter.
 
 * If you have to proceed events, based on their type.
+
+* If the concrete classes depend on some parameter (some user input/ some dynamic parameter/ some configuration setting),
+   then check if it's not a factory.
 
 ### Example 1
 [Source Code on Github](https://github.com/Iretha/design-patterns/tree/master/src/com/smdev/creational/abstract_factory)
