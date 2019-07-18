@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Telescoping Constructor
+title: Object Pool
 parent: Creational Design Patterns
 nav_order: 1060
 permalink: /creational/object-pool
@@ -19,11 +19,12 @@ Reduces the instantiation cost and does a performance boost.
 This is achieved by reusing the instances of stateless objects, that will be kept in a pool in the memory.
 
 You should consider using an Object Pool when:
-1) Creating a new instance is an expensive operation
-2) New instances are created often
-3) The number of the instances, that are used at the same time is low (even limited)
 
-**Don't use the Object Pool Design Pattern, if you are not 100% sure, that there is no other way to achieve your goal!**
+1) Creating a new instance is an expensive operation
+
+2) New instances are created often
+
+3) The number of the instances, that are used at the same time is low (even limited)
 
 Glossary:
 - Reusable - the resource we are going to reuse instead of creating new instance every time
@@ -31,38 +32,43 @@ Glossary:
 - ReusablePool - manages the reusable objects
 
 ## Pros:
-- To boost the performance of the system
+- To boost the performance
 - To reuse a costly resource (fewer objects are created)
+- To control (limit) GC by limiting the number of instances and keeping them "in use"
 
 ## Cons:
 - You should take care of the pool and the number of the allocated objects
-- All allocated objects will be kept in the memory all the time (even if they are not needed)
+- All allocated objects will be kept in the memory (even if they are not needed)
 - It can be a potential bottleneck of your system
 - Violates GC best practices, that objects should not be referenced if they are no longer used (objects should live short)
+
+**Don't use the Object Pool Design Pattern, if you are not 100% sure, that there is no other way to achieve your goal!**
 
 ## How to recognize it?
 When you call a creational method and you always receive one of few instances.
 
 ## How can be improved?
-- You should use a Singleton for the Pool and Factory for creating new instances. 
-- You can implement a "growable" object pool or a pool with a limited number of instances.
-- You must be sure that the number of objects won't "grow" forever. 
+- You should use a Singleton for the Pool. 
+- You can implement a "growable" object pool and/ or a pool with a limited number of instances
+- You must ensure that the number of objects won't "grow" forever
 
 ## Scenarios
 
-* When you create too many network connections
+* When you have to control the number of instances
 
-* When you create too many database/ datasource connections
+* When you have to create often network connections
 
-* When you often have to read connect to some external resource
+* When you have to create often database/ datasource connections
 
-* When you create to many threads
+* When you have to connect often to some external resource
 
-* In games to avoid GC and to improve user experience
+* When you have to create often new threads
+
+* In games, to avoid (to try to control) GC in order to improve user experience (by keeping the number of instances low and "in use"). 
 
 ### Example 1
 
-We are going to implement a thread-safe connection pool.
+We are going to implement a thread-safe connection pool with limited number of connections in use (5 max).
 
 [Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/creational/object-pool)
 
