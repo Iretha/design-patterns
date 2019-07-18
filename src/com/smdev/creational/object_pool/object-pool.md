@@ -19,12 +19,10 @@ Reduces the instantiation cost and does a performance boost.
 This is achieved by reusing the instances of stateless objects, that will be kept in a pool in the memory.
 
 You should consider using an Object Pool when:
-
-1) Creating a new instance is an expensive operation
-
-2) New instances are created often
-
-3) The number of the instances, that are used at the same time is low (even limited)
+- Creating a new instance is an expensive operation
+- New instances needs to be created often
+- The number of the instances, that are used at the same time is low (even limited)
+- You want to limit the number of instances
 
 Glossary:
 - Reusable - the resource we are going to reuse instead of creating new instance every time
@@ -40,7 +38,7 @@ Glossary:
 - You should take care of the pool and the number of the allocated objects
 - All allocated objects will be kept in the memory (even if they are not needed)
 - It can be a potential bottleneck of your system
-- Violates GC best practices, that objects should not be referenced if they are no longer used (objects should live short)
+- Violates GC best practices, because objects should not be referenced, if they are no longer in use
 
 **Don't use the Object Pool Design Pattern, if you are not 100% sure, that there is no other way to achieve your goal!**
 

@@ -13,6 +13,7 @@ It let subclasses to decide which concrete class to instantiate.
 {: .fs-6 .fw-300 }
 
 ---
+The Factory Method is also known as "Virtual Constructor" Pattern.
 
 The main differences between "Abstract Factory" and "Factory Method" is that the factory method is just a method, 
 while "Abstract Factory" has a delegated (factory) class. It uses "creation through inheritance" unlike 

@@ -6,7 +6,55 @@ has_children: true
 permalink: /structural
 ---
 
-# Structural Design Patterns (7)
+# Structural Design Patterns
+
+The Structural Design Patterns deal with the relations between components and objects. 
+{: .fs-6 .fw-300 }
+
+---
+
+## Types
+* structural class patterns - uses inheritance
+* structural objects patterns - uses composition
+
+## Purpose
+* Best way to compose objects and to form larger structures
+
+## Patterns
+There are 7 structural patterns introduced by GoF. 
+Later we will add some more useful patterns to this list.
+
+* [Adapter (GoF)](/design-patterns/structural/adapter)
+
+Designed to make two incompatible types compatible without changing their existing code or extending their functionality
+
+* [Bridge (GoF)](/design-patterns/structural/bridge)
+
+Designed to separate object abstraction from the implementation
+
+* [Composite (GoF)](/design-patterns/structural/composite)
+
+Designed to build a class hierarchy from primitive and composite objects, that may represent complex structures
+
+* [Decorator (GoF)](/design-patterns/structural/decorator)
+
+Designed to add responsibilities to objects dynamically
+
+* [Facade (GoF)](/design-patterns/structural/facade)
+
+Designed to represent an entire subsystem as a single object
+
+* [Flyweight (GoF)](/design-patterns/structural/flyweight)
+
+Designed to share objects to for better efficiency or consistency
+
+* [Proxy (GoF)](/design-patterns/structural/proxy)
+
+Designed to provide a level of indirection to object members
+
+* Private Class Data (TODO)
+
+Designed to protect the object data by maintaining it's state
 
 **Consider applying structural patterns when:**
 - Need to adapt incompatible interfaces (Adapter)
@@ -18,11 +66,7 @@ permalink: /structural
 - You have to protect some object by controlling or managing access to it; to cache or log requests/ responses (Proxy)
 
 
-### Adapter
-* The adapter pattern makes two incompatible interfaces compatible without changing their existing code.
-* Adapters do not extend functionality, they just make two things compatible.
 
-[Detailed Explanation & Examples](https://github.com/Iretha/ebook-design-patterns/blob/master/src/com/smdev/structural/adapter)
 
 ### Bridge
 * If your class does things that can be done independently and doesn't actually care how they work and 

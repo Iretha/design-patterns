@@ -8,28 +8,27 @@ permalink: /structural/adapter
 
 # The Adapter Design Pattern
 
-GoF Design Patterns -> Structural Design Patterns
+The Adapter Design Pattern is designed to make two incompatible types compatible without changing their existing code or extending their functionality.
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/structural/adapter) 
+---
 
-## What problems does it solve? Why to use it?
-The adapter pattern makes two incompatible interfaces compatible without changing their existing code.
-Adapters do not extend functionality, they just make two things compatible.
+The Adapter Design Pattern is also known as "Wrapper".
+
+## What problems does it solve?
+To make two incompatible types compatible by converting one interface into another.
+
 There are two types of adapters (two approaches):
 - Class Adapter - uses inheritance and extends the source object
 - Object Adapter - uses composition ("has a" relation) and holds the source object as a property of the adapter class
 
-**Via adapters we don't add functionality, only compatibility!**
+**Via adapters we don't add functionality, only make things compatible!**
 
 Glossary:
 - Client - the one, who uses the target interface
 - Target - the new interface = target interface = the interface, which client uses
 - Adaptee - the incompatible interface (legacy/ old), that needs to be adapted = source interface
 - Adapter - adapts the adaptee to the target, so that client can use the adaptee as well
-
-## When to use it?
-When you have two independent functionalities and you want to make them work together 
-without modifying the existing code.
 
 ## Pros:
 - easy to extend without changing the old functionality
@@ -38,8 +37,10 @@ without modifying the existing code.
 ## Cons:
 - complexity of the code increases
 
+## How to recognize it?
+
 ## Examples from Java API
-Recognizeable by creational methods taking an instance of different abstract/interface type and 
+Recognizable by creational methods taking an instance of different abstract/interface type and 
 returning an implementation of own/another abstract/interface type which decorates/overrides the given 
 instance
 ```
@@ -51,10 +52,11 @@ java.io.OutputStreamWriter(OutputStream) (returns a Writer)
 javax.xml.bind.annotation.adapters.XmlAdapter#marshal() and #unmarshal()
 ```
 
-## Examples
-
+## Scenarios
+* When you have two independent functionalities and you want to make them work together 
+  without modifying the existing code.
+  
 ### Example 1 - How to implement it?
-
 Let's say, we have an universal remote control, that we use currently to turn on and turn off our LG TV.
 We also have two more TVs - a Sang TV and a Sony TV, that also can be controlled remotely by their own remote controls.
 We want to start using only one universal remote control instead three different remote controls. 
@@ -65,6 +67,8 @@ To adapt the Sang TV (to be controlled by our universal remote control), we will
 For the Sony TV, we will implement an ObjectAdapter (TvSonyObjectAdapter).
 When we implement a ClassAdapter, our Adapter should inherit Sang TV in order to adapt it's the functionality to the new interface.
 When we implement an ObjectAdapter, our Adapter should "have a" Sony TV as instance field in order to adapt it's the functionality to the new interface.
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/structural/adapter) 
 
 Now, let's implement it:
 
