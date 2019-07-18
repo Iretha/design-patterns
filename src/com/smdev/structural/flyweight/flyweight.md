@@ -14,7 +14,7 @@ The Flyweight Pattern is designed to share objects for better efficiency or cons
 ---
 
 ## What problems does it solve?
-It solves memory issues and lowers the needed memory. 
+It solves memory issues and lowers the needed memory and can be used for caching.
 You can optimize the memory and lower RAM usage by dividing the objects into two parts:
 - shareable (intrinsic) state 
 - non-shareable (extrinsic) state.
@@ -60,6 +60,7 @@ java.lang.Integer#valueOf(int) (also on Boolean, Byte, Character, Short, Long an
 * When you have common data that is shared between multiple objects
 * When the application creates large number of similar objects (too many instances)
 * When you need to reduce the storage cost of the application
+* When you need to implement a caching mechanism
 
 ### Example 1
 Let's say we have a register of landmarks. We want to browse landmarks by country. As there are many landmarks in a single country,
