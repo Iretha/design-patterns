@@ -45,7 +45,9 @@ Glossary:
 **Don't use the Object Pool Design Pattern, if you are not 100% sure, that there is no other way to achieve your goal!**
 
 ## How to recognize it?
-When you call a creational method and you always receive one of few instances.
+* When you release a object and then if you call the creational method again, you receive the "released" instance
+
+* When you call a creational method and you always receive one of few instances.
 
 ## How can be improved?
 - You should use a Singleton for the Pool. 
