@@ -8,7 +8,7 @@ permalink: /structural/private-class-data
 
 # The Private Class Data Design Pattern
 
-The Private Class Data Pattern is designed to protect the object data by maintaining it's state.
+The Private Class Data Pattern is designed to protect the object data even from it's own methods.
 {: .fs-6 .fw-300 }
 
 ---

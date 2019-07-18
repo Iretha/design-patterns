@@ -52,9 +52,9 @@ Designed to share objects to for better efficiency or consistency
 
 Designed to provide a level of indirection to object members
 
-* Private Class Data (TODO)
+* [Private Class Data](/design-patterns/structural/private-class-data)
 
-Designed to protect the object data by maintaining it's state
+Designed to protect the object data even from it's own methods.
 
 **Consider applying structural patterns when:**
 - Need to adapt incompatible interfaces (Adapter)
