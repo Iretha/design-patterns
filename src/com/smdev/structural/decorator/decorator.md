@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Decorator
+title: Decorator (GoF)
 parent: Structural Design Patterns
 nav_order: 2030
 permalink: /structural/decorator
@@ -8,29 +8,22 @@ permalink: /structural/decorator
 
 # The Decorator Design Pattern
 
-GoF Design Patterns -> Structural Design Patterns
+The Decorator Pattern is designed to add/ remove responsibilities to objects dynamically (even at runtime), without changing their implementation.
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/structural/decorator) 
+---
 
-## What problems does it solve? Why to use it?
+The Decorator Pattern is also known as Wrapper.
 
+## What problems does it solve?
 This is another way of adding additional behavior to objects instead of subclassing them.
-The additional behavior can be added or removed at runtime.
-
-## When to use it?
-
-When objects may support multiple different features, but you want to choose some of them at runtime.
-
-For example, when you are ordering pizza, you may want to choose what to have on it (cheese, paprika, mushrooms, tomato souse, garlic souse etc.).
-You may make any combination you want. Instead of having so many concrete classes for every possible combination, 
-you can implement the Decorator pattern and enable the features at runtime, based on the user input.
+The most important part is, that the additional behavior can be added or removed at runtime.
 
 ## Pros:
-- Open for extension but closed for modification
+- Open for extension, but closed for modification
 - Behavior modification at runtime
 - Reduces the number of subclasses
-- Single Responsibility Principle - you can divide monolithic class into many small classes; adding a new class 
-is better than modifying the existing once; 
+- Single Responsibility Principle - you can divide monolithic class into many small classes; adding a new class is better than modifying the existing once; 
 
 ## Cons:
 - Too many small objects
@@ -38,21 +31,34 @@ is better than modifying the existing once;
 - If there are too many decorators, it may gets hard to keep track of them (at compile- and runtime)
 - Hard to implement if the order is important
 
+**When using decorator, we actually add/ remove responsibilities to/ from concrete instance, the changes do not affect the entire class.**
+
+## How to recognize it?
+When you call creational methods, that take instance, which adds additional behaviour (features).
+```java
+    Product pizza1 = new ItalianDoughDecorator(new TomatoSouceDecorator(new SalamiDecorator(new MushroomDecorator(new CheeseDecorator(new BbqSouceDecorator(new Pizza()))))));
+    System.out.println("=> Total Price: " + pizza1.getPrice());
+```
 ## Examples from Java API
-Recognizeable by creational methods taking an instance of same abstract/interface type which adds additional behaviour
 ```
 All subclasses of java.io.InputStream, OutputStream, Reader and Writer have a constructor taking an instance of same type.
 java.util.Collections, the checkedXXX(), synchronizedXXX() and unmodifiableXXX() methods.
 javax.servlet.http.HttpServletRequestWrapper and HttpServletResponseWrapper
 javax.swing.JScrollPane
 ```
+## Scenarios
+* When objects may support multiple different features, but you want to choose them at runtime.
 
-## Examples
+For example, when you are ordering pizza, you may want to choose what to have on it (cheese, paprika, mushrooms, tomato souse, garlic souse etc.).
+You may make any combination you want. Instead of having so many concrete classes for every possible combination, 
+you can implement the Decorator pattern and enable the features at runtime, based on the user input.
 
 ### Example 1
 For example, when you are ordering pizza, you may choose what to have on it (cheese, paprika, tomato souse, garlic souse etc.).
 You may choose any combination you want. Instead of having so many concrete classes for every possible combinations, 
 you can you the Decorator pattern and enable the features, based on the user input.
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/structural/decorator) 
 
 How to implement it?
 

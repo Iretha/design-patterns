@@ -1,63 +1,85 @@
 ---
 layout: default
-title: Bridge
+title: Bridge (GoF)
 parent: Structural Design Patterns
 nav_order: 2010
 permalink: /structural/bridge
 ---
 
-
 # The Bridge Design Pattern
 
-GoF Design Patterns -> Structural Design Patterns
+The Bridge Pattern is designed to separate object abstraction from the implementation, 
+so that you can change implementation without affecting the rest of the code.
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/structural/bridge) 
+---
 
-## What problems does it solve? Why to use it?
+The Bridge Pattern is also known as Handle/ Body.
 
+The Bridge Design Pattern is useful when you have two different hierarchies. The Bridge approach 
+is to extend one of them (inherit) and to hold the other as a member ("has-a-relation").
+
+## What problems does it solve?
 If your class does things that can be done independently and doesn't actually care how they work and 
 how they are implemented, then you MUST move them out of this class, maybe to a separate hierarchy 
 and use the functionality you need, referring the abstraction (interface), not the implementation (classes) itself.
 
-When you need to multiply the concrete classes, because there is something else you want to reuse -> MOVE it out!
-
-The Bridge approach it to extend one of them (inherit) and to hold the other as an instance field ("has-a-relation").
-
 Concepts:
 - Prefer composition over inheritance
-- Abstraction contains implementation interface as a member (through composition), which reduces one more level of inheritance
-
-## When to use it?
-- Instead of maintaining multiple very large classes, that supports both, you can separate them in two different hierarchies
-- When you want to extend more than one class (impossible, but you want to do it), then you may need to apply the bridge pattern
-- If you need to duplicate some method in another class, because you can not extend it - it's time to apply the bridge pattern  
+- Abstraction contains implementation interface as a member (through composition), which reduces the level of inheritance
 
 ## Pros:
 - Decouple abstraction from it's implementation, so that the two can live independently
 - Abstraction and Implementation can change independent each other and they are not bound at compile time
-- Reduction in the number of sub classes
-- Cleaner code
+- Reduction in the number of sub classes (level of inheritance)
 - Improved Extensibility
 - Loosely coupled
 - Easy to test and mock
 - Can be developed independently
+- To share abstraction or implementation between multiple projects
+- To change implementation at runtime
 
 ## Cons:
 - Increased complexity due to over use of composition (HAS-A relation)
-- Many java interfaces with a single implementation (java classes)
+- Many java interfaces with a single implementation 
 
-## Examples from Java API
-Recognizeable by creational methods taking an instance of different abstract/interface type 
-and returning an implementation of own abstract/interface type which delegates/uses the given instance.
+## How to recognize it?
+- When there are two different hierarchies that interact together and if you call a method, 
+that method is actually implemented by the other hierarchy.
+
+```java
+public class Car extends Vehicle {
+
+    public Car(Gear gear) {
+        super(gear);
+    }
+}
+
+public class _Main {
+
+    public static void main(String[] args) {
+        Vehicle car1 = new Car(new ManualGear());
+        car1.changeGear();
+
+        Vehicle car2 = new Car(new AutomaticGear());
+        car2.changeGear();
+
+        Vehicle bus1 = new Bus(new AutomaticGear());
+        bus1.changeGear();
+    }
+}
 ```
-None comes to mind yet. A fictive example would be new LinkedHashMap(LinkedHashSet<K>, List<V>) which returns 
-an unmodifiable linked map which doesn't clone the items, but uses them. The java.util.Collections#newSetFromMap() 
-and singletonXXX() methods however comes close.
-```
+## Scenarios
+* Instead of maintaining multiple very large classes, that support both, you can separate them in two different hierarchies
+* When you want to extend more than one class (impossible, but you want to do it), then you may need to apply the bridge pattern
+* If you need to duplicate some method in another class, because you can not extend it - it's time to apply the bridge pattern  
+* When you need to multiply the concrete classes, because there is something else you want to reuse -> MOVE it out!
+* When you need to switch to another implementation without affecting the client
 
-## Examples
+### Example 1
 
-### Example 1 - How to implement it?
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/structural/bridge) 
+
 Let's assume that we represent a vehicle factory.
 We produce cars and buses. Both can be ordered with a manual or an automatic gear.
 

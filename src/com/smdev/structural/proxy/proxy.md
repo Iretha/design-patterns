@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Proxy
+title: Proxy  (GoF)
 parent: Structural Design Patterns
 nav_order: 2060
 permalink: /structural/proxy
@@ -8,57 +8,59 @@ permalink: /structural/proxy
 
 # The Proxy Design Pattern
 
-GoF Design Patterns -> Structural Design Patterns
+The Proxy Pattern is designed to provide a level of indirection to object members.
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/structural/proxy) 
+---
 
-## What problems does it solve? Why to use it?
+The Proxy Pattern is also known as Surrogate.
+Acts as a surrogate to another objects, so that you can control the access to it.
 
-Proxies “control and manage access to the object they are protecting“.
-They can be chained and keep a reference to the object to which they forward requests.
+## What problems does it solve?
+Proxies “control and manage access to the object, they are protecting“.
+They can be chained and keep a reference to the object, to which they forward requests.
 
 Types of proxies:
 - Remote - local "stub/ representation" of something that "lives" on a remote machine/ place
-- Virtual - placeholder for "expensive to create" objects, created on demand
-- Protection - controls access to a sensitive object
-- Smart - does additional actions like objects locking etc.
-
-Adapters vs Decorators vs Proxies:
-- Adapters give different interface and do not add functionality.
-- Decorators provide enhanced interface and add functionality.
-- Proxies use same interface and add functionality.
-
-## When to use it?
-When you need to restrict or manage access to something.
-
-Example usages:
-- To check user privileges/ permissions and restrict access
-- To add logging
-- To cache objects
-- To lock/ unlock object
-- To route/ forward request, based on some rules
+- Virtual - creates "expensive" objects on demand
+- Protection - controls access to the original object
+- smart reference - does additional actions like objects locking etc.
 
 ## Pros:
 - Enhanced security
 - More control over the access to the objects
+- Act as an entry point or point of access
 
 ## Cons:
 - Provide additional layer of abstraction
 
+Adapters vs Decorators vs Proxies:
+- Adapters give different interface.
+- Proxies use same interface and may add functionality.
+- Decorators provide enhanced interface and add functionality (they have other purpose as a whole).
+
+## How to recognize it?
+When you cannot access directly the object "behind" the proxy, but the proxy provides the same interface as its subject.
+
 ## Examples from Java API
-Recognizeable by creational methods which returns an implementation of given abstract/interface type which in turn delegates/uses a different implementation of given abstract/interface type
 ```
 java.lang.reflect.Proxy
 java.rmi.*
 javax.ejb.EJB (explanation here)
-javax.inject.Inject (explanation here)
+javax.inject.Inject 
 javax.persistence.PersistenceContext
 ```
-## Examples
+## Scenarios
+- To check user privileges/ permissions and restrict access
+- To add logging
+- To cache objects
+- To lock/ unlock objects
+- To route/ forward request, based on some rules
 
 ### Example 1
+You should restrict search for some keywords in your office.
 
-You are restricted to search for some keywords in you office.
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/structural/proxy) 
 
 1). Implement general search interface
 ```java
@@ -67,7 +69,6 @@ public interface Search {
     String searchFor(String... keywords) throws Exception;
 }
 ```
-
 2). Create Real Search, that implements our Search interface
 ```java
 public class RealSearch implements Search {
@@ -78,7 +79,6 @@ public class RealSearch implements Search {
     }
 }
 ```
-
 3). Create Search proxy, that also implements our Search interface.
 Our search proxy does some checks and if they pass, the request will be forwarded to the real search.
 
@@ -104,7 +104,6 @@ public class SearchProxy implements Search {
     }
 }
 ```
-
 4). Demo
 ```java
 public class _Main {

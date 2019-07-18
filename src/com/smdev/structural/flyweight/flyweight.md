@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Flyweight
+title: Flyweight (GoF)
 parent: Structural Design Patterns
 nav_order: 2050
 permalink: /structural/flyweight
@@ -8,16 +8,17 @@ permalink: /structural/flyweight
 
 # The Flyweight Design Pattern
 
-GoF Design Patterns -> Structural Design Patterns
+The Flyweight Pattern is designed to share objects for better efficiency or consistency.
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/structural/flyweight) 
+---
 
-## What problems does it solve? Why to use it?
+## What problems does it solve?
 It solves memory issues and lowers the needed memory. 
 You can optimize the memory and lower RAM usage by dividing the objects into two parts:
 - shareable (intrinsic) state 
 - non-shareable (extrinsic) state.
-Then objects with common data can use the same shared state, instead of multiplicating the common data for/ in each object.
+Then objects with common data can use the same shared state, instead of replicating the common data for each object.
 
 Glossary:
 - Flyweight - holds/ represents the shareable (intrinsic/ immutable) state of an object
@@ -25,30 +26,47 @@ Glossary:
 - Concrete object - holds/ represents the non-shareable (extrinsic/ mutable) state. This is the state that changes over time or is unique for the object
 - Client - the one, who uses the objects with their shareable and non-shareable states
 
-## When to use it?
-- When you have common data that is shared between multiple objects
-- When the application creates large number of similar objects
-- When you need to reduce the storage cost of the application
-
 ## Pros:
 - Lowers the memory usage of your application by decreasing duplicated data (even object instances)
 
 ## Cons:
 - Increases the complexity of the code
-- There is an overhead if you need to recalculate/recreate/sync the shareable (intrinsic) state of the object for some reason
+- There is an overhead if you need to recalculate/recreate/sync the shareable (intrinsic) state of the object
 
+## How to recognize it?
+When you call creational method, that returns a cached instance instead of a new one.
+```java
+public final class CountryFactory {
+
+    private static Map<String, Country> cache = new HashMap<>();
+
+    private CountryFactory() {
+        // hidden
+    }
+
+    public static Country createCountry(String name) {
+        if (!cache.containsKey(name)) {
+            cache.put(name, new Country(name));
+        }
+        return cache.get(name);
+    }
+}
+```
 ## Examples from Java API
-Recognizeable by creational methods returning a cached instance instead of a new one
 ```
 java.lang.Integer#valueOf(int) (also on Boolean, Byte, Character, Short, Long and BigDecimal)
 ```
-## Examples
+## Scenarios
+* When you have common data that is shared between multiple objects
+* When the application creates large number of similar objects (too many instances)
+* When you need to reduce the storage cost of the application
 
 ### Example 1
-
 Let's say we have a register of landmarks. We want to browse landmarks by country. As there are many landmarks in a single country,
 we can say that multiple landmarks "share the same country". This means that the class Country can be a Flyweight object 
 and class "Landmark" is our unique object, that shares common data (same country) with other unique objects.
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/structural/flyweight) 
 
 1). Create class Country
 ```java
@@ -66,7 +84,6 @@ public class Country {
     }
 }
 ```
-
 2). Create Factory, which will create new country if necessary or return an existing instance
 ```java
 public final class CountryFactory {
@@ -133,4 +150,4 @@ Landmark(country=Country@7c75222b(Peru), landmarkName=Machu Picchu, landmarkDesc
 Landmark(country=Country@4c203ea1(India), landmarkName=Taj Mahal – Angra, landmarkDescription=Standing majestically on the banks of the River Yamuna, India's national treasure is a symbol of love and romance. )
 
 ```
-As you can see, landmarks in Italy share the same country "Country@e580929(Italy)"
+As you can see, landmarks in Italy share the same country instance "Country@e580929(Italy)"

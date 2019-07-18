@@ -14,8 +14,8 @@ The Structural Design Patterns deal with the relations between components and ob
 ---
 
 ## Types
-* structural class patterns - uses inheritance
-* structural objects patterns - uses composition
+* structural class patterns - use inheritance
+* structural objects patterns - use composition
 
 ## Purpose
 * Best way to compose objects and to form larger structures
@@ -26,11 +26,11 @@ Later we will add some more useful patterns to this list.
 
 * [Adapter (GoF)](/design-patterns/structural/adapter)
 
-Designed to make two incompatible types compatible without changing their existing code or extending their functionality
+Designed to make two incompatible types compatible without changing their existing code
 
 * [Bridge (GoF)](/design-patterns/structural/bridge)
 
-Designed to separate object abstraction from the implementation
+Designed to separate object abstraction from the implementation, so that you can change implementation without affecting the rest of the code
 
 * [Composite (GoF)](/design-patterns/structural/composite)
 
@@ -38,11 +38,11 @@ Designed to build a class hierarchy from primitive and composite objects, that m
 
 * [Decorator (GoF)](/design-patterns/structural/decorator)
 
-Designed to add responsibilities to objects dynamically
+Designed to to add/ remove responsibilities to objects dynamically (even at runtime), without changing their implementation
 
 * [Facade (GoF)](/design-patterns/structural/facade)
 
-Designed to represent an entire subsystem as a single object
+Designed to hide an entire subsystem behind a facade and present is as a single object
 
 * [Flyweight (GoF)](/design-patterns/structural/flyweight)
 

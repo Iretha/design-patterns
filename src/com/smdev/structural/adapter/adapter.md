@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Adapter
+title: Adapter (GoF)
 parent: Structural Design Patterns
 nav_order: 2000
 permalink: /structural/adapter
@@ -8,7 +8,7 @@ permalink: /structural/adapter
 
 # The Adapter Design Pattern
 
-The Adapter Design Pattern is designed to make two incompatible types compatible without changing their existing code or extending their functionality.
+The Adapter Design Pattern is designed to make two incompatible types compatible without changing their existing code.
 {: .fs-6 .fw-300 }
 
 ---
@@ -38,11 +38,46 @@ Glossary:
 - complexity of the code increases
 
 ## How to recognize it?
+* When a creational method accepts as argument an interface/ abstract type and returns 
+an implementation of own/another abstract/interface type which decorates/overrides the given instance
 
+Class Adapter:
+```java
+public class TvSangClassAdapter extends TvSang implements RemoteDevice {
+
+    @Override
+    public void turnOn() {
+        play();
+    }
+
+    @Override
+    public void turnOff() {
+        shutDown();
+    }
+}
+```
+Object Adapter:
+```java
+public class TvSonyObjectAdapter implements RemoteDevice {
+
+    private TvSony adaptee;
+
+    public TvSonyObjectAdapter(TvSony adaptee) {
+        this.adaptee = adaptee;
+    }
+
+    @Override
+    public void turnOn() {
+        this.adaptee.switchOn();
+    }
+
+    @Override
+    public void turnOff() {
+        this.adaptee.switchOff();
+    }
+}
+```
 ## Examples from Java API
-Recognizable by creational methods taking an instance of different abstract/interface type and 
-returning an implementation of own/another abstract/interface type which decorates/overrides the given 
-instance
 ```
 java.util.Arrays#asList()
 java.util.Collections#list()
@@ -51,10 +86,12 @@ java.io.InputStreamReader(InputStream) (returns a Reader)
 java.io.OutputStreamWriter(OutputStream) (returns a Writer)
 javax.xml.bind.annotation.adapters.XmlAdapter#marshal() and #unmarshal()
 ```
-
 ## Scenarios
-* When you have two independent functionalities and you want to make them work together 
-  without modifying the existing code.
+* When you have two independent types and you want to make them work together 
+  
+* When you have to use some external API
+
+* When you have to integrate with external system
   
 ### Example 1 - How to implement it?
 Let's say, we have an universal remote control, that we use currently to turn on and turn off our LG TV.

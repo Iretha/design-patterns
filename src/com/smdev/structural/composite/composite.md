@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Composite
+title: Composite (GoF)
 parent: Structural Design Patterns
 nav_order: 2020
 permalink: /structural/composite
@@ -8,15 +8,14 @@ permalink: /structural/composite
 
 # The Composite Design Pattern
 
-GoF Design Patterns -> Structural Design Patterns
+The Composite Pattern is designed to build a class hierarchy from primitive and composite objects, that may represent complex structures.
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/structural/composite) 
+---
 
-The pattern could be used to implement a tree-like, hierarchical structure of elements, that have same behavior. 
-
-Often the Composite Design Pattern is illustrated with a FileSystem, which has Files and Folders.
-Folders inherit the behavior of the files (like - delete, copy, move), but also have children, which
-might be files and/or other folders, containing files and other folders and etc.
+## What problems does it solve? 
+The pattern is used to implement a tree-like, hierarchical structure of elements, that have same behavior. The elements can be
+primitive (leafs) or composite objects. Composite objects have children, which might be leafs or composite objects.
 
 Glossary:
 - Composition - the abstraction of the composites and the leafs, their common functionality
@@ -24,33 +23,41 @@ Glossary:
 - Composite - composite objects in the composition - they implement the child behavior, bu also have children of type Composition
 - Client - The client operates with the compositions in a general manner. In fact the client doesn't even know if it's a leaf or composite.
 
-## What problems does it solve? Why to use it?
-
-The client operates with the Compositions, representing tree-like structures.
-
-## When to use it?
-
-I don't really like this pattern. 
-Use it only if you need a tree-like structure with some general behavior, that all nodes should implement.
-
 ## Pros:
 - Client knows only about the general behavior off all components and treats them the same way.
-- Good level of abstraction can be achieved
+- to decouple client
+- to achieve good level of abstraction
 
 ## Cons:
 - It is hard to restrict the components of the composite
 
+## How to recognize it?
+When you have behavioral methods, that take an instance of same abstract/interface type into 
+and create or process a tree structure.
+```java
+Folder homeDir = new Folder("Home");
+
+Folder documentsDir = new Folder("Personal Documents");
+homeDir.addChild(documentsDir);
+
+documentsDir.addChild(new File("CV.doc"));
+```
 ## Examples from Java API
-Recognizeable by behavioral methods taking an instance of same abstract/interface type into a tree structure
 ```
 java.awt.Container#add(Component) (practically all over Swing thus)
 javax.faces.component.UIComponent#getChildren() (practically all over JSF UI thus)
 ```
-## Examples
+## Scenarios
 
-### Example 1 - How to implement it?
+* Use it for a tree-like structure, when all elements have some general behavior
+
+* Like a FileSystem, where you have tree of folders and files and you can move them, delete the etc (general behavior).
+
+### Example 1
 
 We have hierarchical folder structure, that may contain other folders in files.
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/structural/composite) 
 
 1). Entry Interface (our Composition)
 ```java

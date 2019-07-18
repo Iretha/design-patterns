@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Facade
+title: Facade (GoF)
 parent: Structural Design Patterns
 nav_order: 2040
 permalink: /structural/facade
@@ -8,46 +8,44 @@ permalink: /structural/facade
 
 # The Facade Design Pattern
 
-GoF Design Patterns -> Structural Design Patterns
+The Facade Pattern is designed to hide an entire subsystem behind a facade and present is as a single object.
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/structural/facade) 
+---
 
-## What problems does it solve? Why to use it?
-
+## What problems does it solve?
 Provides simple facade for the client and hides the complexity of the implementation just like the "face of 
-a building". People on the street can see only outside, they do not know how the building was built, 
-what materials are used etc.
-
-JDBC driver uses facade to hide complexity of creating connection to different database servers.
-
-## When to use it?
-
-- To hide complexity
-- To divide a system into multiple subsystems, that doesn't know much about the complexity of the subsystems they iterract with.
+a building". Clients can see only outside, they do not what's inside.
 
 ## Pros:
-- Hides complexity
 - Provides high level of isolation
+- Hides complexity and makes system easier to use
 - Reduces dependencies between components/ subsystems
 
 ## Cons:
 - Larger API
 - May hide important information as useless information
 
+## How to recognize it?
+When you call behavioral methods, which internally use instances of different independent abstract/interface types.
+
 ## Examples from Java API
-Recognizable by behavioral methods which internally use instances of different independent abstract/interface types
 ```
 JDBC driver uses facade to hide complexity of getting connection to different database servers (Oracle, MySql, etc)
 javax.faces.context.FacesContext, it internally uses among others the abstract/interface types LifeCycle, ViewHandler, NavigationHandler 
 and many more without that the enduser has to worry about it (which are however overrideable by injection).
 javax.faces.context.ExternalContext, which internally uses ServletContext, HttpSession, HttpServletRequest, HttpServletResponse, etc.
 ```
-## Examples
+## Scenarios
+* To divide a system into multiple subsystems, that doesn't know much about the complexity of the subsystems they interact with.
+* JDBC driver uses facade to hide complexity of creating connection to different database servers.
 
 ### Example 1
 We (as customers) want a single pay desk service or mobile app, where we can pay all our bills no matter which provider we use.
 In this case we need a Payment Service Facade, that we can use to pay our bills. The facade will introduce very simple interface. 
 What's hidden inside is, that each provider has it's own payment service, where we should submit each payment.
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/structural/facade) 
 
 1). Create the Facade - we will accept payments for four different providers
 ```java
