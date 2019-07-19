@@ -16,7 +16,7 @@ The Abstract Factory Design Pattern is designed to create families of objects wi
 The Abstract Factory is also known as "Kit" or "Factory of Factories". It uses "creation through delegation" method and 
 provides an interface for creating families of related or dependent objects without specifying 
 their concrete classes. In other words, this model allows us to create objects that follow a general pattern.
-The Abstract Factory uses [Factory](/design-patterns/creational/factory) to create the concrete factory.
+The Abstract Factory uses [Factory](https://iretha.github.io/design-patterns/creational/factory) to create the concrete factory.
 
 ## What problems does it solve? 
 - To construct a particular dependency at runtime, depending on some parameter or setting

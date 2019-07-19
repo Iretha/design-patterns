@@ -29,36 +29,36 @@ The Creational Design Patterns deal with the way objects are created/ instantiat
 There are 5 creational patterns introduced by GoF. 
 Later we will add some more useful patterns to this list.
 
-* [Abstract Factory (GoF)](/design-patterns/creational/abstract-factory)
+* [Abstract Factory (GoF)](https://iretha.github.io/design-patterns/creational/abstract-factory)
 
 Designed to create families of objects without specifying their concrete classes
 
-* [Builder Pattern (GoF)](/design-patterns/creational/builder)
+* [Builder Pattern (GoF)](https://iretha.github.io/design-patterns/creational/builder)
 
 Designed to build complex objects with a lot of optional fields
 
-* [Factory Method (GoF)](/design-patterns/creational/factory-method)
+* [Factory Method (GoF)](https://iretha.github.io/design-patterns/creational/factory-method)
 
 Designed to create objects without specifying their concrete classes. It let subclasses to decide which concrete class to instantiate.
 
-* [Prototype (GoF)](/design-patterns/creational/prototype)
+* [Prototype (GoF)](https://iretha.github.io/design-patterns/creational/prototype)
 
 Designed to create objects faster, when creating a new object is an expensive operation
 
-* [Singleton (GoF)](/design-patterns/creational/singleton)
+* [Singleton (GoF)](https://iretha.github.io/design-patterns/creational/singleton)
 
 Designed to control the number of instances (only 1) ant the access to that instance in serial way via the provided entry/ access point
 
-* [Factory (Pattern?)](/design-patterns/creational/factory)
+* [Factory (Pattern?)](https://iretha.github.io/design-patterns/creational/factory)
 
 Designed to encapsulate the instantiation logic and to create objects without specifying their concrete classes.
 Some people argue if this is a pattern or not, but we will mention it, because it's widely used.
 
-* [Object Pool](/design-patterns/creational/object-pool)
+* [Object Pool](https://iretha.github.io/design-patterns/creational/object-pool)
 
 Designed to the performance by reusing the instances of stateless objects, that are otherwise expensive to create.
 
-* [Telescoping Constructor](/design-patterns/creational/telescoping-constructor)
+* [Telescoping Constructor](https://iretha.github.io/design-patterns/creational/telescoping-constructor)
 
 When you need a mechanism to provide default values or behavior when constructing objects. 
 

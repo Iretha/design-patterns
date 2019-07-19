@@ -24,35 +24,35 @@ The Structural Design Patterns deal with the relations between components and ob
 There are 7 structural patterns introduced by GoF. 
 Later we will add some more useful patterns to this list.
 
-* [Adapter (GoF)](/design-patterns/structural/adapter)
+* [Adapter (GoF)](https://iretha.github.io/design-patterns/structural/adapter)
 
 Designed to make two incompatible types compatible without changing their existing code
 
-* [Bridge (GoF)](/design-patterns/structural/bridge)
+* [Bridge (GoF)](https://iretha.github.io/design-patterns/structural/bridge)
 
 Designed to separate object abstraction from the implementation, so that you can change implementation without affecting the rest of the code
 
-* [Composite (GoF)](/design-patterns/structural/composite)
+* [Composite (GoF)](https://iretha.github.io/design-patterns/structural/composite)
 
 Designed to build a class hierarchy from primitive and composite objects, that may represent complex structures
 
-* [Decorator (GoF)](/design-patterns/structural/decorator)
+* [Decorator (GoF)](https://iretha.github.io/design-patterns/structural/decorator)
 
 Designed to to add/ remove responsibilities to objects dynamically (even at runtime), without changing their implementation
 
-* [Facade (GoF)](/design-patterns/structural/facade)
+* [Facade (GoF)](https://iretha.github.io/design-patterns/structural/facade)
 
 Designed to hide an entire subsystem behind a facade and present is as a single object
 
-* [Flyweight (GoF)](/design-patterns/structural/flyweight)
+* [Flyweight (GoF)](https://iretha.github.io/design-patterns/structural/flyweight)
 
 Designed to share objects to for better efficiency or consistency
 
-* [Proxy (GoF)](/design-patterns/structural/proxy)
+* [Proxy (GoF)](https://iretha.github.io/design-patterns/structural/proxy)
 
 Designed to provide a level of indirection to object members
 
-* [Private Class Data](/design-patterns/structural/private-class-data)
+* [Private Class Data](https://iretha.github.io/design-patterns/structural/private-class-data)
 
 Designed to protect the object data even from it's own methods.
 
