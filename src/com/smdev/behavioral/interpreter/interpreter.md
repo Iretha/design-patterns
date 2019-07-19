@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Interpreter
+title: Interpreter (GoF)
 parent: Behavioral Design Patterns
 nav_order: 3020
 permalink: /behavioral/interpreter
@@ -8,11 +8,13 @@ permalink: /behavioral/interpreter
 
 # The Interpreter Design Pattern 
 
-GoF Design Patterns -> Behavioral Design Patterns
+The Interpreter Design Pattern is designed to define a representation of the grammar of a given language und use that representation to 
+interpret sentences in that language.
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/interpreter) 
+--- 
 
-## What problems does it solve? Why to use it?
+## What problems does it solve? 
 The interpreter pattern is a design pattern that specifies how to evaluate sentences in some custom language. 
 The basic idea is to have a class for each symbol. The symbols are separated by another symbol i.e. "one plus two multiplied-by three", separated by spaces.
 The syntax tree of a sentence in the language can be represented via the composite pattern.
@@ -28,12 +30,6 @@ Glossary:
 - Postfix - the operator follows the left and the right expression: 5 1 +
 - Prefix - the operator precedes the left and the right expression + 5 1
 
-## When to use it?
-- To build a simple grammar as an abstract syntax tree-like structure and run the evaluation
-- To produce different outputs (like file formats etc)
-- To create simple language processors
-- To create simple domain-specific search engines
-
 ## Pros:
 - You can define implementation for a language with simple grammar (syntax or rules)
 
@@ -41,22 +37,44 @@ Glossary:
 - Requires a lot of validations and error checking
 - Not good for complex grammar, because it gets very hard to maintain
 
-## Examples from Java API
-JVM have both compiler and interpreter. Because the compiler compiles the code and generates byte code. 
-After that the interpreter converts byte code to machine understandable code. 
+**Parsing and formatting is not part of the pattern, determining the pattern and how to apply is.**
 
-Recognizable by behavioral methods returning a structurally different instance/type of the given 
-instance/type; note that parsing/formatting is not part of the pattern, determining the pattern and how to apply it is
+**JVM have both compiler and interpreter. Because the compiler compiles the code and generates byte code. 
+After that the interpreter converts byte code to machine understandable code.** 
+
+## How to recognize it?
+When you call a behavioral method and it returns structurally different instance/type of the given type.
+```java
+List<Dog> dogs = new ArrayList<>();
+dogs.add(new Dog("Ruby", "german_shepherd", "female", 5));
+dogs.add(new Dog("Bobby", "german_shepherd", "male", 3));
+
+Map<String, List<Dog>> data = new HashMap<>();
+data.put("dogs", dogs);
+
+Context context = new Context(data, "find dogs where breed eq german_shepherd and gender eq female");
+List<Dog> result = context.evaluate();  
+```
+
+## Examples from Java API
 ```
 java.util.Pattern
 java.text.Normalizer
 All subclasses of java.text.Format
 All subclasses of javax.el.ELResolver
 ```
-## Examples
-### Example 1 - How to implement it?
+## Scenarios
+* To build a simple grammar as an abstract syntax tree-like structure and run the evaluation
+* To produce different outputs (like file formats etc)
+* To create simple language processors
+* To create simple domain-specific search engines
+* To produce different outputs of the same thing
+
+### Example 1 
 We are going to implement a domain-specific search engine for our sample application. 
 Our sample application will keep track of all dogs at a shelter. When someone want to adopt a dog, he can search in our database.
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/interpreter)
 
 Here are some example searches we are going to implement:
 ```

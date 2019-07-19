@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Mediator
+title: Mediator (GoF)
 parent: Behavioral Design Patterns
 nav_order: 3040
 permalink: /behavioral/mediator
@@ -8,36 +8,46 @@ permalink: /behavioral/mediator
 
 # The Mediator Design Pattern 
 
-GoF Design Patterns -> Behavioral Design Patterns
+The Mediator Design Pattern is designed to encapsulate the communication between set of objects in a single object in order to reduce the direct relations between them. 
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/mediator) 
+--- 
 
-## What problems does it solve? Why to use it?
-To eliminate direct connections between separate objects or components.
-The Mediator Pattern provides a centralized communication by encapsulating the communication between them. 
+## What problems does it solve? 
+The Mediator Pattern provides a centralized communication by encapsulating the communication between multiple objects. 
+This is done in order to eliminate the direct connections between separate objects or components.
 Later the interaction can be changed without changing the components.
+To implement it, colleagues hold an instance of the mediator as a member. 
 
 Glossary:
 - Colleagues - the objects that interact together
 - Contract of communication - the interface or abstract implementation of the mediator
 - Concrete Mediator - the concrete implementation of the mediator
 
-## When to use it?
-To avoid tight coupling - if many objects have to interact together, you can put a mediator between them.
-
 ## Pros:
-- Reduces the coupling between colleagues
+- Reduces the coupling between colleagues by reducing the connections between them
 - Easy to modify the way the components interact without changing the components
-- Reusable components
-- Easy to add new colleagues
+- Make components reusable
+- Easy to add/ remove colleagues
 
 ## Cons:
 - The mediator can get very complex
 
-## Examples from Java API
-Recognizable by behavioral methods taking an instance of different abstract/interface type 
-(usually using the command pattern) which delegates/uses the given instance
+## How to recognize it?
+When you call behavioral methods, that change the state of the instances of multiple types or of the same type with a single call of the method.
+The action calls are usually implemented using the Command Pattern.
+```java
+Mediator mediator = new MediatorCloud("my_cloud_account");
 
+Colleague homePc = new ClientWindows("homePc", mediator);
+homePc.addFile("WorkFlow_Example.txt"); // files are sync'ed between clients and clients doesn't know about each other
+
+Colleague notebook1 = new ClientMacOs("notebook1", mediator);
+notebook1.addFile("CV.pdf"); // files are sync'ed between clients and clients doesn't know about each other
+
+Colleague phone = new ClientAndroid("mobile phone", mediator); // files are sync'ed between clients and clients doesn't know about each other
+```
+## Examples from Java API
 ```
 java.util.Timer (all scheduleXXX() methods)
 java.util.concurrent.Executor#execute()
@@ -45,15 +55,20 @@ java.util.concurrent.ExecutorService (the invokeXXX() and submit() methods)
 java.util.concurrent.ScheduledExecutorService (all scheduleXXX() methods)
 java.lang.reflect.Method#invoke()
 ```
-## Examples
-- Traffic Cops
-- Air Control Tower
-- Post Office
-- Group Chat App
-
-### Example 1 - How to implement it?
+## Scenarios
+* Traffic Cops
+* Air Control Tower
+* Post Office
+* Group Chat App
+* To avoid tight coupling - if many objects have to interact together, you can put a mediator between them.
+* When you have to create an app, that should sync files between multiple clients (like Google Drive or smth else)
+* If you need to refactor some tight coupled components, that interact together
+* If you need to centralize the communication between components
+### Example 1 
 We are going to create a demo of "Google Drive"- like app. You can connect to a cloud account
 and synchronize a folder between multiple devices.
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/mediator) 
 
 1). Create an abstract mediator
 ```java

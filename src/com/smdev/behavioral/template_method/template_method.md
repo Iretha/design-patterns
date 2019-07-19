@@ -1,60 +1,81 @@
 ---
 layout: default
-title: Template Method
+title: Template Method (GoF)
 parent: Behavioral Design Patterns
 nav_order: 3090
 permalink: /behavioral/template-method
 ---
 
+# The Template Method Design Pattern 
 
-# The Template Method Design Pattern
+The Template Method Design Pattern is designed to define the skeleton of an algorithm, but lets subclasses to implement or override separate parts of it. 
+{: .fs-6 .fw-300 }
 
-GoF Design Patterns -> Behavioral Design Patterns
+--- 
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/template_method) 
-
-## What problems does it solve? Why to use it?
-It is used to define a skeleton of an algorithm in the superclass ("method stub"), but allows the subclasses to override 
-or implement specific parts. The common part will be implemented by the parent to avoid code duplication.
-
+## What problems does it solve? 
+To define the skeleton and the invariant parts of an algorithm in the superclass ("method stub") and to allow subclasses to override 
+or implement specific parts (the variant parts) of it.
 
 Glossary:
 - Abstract Class - the superclass = the host of the algorithm
 - Concrete Class - the subclasses = that can modify parts of the algorithm
 
-## When to use it?
-To create a "template" or a "stub" of the algorithm = to define it's skeleton.
-
-In you have many classes with almost identical algorithms, you can consider using the template method. In this case, you can implement 
-the differences in the concrete classes and leave the skeleton in their parent class. 
-It's not very appropriate for complex algorithms or algorithms that may change, because it may get very hard to maintain.
-
 ## Pros:
-- Avoid code replication
+- To avoid code replication
 
 ## Cons:
 - Later, if you need to change the algorithm only for specific subclasses,  you might be limited by the skeleton
 - Hard to follow and maintain, if the algorithm has many steps
 - Not appropriate for algorithms that may evolve in different directions for the subclasses
-- Often can lead to violation of the Liskov Substitution Principle
+- Often can lead to violation of the Liskov Substitution Principle (esp. when there is no default implementation)
 
+## How to recognize it?
+This are behavioral methods, which have usually a default behaviour, defined by an abstract type and overridden 
+or implemented by subclasses.
+```java
+public abstract class AbstractDocumentTemplate {
+    /**
+     * Has default implementation, but might be overridden by the subclasses
+     * @param fullText
+     */
+    protected void writeOutput(String fullText) {
+        System.out.println("Your Document:" + fullText);
+    }
+}
+
+public class ShortStoryTemplate extends AbstractDocumentTemplate {
+    @Override
+    protected void writeOutput(String fullText) {
+        System.out.println("Your Short Story:" + fullText);
+    }
+}
+```
 ## Examples from Java API
-Recognizable by behavioral methods which already have a "default" behaviour defined by an abstract type
 ```
 All non-abstract methods of java.io.InputStream, java.io.OutputStream, java.io.Reader and java.io.Writer.
 All non-abstract methods of java.util.AbstractList, java.util.AbstractSet and java.util.AbstractMap.
 javax.servlet.http.HttpServlet, all the doXXX() methods by default sends a HTTP 405 "Method Not Allowed" error to the response. 
 You're free to implement none or any of them.
 ```
-## Examples
+## Scenarios
+* When you want to create a "template" or a "stub" of the algorithm = to define it's skeleton.
+* When multiple classes have similar behavior with slight differences
+* When multiple classes share almost same algorithm
+* When refactoring classes with duplicated code
+* In you have many classes with almost identical algorithms, you can consider using the template method. In this case, you can implement 
+the differences in the concrete classes and leave the skeleton in their parent class. 
+It's not very appropriate for complex algorithms or algorithms that may change, because it may get very hard to maintain.
 
-### Example 1 - How to implement it?
+### Example 1
 Let's say we want to create an app that generates different documents. Each document has specific content with blanks in it. 
 Everyone, who wants to export a specific document, should first fill in the blanks.
 The algorithm that exports the document will have the following steps:
 - Validating the input values
 - Filling in the blanks with the given values
 - Exporting the text without blanks
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/template_method) 
 
 Let's implement it.
 1). Create the abstract class. The skeleton of the algorithm is in the "export" method. 

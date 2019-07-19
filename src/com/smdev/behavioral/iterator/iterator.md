@@ -1,31 +1,30 @@
 ---
 layout: default
-title: Iterator
+title: Iterator (GoF)
 parent: Behavioral Design Patterns
 nav_order: 3030
 permalink: /behavioral/iterator
 ---
 
-
 # The Iterator Design Pattern 
 
-GoF Design Patterns -> Behavioral Design Patterns
+The Iterator Design Pattern is designed to give access to the elements of an aggregate object sequentially 
+without exposing their underlying representation.
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/iterator) 
+--- 
 
-## What problems does it solve? Why to use it?
+The Iterator Design Pattern is also known as Cursor.
+
+## What problems does it solve? 
 You can travers/ access elements of aggregate objects (like custom collections) sequentially without exposing their internal structure.
 The actual traversing algorithm will be implemented in the aggregate objects.
 
 Glossary:
-- Aggregate - aggregate object or collection, which elements we want to iterate
+- Aggregate - aggregate object or collection, which elements we want to iterate (list or some other "bag" with elements)
 - Concrete Aggregate - specific aggregate object
 - Iterator - the generic interface that allows us to iterate over the elements of the aggregate
 - Concrete Iterator - specific iterator for the specific aggregate object
-
-## When to use it?
-To traverse elements of aggregate objects (like collections etc) sequentially. The order will be based on your business logic.
-You can even implement multiple iterators
 
 ## Pros:
 - Hides the implementation of traversing
@@ -37,17 +36,25 @@ another specification or to traverse 2 collections at the same time)
 - The iterator may not be aware if elements change during the iteration
 - It can be an overkill if you can actually use the internal iterators instead of creating you own external iterator
 
+## How to recognize it?
+When you call a behavioral method and it sequentially returns instances of elements (from a different type) 
+from some aggregate structure (list/ container).
+
 ## Examples from Java API
-Recognizable by behavioral methods sequentially returning instances of a different type from a queue
 ```
 All implementations of java.util.Iterator (thus among others also java.util.Scanner!).
 All implementations of java.util.Enumeration
 ```
-## Examples
+## Scenarios
+* When you need to traverse some custom collection of elements sequentially, based on specific business rule
+* When you need multiple iterators that know how to travers elements of a custom collection
+* When you need more complex way to traverse elements, than the provided inner iterators
 
-### Example 1 - How to implement it?
+### Example 1 
 Let's say we have a collection of books. Each book has a title and genre. We may want to iterate our collection by 
 some keyword in the title or by genre. This can be done by implementing two different iterators. Let's do it.
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/iterator) 
 
 1). Create the Book class (this is the type of the elements of the aggregate type) and the Book Genre enum
 ```java

@@ -1,48 +1,69 @@
 ---
 layout: default
-title: Strategy
+title: Strategy (GoF)
 parent: Behavioral Design Patterns
 nav_order: 3080
 permalink: /behavioral/strategy
 ---
 
-# The Strategy Design Pattern (Policy Pattern)
+# The Strategy Design Pattern 
 
-GoF Design Patterns -> Behavioral Design Patterns
+The Strategy Design Pattern is designed to separate the behavior from it's host class, by encapsulating the algorithm 
+in a separate class. This allows you to implement many algorithms and make them interchangeable.
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/strategy) 
+--- 
+
+The Strategy Design Pattern is also knows as "Policy" Design Pattern.
 
 ## What problems does it solve? Why to use it?
 When you want to separate the behavior (the algorithm) from it's host class. 
-
-## When to use it?
-- When you have a lot of classes that have similar behaviour. You can extract the behavior as separate class and 
-pass the objects.
-- When you want to switch to a different behavior easily, without modifying the classes
+You can create multiple algorithms, each one encapsulated in a single class and make them interchangeable.
 
 ## Pros:
 - you can change the behavior at anytime, even at runtime (to swap algorithms)
-- you can create a family of algorithms and pass an object
+- you can create a family of algorithms and make them interchangeable
 - algorithms get reusable (you can pass different objects)
-- you can switch to a different behavior withou modifying objects
+- you can switch to a different behavior without modifying objects
+- provides an alternative to subclassing
 
 ## Cons:
 - increased number of classes
 - client should know about different strategies and when/ how to use them
 
+**One Type that may apply many algorithms = Strategy**
+**Many Types that can apply many algorithms = Visitor**
+
+## How to recognize it?
+If the logic of a behavioral method is executed by a different type and that type is passed as an argument or is 
+member of the method class.
+```java
+Chat chat = new Chat(new SendStrategySms("123", "456"));
+chat.send(new Message("Hello!"));
+
+chat.changeStrategy(new SendStrategyEmail("JonSnow@gmail.com", "JaneDow@gmail.com"));
+chat.send(new Message("Here are the files as I promised"));
+```
 ## Examples from Java API
-Recognizable by behavioral methods in an abstract/interface type which invokes a method in an 
-implementation of a different abstract/interface type which has been passed-in as method argument into 
-the strategy implementation
 ```
 java.util.Comparator#compare(), executed by among others Collections#sort().
 javax.servlet.http.HttpServlet, the service() and all doXXX() methods take HttpServletRequest and HttpServletResponse and the implementor has to process them (and not to get hold of them as instance variables!).
 javax.servlet.Filter#doFilter()
 ```
-## Examples
-### Example 1 - How to implement it?
+## Scenarios
+* When you want to switch to a different behavior easily, without modifying the classes
+* If you have many classes with similar behavior, you can extract the "behaviour"/ algorithm in separate class and reuse it by passing the object as an argument
+* If you want to "switch" to another algorithm (behavior)
+* If you have objects that can "act" differently, depending on something
+* When you need different variants of a single algorithm
+* When an algorithm uses data, that should not be exposed to the client
+* When a class has "many behaviors"
+
+### Example 1
 If you want to create an universal chat app that allows you to send messages using different providers, like: 
 email, sms, viber, social media and etc.
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/strategy) 
 
 1). Universal message object that will be sent to via different providers
 ```java

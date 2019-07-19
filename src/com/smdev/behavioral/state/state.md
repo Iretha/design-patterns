@@ -1,37 +1,35 @@
 ---
 layout: default
-title: State
+title: State (GoF)
 parent: Behavioral Design Patterns
 nav_order: 3070
 permalink: /behavioral/state
 ---
 
-# The State Design Pattern
+# The State Design Pattern 
 
-GoF Design Patterns -> Behavioral Design Patterns
+The State Design Pattern is designed to change the object class (type), when object state changes, because objects' behavior also changes. 
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/state) 
+--- 
 
-## What problems does it solve? Why to use it?
+The State Pattern is also known as "Objects for States".
+
+## What problems does it solve?
+If an object changes it's behavior, when its state changes.
+
 To simplify the code by separating the logic, if an object behaves differently in each of it's states.
 This is done by creating different class for each state and when the state changes, we should instantiate different
-concrete class that will represent the object and it's state.
-It it's like transforming one object into another when something happens.
+concrete class that will represent the object and it's state. It it's like transforming one object into another when something happens.
 
 Glossary:
 - Context - holds the general data (stateless data) and the current state of the object; it will be used by clients
 - Abstract State - defines the general behavior; receives the context and "knows" which is the next state and how to switch to it
 - Concrete state - implements the concrete behavior for the concrete state
 
-## When to use it?
-- When an object has different states and has absolutely different behavior in each of the states
-- To implement a state machine - based on some input, it will switch to a different state and each state will specify the next state (again, based on the input)
-- To implement a process
-- To implement polymorphic behavior
-
 ## Pros:
 - Single Responsibility Principle
-- Simplifies the code
+- To simplify the code
 - To implement polymorphic behavior of an object
 - Easy to extend and add new states
 
@@ -39,11 +37,28 @@ Glossary:
 - It can be an overhead if there are only a few states
 - Hard to maintain because you need different class for each object + state
 
+## How to recognize it?
+When you call a behavioral method that returns different implementation of a single type each time.
+```java
+OrderContext ctx = new OrderContext("Jon Snow", "123 Str, 23 doorbell"); // order received
+ctx.next(); // -> for assembly
+
+@Override
+public OrderState next(OrderContext context) {
+    return new AssemblyInProgress();
+}
+```
 ## Examples from Java API
-Recognizable by behavioral methods which changes its behaviour depending on the instance's state which can be controlled externally
 ```
 javax.faces.lifecycle.LifeCycle#execute() (controlled by FacesServlet, the behaviour is dependent on current phase (state) of JSF lifecycle)
 ```
+## Scenarios
+* When an object has different states and has absolutely different behavior in each of the states
+* To implement a state machine - based on some input, it will switch to a different state and each state will specify the next state (again, based on the input)
+* To implement a process
+* To implement polymorphic behavior
+* When object transforms into another object, if something changes/ happens
+
 ## Examples
 It's like a butterfly metamorphosis. 
 There are 4 stages from an egg to a butterfly, When changes it's state, it also changes it's behavior.
@@ -57,10 +72,13 @@ There are 4 stages from an egg to a butterfly, When changes it's state, it also 
 4). The Butterfly - can fly etc.
 
 Or when an egg hatches and becomes a chickling and later bird.
-### Example 1 - How to implement it?
+
+### Example 1
 Let's say we want to implement an app for pizza delivery. Clients may use the app to order pizza for home.
 We need a context, that will hold the general information about the order like - customer and delivery address and 
 the current state of the order. 
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/state) 
 
 1). The context - with customer info and current state
 ```java

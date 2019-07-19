@@ -1,48 +1,64 @@
 ---
 layout: default
-title: Memento
+title: Memento (GoF)
 parent: Behavioral Design Patterns
 nav_order: 3050
 permalink: /behavioral/memento
 ---
 
-
 # The Memento Design Pattern 
 
-GoF Design Patterns -> Behavioral Design Patterns
+The Memento Design Pattern is designed to externalize the internal state of the object in order to be stored or to restore an object to some previous version of its state.
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/memento) 
+--- 
+
+The Memento Pattern is also known as The Token Design Pattern.
 
 ## What problems does it solve? Why to use it?
-Allows you to restore object to it's previous state.
+Allows you to store history or restore object to it's previous state by externalizing its internal state.
 
 Glossary:
 - Memento - the snapshot/ the state of the object (originator), should be immutable, so that once created, could not be changed
 - Originator - the objects, whose states we are going to keep
 - Caretaker - responsible for storing the states of the originator and restoring them thanks to the memento object
 
-## When to use it?
-When you need to restore a previous state of an object (to rollback/ to revert/ to undo changes).
-
 ## Pros:
-- easy to restore to previous state
+- to keep track of the versions
+- to restore to a previous state
 
 ## Cons:
 - additional operations to create/ keep memento-s (snapshots)
-- increases the memory usage
+- increases the memory usage (because we should keep more states of the object)
 - more code to maintain
 
+## How to recognize it?
+When you call a behavioral method, which internally changes the state of an instance.
+```java
+TextFile file1 = new TextFile("Draft1.txt");
+file1.writeContent("This is my initial content");
+TextFileVersionManager.commit(file1, "My initial version");
+
+file1.writeContent("Content Modified 2");
+TextFileVersionManager.commit(file1, "Version 2");
+
+TextFileVersionManager.restore(file1, 0);
+```
 ## Examples from Java API
-Recognizable by behavioral methods which internally changes the state of the whole instance
 ```
 java.util.Date (the setter methods do that, Date is internally represented by a long value)
 All implementations of java.io.Serializable
 All implementations of javax.faces.component.StateHolder
 ```
-## Examples
-### Example 1 - How to implement it?
+## Scenarios
+* When you need to keep track of the version (history)
+* When you need to restore a previous state of an object (to rollback/ to revert/ to undo changes)
+
+### Example 1
 We can create a simple Version Control System (liteCVS). We will commit files and keep track of the changes with each
 commit. Then we can list all commits and revert a state from specific commit.
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/memento) 
 
 1). Create the Originator
 ```java

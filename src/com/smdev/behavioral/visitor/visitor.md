@@ -1,19 +1,20 @@
 ---
 layout: default
-title: Visitor
+title: Visitor (GoF)
 parent: Behavioral Design Patterns
 nav_order: 3100
 permalink: /behavioral/visitor
 ---
 
-# The Visitor Design Pattern
+# The Visitor Design Pattern 
 
-GoF Design Patterns -> Behavioral Design Patterns
+The Visitor Design Pattern is designed to separate the algorithm from the object and to apply it to a group of similar types.
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/visitor) 
+--- 
 
-## What problems does it solve? Why to use it?
-It provides a mechanism to separate the algorithm from the object.
+## What problems does it solve?
+It provides a mechanism to separate the algorithm from the object and to apply it to many different types.
 
 Glossary:
 - Visitor - an interfaces or abstract class to define the visitor behavior (the visit methods)
@@ -40,10 +41,23 @@ In this case, you can extract the operation/ algorithm in external class and reu
 - you should know the return type in advance
 - hard to modify the return type later
 
+**One Type that may apply many algorithms = Strategy**
+**Many Types that can apply many algorithms = Visitor**
+
+## How to recognize it?
+If there are two different abstract/interface types, which have methods and the one actually calls 
+the method of the other to execute the desired strategy on it.
+```java
+// use the complex shape to calculate the total area
+ComplexShape c1 = new ComplexShape();
+c1.add(new Circle(3));
+c1.add(new Circle(6));
+c1.add(new Circle(9));
+c1.add(new Rectangle(12, 2));
+c1.add(new Hexagon(2));
+c1.calcTotalArea();
+```
 ## Examples from Java API
-Recognizable by two different abstract/interface types which has methods defined which takes each 
-the other abstract/interface type; the one actually calls the method of the other and the other executes 
-the desired strategy on it
 ```
 javax.lang.model.element.AnnotationValue and AnnotationValueVisitor
 javax.lang.model.element.Element and ElementVisitor
@@ -51,10 +65,17 @@ javax.lang.model.type.TypeMirror and TypeVisitor
 java.nio.file.FileVisitor and SimpleFileVisitor
 javax.faces.component.visit.VisitContext and VisitCallback
 ```
-## Examples
-### Example 1 - How to implement it?
+## Scenarios
+* If you want to apply same operation on all elements of some aggregate structure, 
+but elements might be of different types and the algorithm may vary for the concrete types
+* If many distinct and unrelated operations need to be performed on objects in an object structure
+* To define new operations over the elements of a structure, but you don't want to modify the existing classes
+
+### Example 1
 We need an app that can calculate the area of dynamic complex shapes, built from other "simple" shapes. 
 Later, we will extend the functionality and some of the shapes will do specific operations like "print".
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/visitor) 
 
 1). Create an visitable interface for the Area Calculator, that knows how to "accept" visitors ot this type
 ```java

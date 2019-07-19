@@ -1,20 +1,23 @@
 ---
 layout: default
-title: Observer
+title: Observer (GoF)
 parent: Behavioral Design Patterns
 nav_order: 3060
 permalink: /behavioral/observer
 ---
 
-# The Observer Design Pattern aka (Publish - Subscribe Pattern)
+# The Observer Design Pattern 
 
-GoF Design Patterns -> Behavioral Design Patterns
+The Observer Design Pattern is designed to define one-to-many dependency between objects so that when one object changes its state, all its dependents get notified and updated automatically.
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/observer) 
+--- 
 
-## What problems does it solve? Why to use it?
+The Observer Pattern is also known as The Dependents Design Pattern or The Publish-Subscribe Pattern.
+
+## What problems does it solve? 
 Defines one-to-many relations between objects and when an objects changes it's state, all dependents get notified.
-It's also known as Publish-Subscribe Pattern.
+This way we can easily maintain consistent state of the related objects.
 
 Glossary:
 - Subject - defines an interface for attaching (subscribing/ registering)/ detaching (unsubscribing/ deregistering) and notifying observers; contains a list of observers, that should get notified
@@ -24,10 +27,8 @@ Glossary:
 - Message / State - this is the object that will be sent as a notification. It should be an immutable object.
 - Publisher - initiator of the updates/ changes of the subject
 
-## When to use it?
-When many entities need to receive notifications when an object has changed or something happened.
-
 ## Pros:
+- You can avoid tight coupling between related objects, but you still can keep them in a consistent state
 - Subjects and observers are independent and don't "know" each other (loose coupling)
 - Subjects and observers can be added or removed without further changes
 - Subjects and observers can be added or removed at anytime even at runtime
@@ -36,26 +37,40 @@ When many entities need to receive notifications when an object has changed or s
 ## Cons:
 - The order, in which the observers get notified is not very precise
 
-## Examples from Java API
-- Java in-built implementation of the Observer pattern through inheritance (java.util.Observable class and java.util.Observer). 
-This is the reason why programmers avoid to use it.
-- JMS (Observer + Mediator Pattern)
-- MVC frameworks (model is the subject & views are observers)
-- Message Brokers (like RabbitMQ etc)
+**Java has a in-built implementation of the Observer pattern, but it's done through inheritance (java.util.Observable class and java.util.Observer). 
+This is the reason why programmers avoid to use it.**
 
-Recognizable by behavioral methods which invoke a method on an instance of another abstract/interface type, depending on own state
+## How to recognize it?
+When you call a behavioral method which invokes a method on an instance of another abstract/interface type.
+```java
+Publisher publisher = new Publisher();
+
+Topic sports = publisher.findTopic("sports");
+sports.subscribe(new Subscriber("Jon Show"));
+sports.subscribe(new Subscriber("Peter Dow"));
+
+publisher.publishUpdate(new Message(sports.getLabel(), "New Volleyball Star", "More info..."));
+```
+## Examples from Java API
 ```
 java.util.Observer/java.util.Observable (rarely used in real world though)
 All implementations of java.util.EventListener (practically all over Swing thus)
 javax.servlet.http.HttpSessionBindingListener
 javax.servlet.http.HttpSessionAttributeListener
 javax.faces.event.PhaseListener
-
 ```
-## Examples
-### Example 1 - How to implement it?
+## Scenarios
+* When many entities need to receive notifications, when an object has changed or something happened.
+* JMS (Observer + Mediator Pattern)
+* MVC frameworks (model is the subject & views are observers)
+* Message Brokers (like RabbitMQ etc)
+* If you need to notify multiple observers, when something changes
+
+### Example 1
 We own an online media (Publisher) that publishes news (Messages) on different topics (Subjects). Users (Subscribers/ Observers) can subscribe to a topic
 and when news on the subscribed topics are published, the users receive notifications. 
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/observer) 
 
 1). Create a message/ notification that will be send to the subscribers
 ```java

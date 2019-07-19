@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Command
+title: Command (GoF)
 parent: Behavioral Design Patterns
 nav_order: 3010
 permalink: /behavioral/command
@@ -8,24 +8,27 @@ permalink: /behavioral/command
 
 # The Command Design Pattern 
 
-GoF Design Patterns -> Behavioral Design Patterns
+The Command Design Pattern is designed to encapsulate all the data, needed to perform the action as an object and execute the action.
+Sometimes action can be stored in a queue and executed later. 
+{: .fs-6 .fw-300 }
 
-- [Example_1](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/command) 
+---
 
-## What problems does it solve? Why to use it?
-It's used to decentralize the business logic. 
-Each command has a reference to the receiver, the one, whose state the command will change.
-There is only one handler (as opposed to the chain of responsibility pattern with many handlers)
+The Command Design Pattern is also known as Action Pattern/ Transaction Pattern. It uses inheritance to handle requests. 
+There is one Abstract Command, that declares an "execute" action and many concrete commands, that "know" the actual receiver.
+The action is executed by the receiver itself.
+
+## What problems does it solve? 
+It's used to decentralize the business logic. Each request is encapsulated as object and each object (command) has a reference to 
+the receiver (the one, whose state the command will change).
+
+In opposite to the chain of responsibility (with many handlers), the command pattern has only one handler.
 
 Glossary:
-- Command interface  - the interfaces that defines the action
+- Command interface  - the interfaces, that defines the action
 - Concrete commands - implement the interface
-- Receiver - the object that executes the command
-- Invoker/ Client - the object that gives the command
-
-## When to use it?
-When you need to decouple the Invoker and the Receiver and let them "talk" via commands, that only Receiver (The only Handler) 
-knows how to handle them.
+- Receiver (Handler) - the object, that executes the command
+- Invoker/ Client - the object, that gives the command
 
 ## Pros:
 - Allows encapsulation of the request as an object
@@ -37,21 +40,32 @@ knows how to handle them.
 ## Cons:
 - Increased number of classes (separate class for each command)
 
+## How to recognize it?
+When invoking behavioral methods, located in an abstract/interface type.
+The method itself invokes a method in an implementation of a different abstract/interface type, which has been encapsulated by the command.
+```java
+RemoteControl tvRemoteControl = new RemoteControl(new Device("TV"));
+
+tvRemoteControl.pressButton("Play");
+tvRemoteControl.pressButton("Stop");
+```
 ## Examples from Java API
-Recognizable by behavioral methods in an abstract/interface type which invokes a method in 
-an implementation of a different abstract/interface type which has been encapsulated by the command 
-implementation during its creation
 ```
 All implementations of java.lang.Runnable
 All implementations of javax.swing.Action
 ```
-## Examples
-- Handling menu/ button actions
+## Scenarios
+* When you need to handle menu/ button actions
+* When you need to decouple the Invoker and the Receiver and let them "talk" via commands, that only Receiver (the only Handler) knows how to handle them.
+* When you want to store requests in a queue and execute them later
+* When you want to implement undo/ redo actions
 
-### Example 1 - How to implement it?
+### Example 1 
 We want to control remotely our TV. We need a Remote Control (that will act as a Invoker). The TV will be
 out receiver, that will actually execute the commands. The remote control has buttons and when someone
 presses a button, the concrete command should be performed.
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/command) 
 
 1). TV - Our Device class (The Receiver)
 ```java
