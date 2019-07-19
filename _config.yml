@@ -37,7 +37,7 @@ aux_links:
 color_scheme: nil
 
 # Google Analytics Tracking (optional)
-#ga_tracking: UA-43962081-5
+ga_tracking: UA-43962081-5
 
-  #plugins:
-#  - jekyll-seo-tag
+plugins:
+    - jekyll-seo-tag
