@@ -16,7 +16,9 @@ Designed to limit the number of instances to 1 and to control the access to that
 
 ## What problems does it solve?
 Restricts the instantiation of a class to one "single" instance. This is useful when exactly 
-one object is needed to coordinate actions across the system.
+one object is needed to coordinate actions across the system. 
+
+**Best thread-safe implementation is via enums.**
 
 ## When to use it?
 - To ensure that there is only one instance of an object in the whole application and you want to provide global access/ entry point to it.
@@ -35,6 +37,7 @@ one object is needed to coordinate actions across the system.
 An implementation of the singleton pattern must:
 - ensure that only one instance of the singleton class ever exists; 
 - provide global access to that instance;
+- make instance volatile (Volatile is used to indicate that a variable's value will be modified by different threads)
 
 Typically, this is done by:
 - declaring all constructors of the class to be private; 
@@ -70,11 +73,25 @@ public final class Singleton {
                 }
             }
         }
-
         return instance;
     }
 }
 ```
+
+The easiest way is to do a thread-safe Singleton is via Enum. The drawback is that the initialization is eager. 
+See [Example 1](#example-1) - uses classic implementation with double checked locking
+See [Example 2](#example-2) - uses enumeration, which is also thread-safe
+
+To make a Singleton serializable you need to implement the Serializable interface. The problem is that 
+when we want to deserialize it, it will create another instance of the class. This can be solved by:
+* when using enum, everything is ok
+* when using classic implementation we need to override readResolve() as follows
+```java
+protected Object readResolve() {
+    return getInstance();
+}
+```
+See [Example 3](#example-3) - how to serialize a singleton
 
 ## How to recognize it?
 When you call a creational method and it returns the same instance (itself) every time.
@@ -95,7 +112,7 @@ java.lang.System#getSecurityManager()
 
 * If you need to control the state of something in a serial way
 
-### Example 1
+## Example 1
 
 [Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/creational/singleton) 
 
@@ -135,7 +152,9 @@ public class MobileApp {
 2). Create class MobileDevice, that will have only one static instance with a list of running apps and an app on focus
 ```java
 public class MobileDevice {
-
+    /**
+     * Volatile is used to indicate that a variable's value will be modified by different threads
+     */
     private static volatile MobileDevice instance = null;
 
     private Map<String, MobileApp> runningApps = new HashMap<>();
@@ -287,3 +306,142 @@ public class MobileDevice {
 }
 ```
 
+## Example 2
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/creational/singleton) 
+
+We can create Singleton via enum. The drawback is that it will be eager.
+1). Create singleton class
+```java
+@ToString
+public enum MySingleton {
+    INSTANCE;
+
+    public void doSomething() {
+        System.out.println(this + ": Doing something");
+    }
+}
+```
+2). Create demo class
+```java
+public class _Main {
+    public static void main(String[] args) {
+        MySingleton.INSTANCE.doSomething();
+        MySingleton.INSTANCE.doSomething();
+    }
+}
+```
+Output:
+```
+MySingleton.INSTANCE: Doing something
+MySingleton.INSTANCE: Doing something
+```
+
+## Example 3
+
+How to serialize Singletons?
+
+[Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/creational/singleton) 
+
+1). Create a enum singleton
+```java
+@ToString
+public enum SerializedEnumSingleton implements Serializable {
+    INSTANCE;
+
+    public void doSomething() {
+        System.out.println(this + ": Doing something");
+    }
+}
+```
+2). Create a classic singleton
+```java
+import java.io.Serializable;
+
+public class SerializedClassicSingleton implements Serializable {
+
+    /**
+     * Volatile is used to indicate that a variable's value will be modified by different threads
+     */
+    private static volatile SerializedClassicSingleton instance = null;
+
+
+    private SerializedClassicSingleton() {
+    }
+
+    public static SerializedClassicSingleton getInstance() {
+        if (instance == null) {
+            synchronized (SerializedClassicSingleton.class) {
+                if (instance == null) {
+                    instance = new SerializedClassicSingleton();
+                }
+            }
+        }
+        return instance;
+    }
+
+//    protected Object readResolve() {
+//        return getInstance();
+//    }
+}
+```
+3). Create a demo class
+```java
+public class _Main {
+    public static void main(String[] args) throws Exception {
+        System.out.println("Enum Singleton:");
+        serializeAndDeserialize(SerializedEnumSingleton.INSTANCE);
+
+        System.out.println();
+
+        System.out.println("Classic Singleton:");
+        serializeAndDeserialize(SerializedClassicSingleton.getInstance());
+    }
+
+    private static void serializeAndDeserialize(Serializable serializableOne) throws Exception {
+        // serialize it
+        ObjectOutput out = new ObjectOutputStream(new FileOutputStream(
+                "filename.ser"));
+        out.writeObject(serializableOne);
+        out.close();
+
+        //deserialize from file to object
+        ObjectInput in = new ObjectInputStream(new FileInputStream(
+                "filename.ser"));
+        Serializable serializableOneTwo = (Serializable) in.readObject();
+        in.close();
+
+        System.out.println("singleton hashCode=" + serializableOne.hashCode());
+        System.out.println("deserialized singleton hashCode=" + serializableOneTwo.hashCode());
+    }
+}
+```
+Output:
+```java
+Enum Singleton:
+singleton hashCode=1531333864
+deserialized singleton hashCode=1531333864
+
+Classic Singleton:
+singleton hashCode=1937348256
+deserialized singleton hashCode=750044075
+```
+
+As you can see, the enum implementation is OK. To make it work for the classic implementation as well, 
+we need to override readResolve() as follows:
+```java
+    protected Object readResolve() {
+        return getInstance();
+    }
+``` 
+
+Run again and now the output is:
+```
+Enum Singleton:
+singleton hashCode=1531333864
+deserialized singleton hashCode=1531333864
+
+Classic Singleton:
+singleton hashCode=1937348256
+deserialized singleton hashCode=1937348256
+```

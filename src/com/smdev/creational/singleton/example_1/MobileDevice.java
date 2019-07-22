@@ -5,6 +5,9 @@ import java.util.Map;
 
 public class MobileDevice {
 
+    /**
+     * Volatile is used to indicate that a variable's value will be modified by different threads
+     */
     private static volatile MobileDevice instance = null;
 
     private Map<String, MobileApp> runningApps = new HashMap<>();
