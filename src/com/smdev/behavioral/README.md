@@ -70,7 +70,7 @@ Designed to separate the algorithm from the object and to apply it to a group of
 
 * [Null Object](https://iretha.github.io/design-patterns/behavioral/null-object)
 
-Designed to provide default a behavior if object is not found
+Designed to provide a default behavior if the object is not found
 
 **Consider applying behavioral patterns when:**
 - When you have multiple handlers with no specific priority and they should handle requests, based on some rules or forward them (Chain of Responsibility)

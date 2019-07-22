@@ -2,13 +2,13 @@
 layout: default
 title: Null Object
 parent: Behavioral Design Patterns
-nav_order: 3100
+nav_order: 3200
 permalink: /behavioral/null-object
 ---
 
 # The Null Object Design Pattern 
 
-The Null Object Design Pattern is designed to provide default behavior if object is not found.
+The Null Object Design Pattern is designed to provide a default behavior if the object is not found or available.
 {: .fs-6 .fw-300 }
 
 --- 
