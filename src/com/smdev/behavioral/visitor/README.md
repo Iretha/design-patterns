@@ -25,12 +25,6 @@ Glossary:
 
 You can use it with a collection/ complex structure or without.
 
-## When to use it?
-- When you have to perform the same operation on multiple classes, that build a complex structure, but you could
-not implement it in the parent class, because not all of the subclasses support it.
-In this case, you can extract the operation/ algorithm in external class and reuse it, where applicable.
-- When you don't want to add a method to a parent class
-
 ## Pros:
 - you can define new operation without changing current implementation of the classes
 - you can add new operation without changing the code of the class hierarchy
@@ -57,6 +51,13 @@ c1.add(new Rectangle(12, 2));
 c1.add(new Hexagon(2));
 c1.calcTotalArea();
 ```
+
+## Scenarios
+* When you have to perform the same operation on multiple classes, that build a complex structure, but you could
+not implement it in the parent class, because not all of the subclasses support it.
+In this case, you can extract the operation/ algorithm in external class and reuse it, where applicable.
+* When you don't want to add a method to a parent class
+
 ## Examples from Java API
 ```
 javax.lang.model.element.AnnotationValue and AnnotationValueVisitor

@@ -68,6 +68,10 @@ Designed to define the skeleton of an algorithm, but lets subclasses to implemen
 
 Designed to separate the algorithm from the object and to apply it to a group of similar types
 
+* [Null Object](https://iretha.github.io/design-patterns/behavioral/null-object)
+
+Designed to provide default a behavior if object is not found
+
 **Consider applying behavioral patterns when:**
 - When you have multiple handlers with no specific priority and they should handle requests, based on some rules or forward them (Chain of Responsibility)
 - When you have many options handled by a single handler (Command)
@@ -80,3 +84,4 @@ Designed to separate the algorithm from the object and to apply it to a group of
 - When you have many classes with the same behavior (implement the same algorithm) or the behavior should be easily changed (Strategy) /the client should know the available strategies and to use them/
 - When many classes share almost the same behavior or algorithm (Template Method)
 - When you don't want to change the code or you want the algorithm to be in a separate class (Visitor)
+- When you want to provide default behavior, when there is no object (Null Object)
