@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Interview Questions
-nav_order: 8888
+nav_order: 7777
 description: ""
 permalink: /interview-questions
 ---
@@ -101,8 +101,8 @@ Does the check twice. You can also mark the instance as volatile (to indicate th
 ```
 
 ### How to make Singleton serializable?
-> Implement the Serializable interface. The problem is that when we deserialize it, it will create a new instance of the class.
-> This will be solved by implementing readResolve or if you use enum.
+Implement the Serializable interface. The problem is that when we deserialize it, it will create a new instance of the class.
+This will be solved by implementing readResolve or if we use enum.
 ```java
 protected Object readResolve() {
     return getInstance();
