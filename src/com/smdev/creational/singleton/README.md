@@ -78,19 +78,28 @@ public final class Singleton {
 }
 ```
 
-The easiest way is to do a thread-safe Singleton is via Enum. The drawback is that the initialization is eager. 
-See [Example 1](#example-1) - uses classic implementation with double checked locking
-See [Example 2](#example-2) - uses enumeration, which is also thread-safe
+**The best way to implement a Singleton is using enum, because:**
+* Thread-safe Singleton
+The easiest way is to implement a thread-safe Singleton is via Enum. 
 
+* Reflection-safe Singleton
+To prevent access via Reflection, you should use Enum.
+
+* Deserialization-safe Singleton
 To make a Singleton serializable you need to implement the Serializable interface. The problem is that 
 when we want to deserialize it, it will create another instance of the class. This can be solved by:
-* when using enum, everything is ok
-* when using classic implementation we need to override readResolve() as follows
-```java
-protected Object readResolve() {
-    return getInstance();
-}
-```
+    * when using enum, everything is ok
+    * when using classic implementation we need to override readResolve() as follows
+        ```java
+        protected Object readResolve() {
+            return getInstance();
+        }
+        ```
+
+There is one drawback of implementing a Singleton as enum - it's will be eagerly initialized.
+
+See [Example 1](#example-1) - uses classic implementation with double checked locking
+See [Example 2](#example-2) - uses enumeration, which is also thread-safe
 See [Example 3](#example-3) - how to serialize a singleton
 
 ## How to recognize it?
