@@ -1,9 +1,15 @@
-Visit [https://iretha.github.io/design-patterns](https://iretha.github.io/design-patterns)
-for detailed explanation and code examples.
+---
+layout: default
+title: Cheat Sheet
+nav_order: 6666
+description: ""
+permalink: /interview-questions
+---
 
-# Design Patterns Cheat List
 
-## Creational
+# Design Patterns Cheat Sheet
+
+## [Creational](https://github.com/Iretha/design-patterns/tree/master/src/com/smdev/creational)
 
 ### [Abstract Factory (GoF)](https://iretha.github.io/design-patterns/creational/abstract-factory)
 
@@ -38,7 +44,8 @@ Designed to improve performance by reusing the instances of stateless objects, t
 
 When you need a mechanism to provide default values or behavior when constructing objects. 
 
-## Structural
+## [Structural](https://github.com/Iretha/design-patterns/tree/master/src/com/smdev/structural)
+
 ### [Adapter (GoF)](https://iretha.github.io/design-patterns/structural/adapter)
 
 Designed to make two incompatible types compatible without changing their existing code
@@ -71,7 +78,7 @@ Designed to provide a level of indirection to object members and may add additio
 
 Designed to protect the object data (to restrict write access) even from it's own methods.
 
-## Behavioral
+## [Behavioral](https://github.com/Iretha/design-patterns/tree/master/src/com/smdev/behavioral)
 
 ### [Chain Of Responsibility (GoF)](https://iretha.github.io/design-patterns/behavioral/chain-of-responsibility)
 
@@ -121,3 +128,9 @@ Designed to separate the algorithm from the object and to apply it to a group of
 ### [Null Object](https://iretha.github.io/design-patterns/behavioral/null-object)
 
 Designed to provide a default behavior if the object is not found
+
+
+
+
+Visit [https://iretha.github.io/design-patterns](https://iretha.github.io/design-patterns)
+for detailed explanation and code examples.
