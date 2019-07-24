@@ -3,7 +3,7 @@ layout: default
 title: Cheat Sheet
 nav_order: 6666
 description: ""
-permalink: /interview-questions
+permalink: /cheat-sheet
 ---
 
 
