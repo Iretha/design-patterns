@@ -9,7 +9,7 @@ permalink: /creational/factory-method
 # The Factory Method Design Pattern
 
 The Factory Method Design Pattern is designed to create objects without specifying their concrete classes.
-It let subclasses to decide which concrete class to instantiate.
+Subclasses should decide which concrete class to instantiate.
 {: .fs-6 .fw-300 }
 
 ---

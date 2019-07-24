@@ -8,7 +8,7 @@ permalink: /structural/facade
 
 # The Facade Design Pattern
 
-The Facade Pattern is designed to hide an entire subsystem behind a facade and present is as a single object.
+The Facade Pattern is designed to hide an entire subsystem behind a facade and present is as a single object/ interface.
 {: .fs-6 .fw-300 }
 
 ---

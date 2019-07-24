@@ -8,7 +8,8 @@ permalink: /structural/proxy
 
 # The Proxy Design Pattern
 
-The Proxy Pattern is designed to provide a level of indirection to object members.
+The Proxy Pattern is designed to provide a level of indirection to object members and may add additional logic (i.e. 
+to control access or to provide a wrapper implementation for better performance).
 {: .fs-6 .fw-300 }
 
 ---

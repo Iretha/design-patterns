@@ -8,7 +8,7 @@ permalink: /structural/composite
 
 # The Composite Design Pattern
 
-The Composite Pattern is designed to build a class hierarchy from primitive and composite objects, that may represent complex structures.
+The Composite Pattern is designed to build a class hierarchy from primitive and composite objects, that may represent complex structures, but have similar behavior.
 {: .fs-6 .fw-300 }
 
 ---

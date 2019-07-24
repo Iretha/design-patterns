@@ -8,7 +8,7 @@ permalink: /structural/flyweight
 
 # The Flyweight Design Pattern
 
-The Flyweight Pattern is designed to share objects for better efficiency or consistency.
+The Flyweight Pattern is designed to share objects (to reuse instances) for better efficiency and consistency.
 {: .fs-6 .fw-300 }
 
 ---

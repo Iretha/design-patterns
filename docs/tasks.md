@@ -13,4 +13,4 @@ Design and implement a vending machine, that allows customers to byu different p
 What patterns are going to use? How would you implement it?
 
 ## ATM Machine
-Design ATM Machine, that Should work as expected in all situation, even if there is power outage.
+Design ATM Machine, that should work as expected in all situation, even if there is power outage.

@@ -25,7 +25,7 @@ Later we will add some more useful patterns to this list.
 
 * [Chain Of Responsibility (GoF)](https://iretha.github.io/design-patterns/behavioral/chain-of-responsibility)
 
-Designed to to decouple sender and receiver and to allow multiple handler implementations, that can handle the request and the concrete handler isn't known a priori
+Designed to to decouple sender and receiver and to allow multiple handler implementations, that can handle the request, especially when the concrete handler isn't known a priori
 
 * [Command (GoF)](https://iretha.github.io/design-patterns/behavioral/command)
 
@@ -49,7 +49,7 @@ Designed to externalize the internal state of the object in order to be stored o
 
 * [Observer (GoF)](https://iretha.github.io/design-patterns/behavioral/observer)
 
-Designed to define one-to-many dependency between objects so that when one object changes its state, all its dependents get notified and updated automatically
+Designed to define one-to-many dependency between objects, so that when one object changes its state, all its dependents get notified and updated automatically
 
 * [State (GoF)](https://iretha.github.io/design-patterns/behavioral/state)
 

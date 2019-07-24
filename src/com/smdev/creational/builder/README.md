@@ -8,7 +8,7 @@ permalink: /creational/builder
 
 # The Builder Design Pattern
 
-Designed to build complex objects with a lot of optional fields 
+Designed to build complex objects with a lot of optional fields or when the input order of the values is not clear /
 or to replace [Telescoping Constructors](https://iretha.github.io/design-patterns/creational/telescoping-constructor) with too many args.
 {: .fs-6 .fw-300 }
 
