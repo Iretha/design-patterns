@@ -4,7 +4,7 @@ import lombok.Getter;
 
 import java.math.BigDecimal;
 
-public enum Coin {
+public enum CoinType {
     /**
      * 10 cents
      */
@@ -50,7 +50,7 @@ public enum Coin {
     @Getter
     private double weight;
 
-    Coin(BigDecimal nominal, double diameter, double weight, String label) {
+    CoinType(BigDecimal nominal, double diameter, double weight, String label) {
         this.nominal = nominal;
         this.diameter = diameter;
         this.weight = weight;
@@ -64,9 +64,9 @@ public enum Coin {
      * @param weight
      * @return
      */
-    public static Coin get(double diameter, double weight) {
-        Coin[] coins = Coin.values();
-        for(Coin coin: coins){
+    public static CoinType get(double diameter, double weight) {
+        CoinType[] coins = CoinType.values();
+        for(CoinType coin: coins){
             if(coin.getDiameter() == diameter && coin.getWeight() == weight){
                 return coin;
             }

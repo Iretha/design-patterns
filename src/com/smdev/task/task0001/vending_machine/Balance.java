@@ -1,4 +1,5 @@
 package com.smdev.task.task0001.vending_machine;
+
 import lombok.AccessLevel;
 import lombok.Getter;
 
@@ -9,15 +10,16 @@ import java.util.Map;
 public class Balance {
 
     @Getter(AccessLevel.PACKAGE)
-    private Map<Coin, Integer> coins;
+    private Map<CoinType, Integer> coins;
 
+    @Getter
     private BigDecimal amount;
 
     public Balance() {
         init();
     }
 
-    public Balance(Map<Coin, Integer> initialCoins) {
+    public Balance(Map<CoinType, Integer> initialCoins) {
         this();
         deposit(initialCoins);
 
@@ -28,35 +30,31 @@ public class Balance {
         this.coins = new HashMap<>();
         this.amount = BigDecimal.valueOf(0);
 
-        Coin[] coinTypes = Coin.values();
-        for (Coin coinType : coinTypes) {
-            if (!Coin.UNKNOWN.equals(coinType)) {
+        CoinType[] coinTypes = CoinType.values();
+        for (CoinType coinType : coinTypes) {
+            if (!CoinType.UNKNOWN.equals(coinType)) {
                 this.coins.put(coinType, 0);
             }
         }
     }
 
-    public void deposit(Map<Coin, Integer> coins) {
-        for (Map.Entry<Coin, Integer> entry : coins.entrySet()) {
+    public void deposit(Map<CoinType, Integer> coins) {
+        for (Map.Entry<CoinType, Integer> entry : coins.entrySet()) {
             add(entry.getKey(), entry.getValue());
         }
     }
 
-    public void add(Coin coin) {
+    public void add(CoinType coin) {
         add(coin, 1);
     }
 
-    private void add(Coin coin, Integer count) {
+    private void add(CoinType coin, Integer count) {
         if (coin == null) {
             return;
         }
 
         this.coins.put(coin, this.coins.get(coin) + count);
         this.amount = this.amount.add(BigDecimal.valueOf(count).multiply(coin.getNominal()));
-    }
-
-    public double getAmount() {
-        return this.amount.doubleValue();
     }
 
     public void releaseCoins() {
@@ -69,9 +67,23 @@ public class Balance {
         }
     }
 
-    public void withdraw(Map<Coin, Integer> coinsToWithdraw) {
+    public void withdraw(Map<CoinType, Integer> coinsToWithdraw) {
         coinsToWithdraw.forEach((k, v) -> this.coins.put(k, (this.coins.get(k) - v)));
         calcAmount();
+    }
+
+    public void withdrawChange(BigDecimal change) throws Exception {
+        if (change == null || change.doubleValue() == 0) {
+            System.out.println("Exact amount. No change.");
+            return;
+        }
+
+        ChangeStrategy strategy = new ChangeStrategyBiggestFirst();
+        Map<CoinType, Integer> amountInCoins = strategy.convertInCoins(getCoins(), change);
+        withdraw(amountInCoins);
+
+        System.out.println("Returning Change to Customer=" + change.doubleValue());
+
     }
 
     private void calcAmount() {

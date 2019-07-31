@@ -7,63 +7,67 @@ import java.util.Map;
 public enum VendingMachine {
     INSTANCE;
 
-    private MoneyManager moneyManager;
-    private ProductStorage productManager;
+    private Cashier cashier;
+    private Storage storage;
 
     VendingMachine() {
         init();
     }
 
     private void init() {
-        List<ProductSlot> productSlots = Arrays.asList(
-                new ProductSlot(Product.CROISSANT, 15),
-                new ProductSlot(Product.CROISSANT, 8),
-                new ProductSlot(Product.MUFFIN, 20),
-                new ProductSlot(Product.PIZZA, 10),
-                new ProductSlot(Product.PIZZA, 9)
+        Map<CoinType, Integer> initialBalance = Map.of(
+                CoinType.CENTS_10, 10,
+                CoinType.CENTS_25, 10,
+                CoinType.CENTS_50, 10,
+                CoinType.DOLLAR_1, 10
         );
-        this.productManager = new ProductStorage(productSlots);
+        this.cashier = new Cashier(initialBalance);
 
-        Map<Coin, Integer> initialBalance = Map.of(
-                Coin.CENTS_10, 10,
-                Coin.CENTS_25, 10,
-                Coin.CENTS_50, 10,
-                Coin.DOLLAR_1, 10
+        List<StorageSlot> slotsWithProducts = Arrays.asList(
+                new StorageSlot(ProductType.CROISSANT, 15),
+                new StorageSlot(ProductType.CROISSANT, 8),
+                new StorageSlot(ProductType.MUFFIN, 20),
+                new StorageSlot(ProductType.PIZZA, 10),
+                new StorageSlot(ProductType.PIZZA, 9)
         );
-        this.moneyManager = new MoneyManager(initialBalance);
+        this.storage = new Storage(slotsWithProducts);
     }
 
     public synchronized void insertCoin(double diameter, double weight) {
-        Coin coin = Coin.get(diameter, weight);
-        if (Coin.UNKNOWN.equals(coin)) {
+        CoinType coin = CoinType.get(diameter, weight);
+        insertCoin(coin);
+    }
+
+    public synchronized void insertCoin(CoinType coin) {
+        if (CoinType.UNKNOWN.equals(coin)) {
             System.out.println("Coin " + coin.getLabel() + " NOT accepted.");
         } else {
             System.out.println("Coin " + coin.getLabel() + " accepted.");
 
-            this.moneyManager.addToCustomerBalance(coin);
+            this.cashier.addToCustomerBalance(coin);
         }
-        System.out.println("Customer Balance=" + this.moneyManager.getCustomerAmount());
+        System.out.println("Customer Balance=" + this.cashier.getCustomerAmount());
     }
 
     public synchronized void cancelPurchase() {
-        this.moneyManager.releaseCustomerBalance();
+        this.cashier.releaseCustomerBalance();
     }
 
     public synchronized void purchaseProduct(int buttonNo) {
-        Product product = Product.getByButton(buttonNo);
+        ProductType product = ProductType.getByButton(buttonNo);
         if (product == null) {
             System.err.println("No product at the selected position!");
             return;
         }
 
-        if (!this.productManager.isProductAvailable(product)) {
+        if (!this.storage.isProductAvailable(product)) {
             System.err.println("Product not available!");
             return;
         }
 
         try {
-            this.moneyManager.acquireFromCustomerBalance(product.getPrice());
-            this.productManager.releaseProduct(product);
+            this.cashier.acquireFromCustomerBalance(product.getPrice());
+            this.storage.releaseProduct(product);
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }

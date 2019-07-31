@@ -13,9 +13,19 @@ public class _Demo {
         vending.insertCoin(2.15, 11.34);
         vending.insertCoin(2.15, 11.34);
 
-        //vending.purchaseProduct(100);
+        vending.purchaseProduct(100);
         vending.purchaseProduct(1);
 
+        vending.insertCoin(2.15, 11.34);
+        vending.insertCoin(2.58, 22.68);
+        vending.insertCoin(1.75, 5.67);
+        vending.insertCoin(1.75, 5.67);
+        vending.insertCoin(1.35, 2.268);
+        vending.insertCoin(1.35, 2.268);
+        vending.purchaseProduct(2);
 
+        vending.insertCoin(1.35, 2.268);
+        vending.insertCoin(1.35, 2.268);
+        vending.purchaseProduct(3);
     }
 }

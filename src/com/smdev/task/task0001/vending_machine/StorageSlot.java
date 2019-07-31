@@ -2,15 +2,15 @@ package com.smdev.task.task0001.vending_machine;
 
 import lombok.Getter;
 
-public class ProductSlot {
+public class StorageSlot {
 
     @Getter
-    private Product productType;
+    private ProductType productType;
 
     @Getter
     private int quantity;
 
-    public ProductSlot(Product productType, int initialQuantity) {
+    public StorageSlot(ProductType productType, int initialQuantity) {
         this.productType = productType;
         this.quantity = initialQuantity;
     }
@@ -25,6 +25,6 @@ public class ProductSlot {
         }
 
         this.quantity--;
-        System.out.println("Product " + getProductType().getLabel() + " released. Thank you for your purchase!");
+        System.out.println("Product " + getProductType().getLabel() + "with price=" + getProductType().getPrice().doubleValue() + " released. Thank you for your purchase!");
     }
 }
