@@ -77,7 +77,6 @@ java.util.Timer (all scheduleXXX() methods)
 java.util.Comparator#compare(), executed by among others Collections#sort()
 ```
 
-
 ## Singleton Questions
 ### Can we create a clone of a singleton object?
 Yes, we can.
@@ -120,6 +119,30 @@ protected Object readResolve() {
 * Decorator: Adds functionality based on some input or configuration
 * Facade: The facade provides a different front to the client and hides complexity 
 * Proxy: May provide some functionality like logging etc.
+
+### [Strategy vs Decorator](https://stackoverflow.com/questions/26422884/strategy-pattern-v-s-decorator-pattern)
+
+**The key difference is in the change vs augment**
+
+* As an example, imagine you are writing something to sort a collection of elements. So you write an interface 
+ISortingStrategy you can then implement several different sorting strategies BubbleSortStrategy, QuickSortStrategy, 
+RadixSortStrategy, then your application, based on some criteria of the existing list chooses the most appropriate 
+strategy to use to sort the list. So for example if the list has fewer then 10 items we will use RadixSortStrategy, 
+if fewer than 10 items have been added to the list since the last sort we will use BubbleSortStrategy otherwise we 
+will use QuickSortStrategy.We are changing the type of sort at runtime (to be more efficient based on some extra information.) 
+this is the strategy pattern.
+
+* Now imagine someone asks us to provide a log of how often each sorting algorithm is used to do an actual sort and 
+to restrict sorting to admin users. We can add both of these pieces of functionality by creating a decorator which 
+enhances any ISortingStrategy. We could create a decorator which logs that it was used to sort something and the type 
+of the decorated sorting strategy. And we could add another decorator that checked if the current user was 
+an administrator before it called the decorated sorting strategy.
+
+### Strategy vs Visitor vs Decorator
+**One Type that may apply many algorithms of a single family of algorithms (i.e. different sorting algorithms) = Strategy**
+**Many Types that can apply same or multiple algorithms = Visitor**
+**If you want to add some functionality, not related to the main algorithm i.e. to log when an algorithm is used = Decorator**
+
 
 
 
