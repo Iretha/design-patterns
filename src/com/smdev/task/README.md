@@ -3,12 +3,13 @@ layout: default
 title: Tasks
 nav_order: 8888
 description: ""
+has_children: true
 permalink: /tasks
 ---
 
 # Tasks
 
-## Vending Machine
+## [Vending Machine](https://github.com/Iretha/design-patterns/tree/master/src/com/smdev/task/task0001)
 Design and implement a vending machine, that allows customers to buy different products with coins.
 What patterns are going to use? How would you implement it?
 

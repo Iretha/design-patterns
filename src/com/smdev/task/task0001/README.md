@@ -3,6 +3,7 @@ layout: default
 title: Vending Machine
 nav_order: 8890
 description: ""
+parent: Tasks
 permalink: /task001
 ---
 
