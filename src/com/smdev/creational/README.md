@@ -32,14 +32,14 @@ Later we will add some more useful patterns to this list.
 
 Design Pattern | Main Purpose
 --- | ---
-[Abstract Factory (GoF)](https://iretha.github.io/design-patterns/creational/abstract-factory) | Designed to create families of objects without specifying their concrete classes
-[Builder Pattern (GoF)](https://iretha.github.io/design-patterns/creational/builder) | Designed to build complex objects with a lot of optional fields or when the input order of the values is not clear
-[Factory Method (GoF)](https://iretha.github.io/design-patterns/creational/factory-method) | Designed to create objects without specifying their concrete classes. Subclasses should decide which concrete class to instantiate.
-[Prototype/ Cloneable (GoF)](https://iretha.github.io/design-patterns/creational/prototype) | Designed to create objects faster, when creating a new object is an expensive operation
-[Singleton (GoF)](https://iretha.github.io/design-patterns/creational/singleton) | Designed to control the number of instances (only 1) and the access to that instance in serial way via the provided entry/ access point
+[Abstract Factory (GoF)](https://iretha.github.io/design-patterns/creational/abstract-factory) | Designed **to create families of objects without specifying their concrete classes**
+[Builder Pattern (GoF)](https://iretha.github.io/design-patterns/creational/builder) | Designed **to build complex objects with a lot of optional fields** or when the input order of the values is not clear
+[Factory Method (GoF)](https://iretha.github.io/design-patterns/creational/factory-method) | Designed to create objects without specifying their concrete classes. **Subclasses should decide which concrete class to instantiate**.
+[Prototype/ Cloneable (GoF)](https://iretha.github.io/design-patterns/creational/prototype) | Designed to create objects faster, when **creating a new object is an expensive operation**
+[Singleton (GoF)](https://iretha.github.io/design-patterns/creational/singleton) | Designed **to control the number of instances (only 1) and the access to that instance** (in serial way if it should be thread-safe) via the provided entry/ access point
 [Factory (Pattern?)](https://iretha.github.io/design-patterns/creational/factory) | Designed to encapsulate the instantiation logic and to create objects without specifying their concrete classes. Some people argue if this is a pattern or not, but we will mention it, because it's widely used.
-[Object/ Resource Pool](https://iretha.github.io/design-patterns/creational/object-pool) |Designed to improve performance by reusing the instances of stateless objects, that are otherwise expensive to create.
-[Telescoping Constructor](https://iretha.github.io/design-patterns/creational/telescoping-constructor) | When you need a mechanism to provide default values or behavior when constructing objects. 
+[Object/ Resource Pool](https://iretha.github.io/design-patterns/creational/object-pool) |Designed **to improve performance by reusing the instances of stateless objects**, that are otherwise expensive to create.
+[Telescoping Constructor](https://iretha.github.io/design-patterns/creational/telescoping-constructor) | When you need a mechanism **to provide default values or behavior when constructing objects**. 
 
 
 **Consider applying creational patterns when:**

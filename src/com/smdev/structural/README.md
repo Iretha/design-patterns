@@ -26,14 +26,14 @@ Later we will add some more useful patterns to this list.
 
 Design Pattern | Main Purpose
 --- | ---
-[Adapter (GoF)](https://iretha.github.io/design-patterns/structural/adapter) | Designed to make two incompatible types compatible without changing their existing code
-[Bridge (GoF)](https://iretha.github.io/design-patterns/structural/bridge) | Designed to separate object abstraction from the implementation, so that you can change implementation without affecting the rest of the code
-[Composite (GoF)](https://iretha.github.io/design-patterns/structural/composite) | Designed to build a class hierarchy from primitive and composite objects, that may represent complex structures, but have similar behavior
-[Decorator (GoF)](https://iretha.github.io/design-patterns/structural/decorator) | Designed to to add/ remove responsibilities to objects dynamically (even at runtime), without changing their implementation
-[Facade (GoF)](https://iretha.github.io/design-patterns/structural/facade) | Designed to hide an entire subsystem behind a facade and present it is as a single object/ interface
-[Flyweight (GoF)](https://iretha.github.io/design-patterns/structural/flyweight) | Designed to share objects (to reuse instances) for better efficiency and consistency
-[Proxy (GoF)](https://iretha.github.io/design-patterns/structural/proxy) | Designed to provide a level of indirection to object members and may add additional logic (i.e. to control access or to provide a wrapper implementation for better performance)
-[Private Class Data](https://iretha.github.io/design-patterns/structural/private-class-data) | Designed to protect the object data (to restrict write access) even from it's own methods.
+[Adapter (GoF)](https://iretha.github.io/design-patterns/structural/adapter) | Designed to make **two incompatible types compatible** without changing their existing code
+[Bridge (GoF)](https://iretha.github.io/design-patterns/structural/bridge) | Designed **to separate object abstraction from the implementation**, so that you can change implementation without affecting the rest of the code
+[Composite (GoF)](https://iretha.github.io/design-patterns/structural/composite) | Designed **to build a class hierarchy from primitive and composite objects**, that may represent complex structures, but have similar behavior
+[Decorator (GoF)](https://iretha.github.io/design-patterns/structural/decorator) | Designed **to add/ remove independent responsibilities to objects dynamically** (even at runtime), without changing their implementation
+[Facade (GoF)](https://iretha.github.io/design-patterns/structural/facade) | Designed **to hide an entire subsystem behind a facade** and present it is as a single object/ interface
+[Flyweight (GoF)](https://iretha.github.io/design-patterns/structural/flyweight) | Designed **to share objects (to reuse instances)** for better efficiency and consistency
+[Proxy (GoF)](https://iretha.github.io/design-patterns/structural/proxy) | Designed **to provide a level of indirection to object members and may add additional logic** (i.e. to control access or to provide a wrapper implementation for better performance)
+[Private Class Data](https://iretha.github.io/design-patterns/structural/private-class-data) | Designed to **protect the object data (to restrict write access)** even from it's own methods.
 
 
 **Consider applying structural patterns when:**
