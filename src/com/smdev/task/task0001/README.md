@@ -34,7 +34,7 @@ List all problems, that comes to your mind and we need to solve:
 * We should calculate the total value of the accepted coins
 * We should release all unaccepted coins
 * We should return change, if there is any
-* We should to "calculate" how to return change (the combination of coins)
+* We should "calculate" how to return change (the combination of coins)
 * We should know where is the chosen product (on which slot)
 * We may have the same product on multiple slots
 * We should add the temp balance to the total balance, when the product is released
@@ -65,5 +65,8 @@ To calculate the combination of coins when returning change
 
 ### Memento
 You may use memento, if you want to keep the state in case the power stops ot etc.
+
+
+[Source Code](https://github.com/Iretha/design-patterns/tree/master/src/com/smdev/task/task0001)
 
 
