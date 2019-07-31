@@ -68,6 +68,10 @@ javax.xml.bind.JAXBContext#createMarshaller() and other similar methods
 
 * When you don't know the object, but you just want something to do the job
 
+* When you want to decide later how to implement the subclasses
+
+* When you have simple logic and don't want to use Abstract Factory
+
 ### Example 1
 
 - [Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/creational/factory_method) 

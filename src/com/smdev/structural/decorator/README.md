@@ -19,6 +19,11 @@ The Decorator Pattern is also known as Wrapper.
 This is another way of adding additional behavior to objects instead of subclassing them.
 The most important part is, that the additional behavior can be added or removed at runtime.
 
+Purpose:
+* To add additional functionalities/responsibilities dynamically
+* To remove functionalities/responsibilities dynamically
+* To avoid too much of sub-classing to add additional responsibilities.
+
 ## Pros:
 - Open for extension, but closed for modification
 - Behavior modification at runtime

@@ -71,7 +71,7 @@ public enum Platform {
 ```
 
 ## Scenarios
-* If you go to a general car distributor and you want to order a car. Based on the brand of the car, the distributor 
+* If you go to a car distributor and you want to order a car. Based on the brand of the car, the distributor 
 will contact different factory to order the car for assembly and the car will be assembled with parts of different brands,
 depending on the factory and what parts they use. At the end, it's still a car. 
 
@@ -83,7 +83,7 @@ At the end, you will still get windows, but with different specifications.
 you should "calculate" and create a concrete instance of the document. The client doesn't need to know the concrete class of the 
 document, but it's status and the it's unique (registration) number.
 
-* If you want to create a general API, that connects to a different data source and reads data. Depending on the input, 
+* If you want to implement an API, that connects to a different data source and reads data. Depending on the input, 
 the implementation may differ.
 
 * If you want to create an app, that runs on different platforms. Depending on the platform (input), you need different

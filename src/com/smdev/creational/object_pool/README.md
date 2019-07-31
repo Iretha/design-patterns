@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Object Pool
+title: Object/ Resource Pool
 parent: Creational Design Patterns
 nav_order: 1060
 permalink: /creational/object-pool

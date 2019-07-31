@@ -119,7 +119,11 @@ java.lang.System#getSecurityManager()
 
 * Singletons are often modeled as a server that accepts requests to: send, store or retrieve data.
 
-* If you need to control the state of something in a serial way
+* When you need to control the access/ state of something in a serial way
+
+* When you have some shared data
+
+* When you want to limit the number of instances to 1
 
 ## Example 1
 

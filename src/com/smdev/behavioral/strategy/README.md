@@ -20,6 +20,12 @@ The Strategy Design Pattern is also knows as "Policy" Design Pattern.
 When you want to separate the behavior (the algorithm) from it's host class. 
 You can create multiple algorithms, each one encapsulated in a single class and make them interchangeable.
 
+Purpose:
+- To create a family of algorithms
+- To encapsulate each algorithm
+- To make the algorithms interchangeable within that family
+- To "encapsulate what changes"
+
 ## Pros:
 - you can change the behavior at anytime, even at runtime (to swap algorithms)
 - you can create a family of algorithms and make them interchangeable
@@ -32,7 +38,14 @@ You can create multiple algorithms, each one encapsulated in a single class and 
 - client should know about different strategies and when/ how to use them
 
 **One Type that may apply many algorithms = Strategy**
-**Many Types that can apply many algorithms = Visitor**
+**Many Types that can apply same or multiple algorithms = Visitor**
+
+[Strategy vs Decorator](https://stackoverflow.com/questions/26422884/strategy-pattern-v-s-decorator-pattern)
+> The key difference is in the change vs augment
+  In one of the questions you linked to it also points out that with the strategy pattern the consumer is aware that the different options exist, whereas with the decorator pattern the consumer would not be aware of the additional functionality.
+  As an example, imagine you are writing something to sort a collection of elements. So you write an interface ISortingStrategy you can then implement several different sorting strategies BubbleSortStrategy, QuickSortStrategy, RadixSortStrategy, then your application, based on some criteria of the existing list chooses the most appropriate strategy to use to sort the list. So for example if the list has fewer then 10 items we will use RadixSortStrategy, if fewer than 10 items have been added to the list since the last sort we will use BubbleSortStrategy otherwise we will use QuickSortStrategy.
+  We are changing the type of sort at runtime (to be more efficient based on some extra information.) this is the strategy pattern.
+  Now imagine someone asks us to provide a log of how often each sorting algorithm is used to do an actual sort and to restrict sorting to admin users. We can add both of these pieces of functionality by creating a decorator which enhances any ISortingStrategy. We could create a decorator which logs that it was used to sort something and the type of the decorated sorting strategy. And we could add another decorator that checked if the current user was an administrator before it called the decorated sorting strategy.
 
 ## How to recognize it?
 If the logic of a behavioral method is executed by a different type and that type is passed as an argument or is 

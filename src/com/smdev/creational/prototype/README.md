@@ -60,6 +60,8 @@ java.lang.Object#clone() (the class has to implement java.lang.Cloneable)
 
 * When you need to do expensive calls or operations to create ан object and you already have the data in the memory
 
+* When you need to copy an object or part of its fields
+
 ### Example 1
 
 [Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/creational/prototype) 
