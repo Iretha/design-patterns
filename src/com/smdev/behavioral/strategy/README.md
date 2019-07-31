@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Strategy (GoF)
+title: Strategy/ Policy (GoF)
 parent: Behavioral Design Patterns
 nav_order: 3080
 permalink: /behavioral/strategy
@@ -37,9 +37,13 @@ Purpose:
 - increased number of classes
 - client should know about different strategies and when/ how to use them
 
-**One Type that may apply many algorithms of a single family of algorithms (i.e. different sorting algorithms) = Strategy**
-**Many Types that can apply same or multiple algorithms = Visitor**
-**If you want to add some functionality, not related to the main algorithm i.e. to log when an algorithm is used = Decorator**
+## Comparison:
+* One Type that may apply many algorithms of a single family of algorithms (i.e. different sorting algorithms) = Strategy*
+
+* Many Types that can apply same or multiple algorithms = Visitor*
+
+* If you want to add some functionality, not related to the main algorithm i.e. to log when an algorithm is used = Decorator*
+
 
 ## How to recognize it?
 If the logic of a behavioral method is executed by a different type and that type is passed as an argument or is 

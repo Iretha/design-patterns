@@ -139,9 +139,11 @@ of the decorated sorting strategy. And we could add another decorator that check
 an administrator before it called the decorated sorting strategy.
 
 ### Strategy vs Visitor vs Decorator
-**One Type that may apply many algorithms of a single family of algorithms (i.e. different sorting algorithms) = Strategy**
-**Many Types that can apply same or multiple algorithms = Visitor**
-**If you want to add some functionality, not related to the main algorithm i.e. to log when an algorithm is used = Decorator**
+* One Type that may apply many algorithms of a single family of algorithms (i.e. different sorting algorithms) = Strategy*
+
+* Many Types that can apply same or multiple algorithms = Visitor*
+
+* If you want to add some functionality, not related to the main algorithm i.e. to log when an algorithm is used = Decorator*
 
 
 

@@ -31,13 +31,12 @@ Design Pattern | Main Purpose
 [Iterator (GoF)](https://iretha.github.io/design-patterns/behavioral/iterator) | Designed to give access to the elements of an aggregate object sequentially without exposing their underlying representation
 [Mediator (GoF)](https://iretha.github.io/design-patterns/behavioral/mediator) | Designed to encapsulate the communication between multiple objects in a single object in order to reduce the direct relations between them
 [Memento (GoF)](https://iretha.github.io/design-patterns/behavioral/memento) | Designed to externalize the internal state of the object in order to be stored or to restore an object to some previous version of its state
-[Observer (GoF)](https://iretha.github.io/design-patterns/behavioral/observer) | Designed to define one-to-many dependency between objects, so that when one object changes its state, all its dependents get notified and updated automatically
+[Observer/ Publish-Subscribe (GoF)](https://iretha.github.io/design-patterns/behavioral/observer) | Designed to define one-to-many dependency between objects, so that when one object changes its state, all its dependents get notified and updated automatically
 [State (GoF)](https://iretha.github.io/design-patterns/behavioral/state) | Designed to change the object class (type), when object state changes, because its behavior also changes
-[Strategy (GoF)](https://iretha.github.io/design-patterns/behavioral/strategy) | Designed to separate the behavior from it's host class, by encapsulating the algorithm in a separate class. This allows you to implement many algorithms and make them interchangeable.
+[Strategy/ Policy (GoF)](https://iretha.github.io/design-patterns/behavioral/strategy) | Designed to separate the behavior from it's host class, by encapsulating the algorithm in a separate class. This allows you to implement many algorithms and make them interchangeable.
 [Template Method (GoF)](https://iretha.github.io/design-patterns/behavioral/template-method) | Designed to define the skeleton of an algorithm, but lets subclasses to implement or override separate parts of it
 [Visitor (GoF)](https://iretha.github.io/design-patterns/behavioral/visitor) | Designed to separate the algorithm from the object and to apply it to a group of similar types
 [Null Object](https://iretha.github.io/design-patterns/behavioral/null-object) | Designed to provide a default behavior if the object is not found
-
 
 
 **Consider applying behavioral patterns when:**
