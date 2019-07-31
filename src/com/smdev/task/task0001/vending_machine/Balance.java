@@ -1,64 +1,83 @@
 package com.smdev.task.task0001.vending_machine;
-
 import lombok.AccessLevel;
 import lombok.Getter;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Balance {
 
-    @Getter(AccessLevel.PRIVATE)
-    private Map<Coin, Integer> slots;
+    @Getter(AccessLevel.PACKAGE)
+    private Map<Coin, Integer> coins;
 
-    private BigDecimal balance;
-    private BigDecimal purchaseBalance;
+    private BigDecimal amount;
 
     public Balance() {
         init();
     }
 
-    private void init() {
-        this.slots = new HashMap<>();
-        this.balance = BigDecimal.valueOf(0);
-        this.purchaseBalance = BigDecimal.valueOf(0);
+    public Balance(Map<Coin, Integer> initialCoins) {
+        this();
+        deposit(initialCoins);
+
+        System.out.println("Initial Balance " + getAmount());
     }
 
-    public void addCoin(Coin coin) {
-        Integer count = getCount(coin);
-        getSlots().put(coin, ++count);
+    void init() {
+        this.coins = new HashMap<>();
+        this.amount = BigDecimal.valueOf(0);
 
-        this.purchaseBalance = this.purchaseBalance.add(coin.getNominal());
+        Coin[] coinTypes = Coin.values();
+        for (Coin coinType : coinTypes) {
+            if (!Coin.UNKNOWN.equals(coinType)) {
+                this.coins.put(coinType, 0);
+            }
+        }
     }
 
-    private Integer getCount(Coin coin) {
-        Integer count = getSlots().get(coin);
-        return count != null ? count : 0;
+    public void deposit(Map<Coin, Integer> coins) {
+        for (Map.Entry<Coin, Integer> entry : coins.entrySet()) {
+            add(entry.getKey(), entry.getValue());
+        }
     }
 
-    public BigDecimal getPurchaseBalance() {
-        return BigDecimal.valueOf(this.purchaseBalance.doubleValue()); // we don't want to return the original value
+    public void add(Coin coin) {
+        add(coin, 1);
     }
 
-    public void makePurchase(BigDecimal value) throws Exception {
-        if (value.doubleValue() > this.purchaseBalance.doubleValue()) {
-            throw new Exception("Please, insert more coins to make the purchase!");
+    private void add(Coin coin, Integer count) {
+        if (coin == null) {
+            return;
         }
 
-        this.balance = this.balance.add(value);
-        this.purchaseBalance = this.purchaseBalance.subtract(value);
-
-        returnChange();
+        this.coins.put(coin, this.coins.get(coin) + count);
+        this.amount = this.amount.add(BigDecimal.valueOf(count).multiply(coin.getNominal()));
     }
 
-    public List<Coin> returnChange() {
-        if (this.purchaseBalance.doubleValue() > 0) {
-            // TODO calc
+    public double getAmount() {
+        return this.amount.doubleValue();
+    }
+
+    public void releaseCoins() {
+        double currentBalance = this.amount.doubleValue();
+        if (currentBalance == 0) {
+            System.out.println("Nothing to release...");
+        } else {
+            System.out.println("Releasing " + currentBalance);
+            init();
         }
-        return new ArrayList();
     }
 
+    public void withdraw(Map<Coin, Integer> coinsToWithdraw) {
+        coinsToWithdraw.forEach((k, v) -> this.coins.put(k, (this.coins.get(k) - v)));
+        calcAmount();
+    }
+
+    private void calcAmount() {
+        this.amount = BigDecimal.valueOf(0);
+        this.coins.forEach((k, v) -> this.amount = this.amount.add(
+                v > 0 ? k.getNominal().multiply(BigDecimal.valueOf(v)) : BigDecimal.ZERO
+        ));
+    }
 }

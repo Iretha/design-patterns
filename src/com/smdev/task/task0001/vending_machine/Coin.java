@@ -8,20 +8,23 @@ public enum Coin {
     /**
      * 10 cents
      */
-    CENTS_10(BigDecimal.valueOf(0.1), 1.35, 2.268),
+    CENTS_10(BigDecimal.valueOf(0.1), 1.35, 2.268, "10 cents"),
     /**
      * 25 cents
      */
-    CENTS_25(BigDecimal.valueOf(0.25), 1.75, 5.67),
+    CENTS_25(BigDecimal.valueOf(0.25), 1.75, 5.67, "25 cents"),
     /**
      * 50 cents
      */
-    CENTS_50(BigDecimal.valueOf(0.5), 2.15, 11.34),
+    CENTS_50(BigDecimal.valueOf(0.5), 2.15, 11.34, "50 cents"),
     /**
      * 1 dollar
      */
-    DOLLAR_1(BigDecimal.valueOf(1.0), 2.58, 22.68),
-
+    DOLLAR_1(BigDecimal.valueOf(1.0), 2.58, 22.68, "1 dollar"),
+    /**
+     * NULL OBJECT
+     */
+    UNKNOWN(BigDecimal.valueOf(0), 0, 0, "Not Recognized")
     ;
     /**
      * The value
@@ -36,15 +39,22 @@ public enum Coin {
     private double diameter;
 
     /**
+     * In millimeters
+     */
+    @Getter
+    private String label;
+
+    /**
      * In grams
      */
     @Getter
     private double weight;
 
-    Coin(BigDecimal nominal, double diameter, double weight) {
+    Coin(BigDecimal nominal, double diameter, double weight, String label) {
         this.nominal = nominal;
         this.diameter = diameter;
         this.weight = weight;
+        this.label = label;
     }
 
     /**
@@ -61,6 +71,6 @@ public enum Coin {
                 return coin;
             }
         }
-        return null;
+        return UNKNOWN;
     }
 }

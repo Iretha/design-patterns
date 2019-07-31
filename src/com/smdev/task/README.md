@@ -9,7 +9,7 @@ permalink: /tasks
 # Tasks
 
 ## Vending Machine
-Design and implement a vending machine, that allows customers to byu different products with coins.
+Design and implement a vending machine, that allows customers to buy different products with coins.
 What patterns are going to use? How would you implement it?
 
 ## ATM Machine

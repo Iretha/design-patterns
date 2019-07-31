@@ -51,9 +51,13 @@ The implementation of the abstract factory will be very simplified and it will u
 We can use the COR pattern as well, but I'm not going to do it, because there is no "behavior" to be
 implemented. All we need is to get the nominal of the coins and the abstract factory works for us with less code.
 
+### Null Object
+We need a default coin, that should represent any coin, that is inserted, but we are not able to recognize.
 
+### Telescoping Constructor
+To init coin holder
 
-
-
+### Strategy 
+To calculate the combination of coins when returning change
 
 
