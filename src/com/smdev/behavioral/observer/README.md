@@ -36,6 +36,7 @@ Glossary:
 
 ## Cons:
 - The order, in which the observers get notified is not very precise
+- May cause memory leaks, because subject holds references to observers
 
 **Java has a in-built implementation of the Observer pattern, but it's done through inheritance (java.util.Observable class and java.util.Observer). 
 This is the reason why programmers avoid to use it.**
