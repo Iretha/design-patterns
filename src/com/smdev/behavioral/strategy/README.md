@@ -82,7 +82,7 @@ for sending messages to different users.
 
 [Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/strategy) 
 
-![](https://github.com/Iretha/design-patterns/blob/master/src/com/smdev/behavioral/strategy/example_1/_diagram.png=650px)
+![](https://github.com/Iretha/design-patterns/blob/master/src/com/smdev/behavioral/strategy/example_1/_diagram.png)
 
 1). Universal message object that will be sent to via different providers
 ```java
