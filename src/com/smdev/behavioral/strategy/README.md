@@ -9,12 +9,13 @@ permalink: /behavioral/strategy
 # The Strategy Design Pattern 
 
 The Strategy Design Pattern is designed to separate the behavior from it's host class, by encapsulating the algorithm 
-in a separate class. This allows you to implement many algorithms and make them interchangeable.
+in a separate class. This allows you to implement families of algorithms and make them interchangeable.
 {: .fs-6 .fw-300 }
 
 --- 
 
-The Strategy Design Pattern is also knows as "Policy" Design Pattern.
+The Strategy Design Pattern is also knows as "Policy" Design Pattern. 
+Uses "Composition over Inheritance" Principle.
 
 ## What problems does it solve? Why to use it?
 When you want to separate the behavior (the algorithm) from it's host class. 
@@ -25,6 +26,12 @@ Purpose:
 - To encapsulate each algorithm
 - To make the algorithms interchangeable within that family
 - To "encapsulate what changes"
+- To decouple algorithm from the class - if you change the algorithm, you don't have to change the client
+
+## How to use it?
+Instead of subclassing, because of some differences in the behavior, better implement the behaviors as
+different strategies/ polices (separate classes) and inject them in the constructor. Then, you will be able 
+to achieve any combination of behaviors if needed.
 
 ## Pros:
 - you can change the behavior at anytime, even at runtime (to swap algorithms)
@@ -44,10 +51,9 @@ Purpose:
 
 * If you want to add some functionality, not related to the main algorithm i.e. to log when an algorithm is used = Decorator*
 
-
 ## How to recognize it?
 If the logic of a behavioral method is executed by a different type and that type is passed as an argument or is 
-member of the method class.
+member of the method class, or even injected (DI).
 ```java
 Chat chat = new Chat(new SendStrategySms("123", "456"));
 chat.send(new Message("Hello!"));
