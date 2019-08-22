@@ -82,7 +82,7 @@ for sending messages to different users.
 
 [Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/strategy) 
 
-![Class Diagram][diagram1]
+![Strategy Pattern Class Diagram](https://github.com/Iretha/design-patterns/blob/master/src/com/smdev/behavioral/strategy/example_1/_diagram.png "Class Diagram")
 
 1). Universal message object that will be sent to via different providers
 ```java
@@ -229,5 +229,3 @@ Sending Email: SendStrategyEmail(from=JonSnow@gmail.com, to=JaneDow@gmail.com); 
  === Strategy changed to: SendStrategyFacebook(from=Jon Snow, to=Jane Dow)
 Sending FB Message: SendStrategyFacebook(from=Jon Snow, to=Jane Dow); message=Message(text=Files sent, check your email, createdOn=Fri Jul 12 11:45:27 EEST 2019)
 ```
-
-[diagram1]: https://github.com/Iretha/design-patterns/blob/master/src/com/smdev/behavioral/strategy/example_1/_diagram.png "Strategy Pattern Class Diagram"
