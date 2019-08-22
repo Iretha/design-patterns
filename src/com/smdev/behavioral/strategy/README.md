@@ -17,8 +17,6 @@ in a separate class. This allows you to implement families of algorithms and mak
 The Strategy Design Pattern is also knows as "Policy" Design Pattern. 
 Uses "Composition over Inheritance" Principle.
 
-Strategy Pattern Class Diagram
-
 ## What problems does it solve? Why to use it?
 1). When you want to separate the behavior (the algorithm) from it's host class. 
 You can create multiple algorithms, each one encapsulated in a single class and make them interchangeable.
@@ -232,4 +230,4 @@ Sending Email: SendStrategyEmail(from=JonSnow@gmail.com, to=JaneDow@gmail.com); 
 Sending FB Message: SendStrategyFacebook(from=Jon Snow, to=Jane Dow); message=Message(text=Files sent, check your email, createdOn=Fri Jul 12 11:45:27 EEST 2019)
 ```
 
-[diagram1]: https://github.com/Iretha/design-patterns/tree/master/src/com/smdev/behavioral/strategy/example_1/_diagram.png "Strategy Pattern Class Diagram"
+[diagram1]: https://github.com/Iretha/design-patterns/blob/master/src/com/smdev/behavioral/strategy/example_1/_diagram.png "Strategy Pattern Class Diagram"
