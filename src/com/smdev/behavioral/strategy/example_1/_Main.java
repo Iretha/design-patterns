@@ -3,7 +3,7 @@ package com.smdev.behavioral.strategy.example_1;
 public class _Main {
 
     public static void main(String[] args) {
-        Chat chat = new Chat(new SendStrategySms("123", "456"));
+        Messenger chat = new Messenger(new SendStrategySms("123", "456"));
         chat.send(new Message("Hello!"));
         chat.send(new Message("Can you talk?"));
         chat.send(new Message("Let's talk in FB!"));

@@ -18,8 +18,12 @@ The Strategy Design Pattern is also knows as "Policy" Design Pattern.
 Uses "Composition over Inheritance" Principle.
 
 ## What problems does it solve? Why to use it?
-When you want to separate the behavior (the algorithm) from it's host class. 
+1). When you want to separate the behavior (the algorithm) from it's host class. 
 You can create multiple algorithms, each one encapsulated in a single class and make them interchangeable.
+
+2). Instead of subclassing, because of some differences in the behavior. You'd better implement the behaviors as
+different strategies/ polices (separate classes) and inject them in the constructor. Then, you will be able 
+to achieve any combination of behaviors if needed.
 
 Purpose:
 - To create a family of algorithms
@@ -27,11 +31,6 @@ Purpose:
 - To make the algorithms interchangeable within that family
 - To "encapsulate what changes"
 - To decouple algorithm from the class - if you change the algorithm, you don't have to change the client
-
-## How to use it?
-Instead of subclassing, because of some differences in the behavior, better implement the behaviors as
-different strategies/ polices (separate classes) and inject them in the constructor. Then, you will be able 
-to achieve any combination of behaviors if needed.
 
 ## Pros:
 - you can change the behavior at anytime, even at runtime (to swap algorithms)
@@ -169,11 +168,11 @@ public class SendStrategySms implements SendStrategy {
 ```
 4). A chat app
 ```java
-public class Chat {
+public class Messenger {
 
     private SendStrategy strategy;
 
-    public Chat(SendStrategy strategy) {
+    public Messenger(SendStrategy strategy) {
         changeStrategy(strategy);
     }
 
@@ -193,7 +192,7 @@ public class Chat {
 public class _Main {
 
     public static void main(String[] args) {
-        Chat chat = new Chat(new SendStrategySms("123", "456"));
+        Messenger chat = new Messenger(new SendStrategySms("123", "456"));
         chat.send(new Message("Hello!"));
         chat.send(new Message("Can you talk?"));
         chat.send(new Message("Let's talk in FB!"));

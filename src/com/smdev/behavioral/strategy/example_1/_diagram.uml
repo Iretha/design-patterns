@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="111.0">com.smdev.behavioral.strategy.example_1.Messenger</node>
+    <node x="563.0" y="100.0">com.smdev.behavioral.strategy.example_1.SendStrategySms</node>
+    <node x="285.99999999999994" y="100.0">com.smdev.behavioral.strategy.example_1.SendStrategyEmail</node>
+    <node x="834.0" y="100.0">com.smdev.behavioral.strategy.example_1.SendStrategyFacebook</node>
+    <node x="329.49999999999994" y="0.0">com.smdev.behavioral.strategy.example_1.SendStrategy</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.smdev.behavioral.strategy.example_1.SendStrategyFacebook" target="com.smdev.behavioral.strategy.example_1.SendStrategy">
+      <point x="0.0" y="-70.0" />
+      <point x="976.0" y="70.0" />
+      <point x="482.49999999999994" y="70.0" />
+      <point x="68.0" y="25.0" />
+    </edge>
+    <edge source="com.smdev.behavioral.strategy.example_1.SendStrategySms" target="com.smdev.behavioral.strategy.example_1.SendStrategy">
+      <point x="-5.6843418860808015E-14" y="-70.0" />
+      <point x="688.4999999999999" y="80.0" />
+      <point x="448.49999999999994" y="80.0" />
+      <point x="34.0" y="25.0" />
+    </edge>
+    <edge source="com.smdev.behavioral.strategy.example_1.SendStrategyEmail" target="com.smdev.behavioral.strategy.example_1.SendStrategy">
+      <point x="0.0" y="-70.0" />
+      <point x="0.0" y="25.0" />
+    </edge>
+    <edge source="com.smdev.behavioral.strategy.example_1.Messenger" target="com.smdev.behavioral.strategy.example_1.SendStrategy">
+      <point x="-66.5" y="-59.0" />
+      <point x="66.5" y="70.0" />
+      <point x="346.49999999999994" y="70.0" />
+      <point x="-68.0" y="25.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="559.0" y="120.0" />
+  <SelectedNodes>
+    <node>com.smdev.behavioral.strategy.example_1.SendStrategyEmail</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,10 +1,10 @@
 package com.smdev.behavioral.strategy.example_1;
 
-public class Chat {
+public class Messenger {
 
     private SendStrategy strategy;
 
-    public Chat(SendStrategy strategy) {
+    public Messenger(SendStrategy strategy) {
         changeStrategy(strategy);
     }
 
