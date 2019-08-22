@@ -83,7 +83,8 @@ for sending messages to different users.
 [Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/behavioral/strategy) 
 
 ![Strategy Pattern Class Diagram](https://github.com/Iretha/design-patterns/blob/master/src/com/smdev/behavioral/strategy/example_1/_diagram.png "Class Diagram")
-![Strategy Pattern Class Diagram](/example_1/_diagram.png)
+![Strategy Pattern Class Diagram](example_1/_diagram.png)
+
 1). Universal message object that will be sent to via different providers
 ```java
 @ToString
