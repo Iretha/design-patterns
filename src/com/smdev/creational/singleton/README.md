@@ -107,9 +107,12 @@ when we want to deserialize it, it will create another instance of the class. Th
 There is one drawback of implementing a Singleton as enum - it's will be eagerly initialized.
 
 See [Example 1](#example-1) - uses classic implementation with double checked locking
+
 See [Example 2](#example-2) - uses enumeration, which is also thread-safe
+
 See [Example 3](#example-3) - how to serialize a singleton
 
+Different ways to implement a Singleton:
 ![](_diagram.png)
 
 ## How to recognize it?

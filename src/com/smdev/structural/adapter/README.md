@@ -8,15 +8,17 @@ permalink: /structural/adapter
 
 # The Adapter Design Pattern
 
-The Adapter Design Pattern is designed to make two incompatible types compatible without changing their existing code.
+The Adapter Design Pattern is designed to make two incompatible types compatible 
+without changing their existing code.
 {: .fs-6 .fw-300 }
 
 ---
 
-The Adapter Design Pattern is also known as "Wrapper".
+The Adapter Design Pattern is also known as "Wrapper". It simply wraps things.
 
 ## What problems does it solve?
-To make two incompatible types compatible by converting one interface into another.
+To make two incompatible types compatible by converting one interface into another. The intention 
+here is not to add/ remove/ modify behavior, but to adapt the existing one.
 
 There are two types of adapters (two approaches):
 - Class Adapter - uses inheritance and extends the source object
@@ -93,7 +95,7 @@ javax.xml.bind.annotation.adapters.XmlAdapter#marshal() and #unmarshal()
 
 * When you have to integrate with external system
   
-### Example 1 - How to implement it?
+### Example 1
 Let's say, we have an universal remote control, that we use currently to turn on and turn off our LG TV.
 We also have two more TVs - a Sang TV and a Sony TV, that also can be controlled remotely by their own remote controls.
 We want to start using only one universal remote control instead three different remote controls. 
@@ -106,6 +108,8 @@ When we implement a ClassAdapter, our Adapter should inherit Sang TV in order to
 When we implement an ObjectAdapter, our Adapter should "have a" Sony TV as instance field in order to adapt it's the functionality to the new interface.
 
 [Source Code](https://github.com/Iretha/ebook-design-patterns/tree/master/src/com/smdev/structural/adapter) 
+
+![](_diagram.png)
 
 Now, let's implement it:
 
