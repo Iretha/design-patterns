@@ -16,22 +16,30 @@ Designed to limit the number of instances to 1 and to control the access to that
 
 ## What problems does it solve?
 Restricts the instantiation of a class to one "single" instance. This is useful when exactly 
-one object is needed to coordinate actions across the system. 
+one object is needed to coordinate actions across the system, but it'a an anti pattern.
 
-**Best thread-safe implementation is via enums.**
+**Best thread-safe, serializable implementation is with ENUM !!!!.**
 
 ## When to use it?
-- To ensure that there is only one instance of an object in the whole application and you want to provide global access/ entry point to it.
+- To ensure that there is only one instance of an object in the whole application and 
+you want to provide global access/ entry point to it.
 
 ## Pros:
-- To encapsulate a unique (shared) resource and make it available throughout the whole application
+- To encapsulate a unique (shared) resource and make it available throughout the whole application (like global variables)
 - To control or to ensure serial access to a shared resource
 
 ## Cons:
 - When not used properly, provides unnecessary limitations
 - Often Singletons are used to access global/ shared data and you give access of the clients to all data exposed in that Singleton
-- Singletons hinder unit testing - sometimes is impossible to test without writing a fully-functional class dedicated to the Singleton
+- Singletons hinder unit testing - you cannot mock it and it is impossible to test without writing a fully-functional class dedicated to the Singleton
 - Singletons may create hidden dependencies
+- Some of the clients with access to the global resource may modify it, if it's not immutable
+- It's considered as anti pattern
+
+Remember:
+> "One man's constant is another man's variable." Alan Perlis
+
+You can't be sure if one day you won't need another instance!
 
 ## Implementation
 An implementation of the singleton pattern must:
@@ -79,13 +87,13 @@ public final class Singleton {
 ```
 
 **The best way to implement a Singleton is using enum, because:**
-* Thread-safe Singleton
+* Thread-safety
 The easiest way is to implement a thread-safe Singleton is via Enum. 
 
-* Reflection-safe Singleton
+* Reflection-safety
 To prevent access via Reflection, you should use Enum.
 
-* Deserialization-safe Singleton
+* Deserialization-safety
 To make a Singleton serializable you need to implement the Serializable interface. The problem is that 
 when we want to deserialize it, it will create another instance of the class. This can be solved by:
     * when using enum, everything is ok
@@ -101,6 +109,8 @@ There is one drawback of implementing a Singleton as enum - it's will be eagerly
 See [Example 1](#example-1) - uses classic implementation with double checked locking
 See [Example 2](#example-2) - uses enumeration, which is also thread-safe
 See [Example 3](#example-3) - how to serialize a singleton
+
+![](_diagram.png)
 
 ## How to recognize it?
 When you call a creational method and it returns the same instance (itself) every time.
@@ -164,7 +174,7 @@ public class MobileApp {
 ```
 2). Create class MobileDevice, that will have only one static instance with a list of running apps and an app on focus
 ```java
-public class MobileDevice {
+public class MobileDeviceClassSingleton {
     /**
      * Volatile is used to indicate that a variable's value will be modified by different threads
      */
@@ -178,26 +188,26 @@ public class MobileDevice {
 ```
 3). We need to ensure that no one could instantiate our MobileDevice, so we make the constructor private
 ```java
-public class MobileDevice {
-    private MobileDevice() {
+public class MobileDeviceClassSingleton {
+    private MobileDeviceClassSingleton() {
         // hidden constructor
     }
 }
 ```
 4). We may want to ensure that no one could extend our class, so we may want to make it final
 ```java
-public final class MobileDevice {
+public final class MobileDeviceClassSingleton {
 
 }
 ```
 5). Now we should provide a single entry point, that will give access to the instance and it's data
 ```java
-public final class MobileDevice {
-    public static MobileDevice getInstance() {
+public final class MobileDeviceClassSingleton {
+    public static MobileDeviceClassSingleton getInstance() {
         if (instance == null) {
-            synchronized (MobileDevice.class) {
+            synchronized (MobileDeviceClassSingleton.class) {
                 if (instance == null) {
-                    instance = new MobileDevice();
+                    instance = new MobileDeviceClassSingleton();
                 }
             }
         }
@@ -208,7 +218,7 @@ public final class MobileDevice {
 6). We also may want to provide some business logic so that we could always have only one app on focus, and when an app looses focus,
 it will be sent to background or even paused in order to save battery
 ```java
-public final class MobileDevice {
+public final class MobileDeviceClassSingleton {
     public synchronized void runApp(String appName, boolean moveToFocus) {
             MobileApp app = this.runningApps.get(appName);
             if (app == null) {
@@ -254,23 +264,26 @@ public final class MobileDevice {
 it's functions.
 
 ```java
-public class MobileDevice {
+public class MobileDeviceClassSingleton {
 
-    private static volatile MobileDevice instance = null;
+    /**
+     * Volatile is used to indicate that a variable's value will be modified by different threads
+     */
+    private static volatile MobileDeviceClassSingleton instance = null;
 
     private Map<String, MobileApp> runningApps = new HashMap<>();
 
     private MobileApp appOnFocus;
 
 
-    private MobileDevice() {
+    private MobileDeviceClassSingleton() {
     }
 
-    public static MobileDevice getInstance() {
+    public static MobileDeviceClassSingleton getInstance() {
         if (instance == null) {
-            synchronized (MobileDevice.class) {
+            synchronized (MobileDeviceClassSingleton.class) {
                 if (instance == null) {
-                    instance = new MobileDevice();
+                    instance = new MobileDeviceClassSingleton();
                 }
             }
         }
@@ -327,7 +340,7 @@ We can create Singleton via enum. The drawback is that it will be eager.
 1). Create singleton class
 ```java
 @ToString
-public enum MySingleton {
+public enum EnumSingleton {
     INSTANCE;
 
     public void doSomething() {

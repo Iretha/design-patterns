@@ -3,26 +3,26 @@ package com.smdev.creational.singleton.example_1;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MobileDevice {
+public class MobileDeviceClassSingleton {
 
     /**
      * Volatile is used to indicate that a variable's value will be modified by different threads
      */
-    private static volatile MobileDevice instance = null;
+    private static volatile MobileDeviceClassSingleton instance = null;
 
     private Map<String, MobileApp> runningApps = new HashMap<>();
 
     private MobileApp appOnFocus;
 
 
-    private MobileDevice() {
+    private MobileDeviceClassSingleton() {
     }
 
-    public static MobileDevice getInstance() {
+    public static MobileDeviceClassSingleton getInstance() {
         if (instance == null) {
-            synchronized (MobileDevice.class) {
+            synchronized (MobileDeviceClassSingleton.class) {
                 if (instance == null) {
-                    instance = new MobileDevice();
+                    instance = new MobileDeviceClassSingleton();
                 }
             }
         }

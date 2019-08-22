@@ -4,7 +4,7 @@ public class _Main {
 
     public static void main(String[] args) {
 
-        MobileDevice myPhone = MobileDevice.getInstance();
+        MobileDeviceClassSingleton myPhone = MobileDeviceClassSingleton.getInstance();
 
         myPhone.runApp("FACEBOOK", true);
         myPhone.runApp("GMAIL", true);

@@ -3,7 +3,7 @@ package com.smdev.creational.singleton.example_2;
 import lombok.ToString;
 
 @ToString
-public enum MySingleton {
+public enum EnumSingleton {
     INSTANCE;
 
     public void doSomething() {

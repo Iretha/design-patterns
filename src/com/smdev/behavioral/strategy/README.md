@@ -15,7 +15,8 @@ in a separate class. This allows you to implement families of algorithms and mak
 --- 
 
 The Strategy Design Pattern is also knows as "Policy" Design Pattern. 
-Uses "Composition over Inheritance" Principle.
+If you have ever used dependency injection (DI), then you also have used Strategy Design Pattern.
+It uses "Composition over Inheritance" principle and decouples client from the concrete implementation of the algorithm.
 
 ## What problems does it solve? Why to use it?
 1). When you want to separate the behavior (the algorithm) from it's host class. 
