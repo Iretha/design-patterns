@@ -22,13 +22,13 @@ are 3 types: creational, structural and behavioral. If the question is about all
 architectural, integration etc.
 
 ### Explain the idea behind Creational Patterns
-TODO
+To deal with object creation/ instantiation.
 
 ### Explain the idea behind Structural Patterns
-TODO
+To deal with the relations between objects
 
 ### Explain the idea behind Behavioral Patterns
-TODO
+To deal with communication between objects
 
 ### Name some of the design patterns, used in JAVA API.
 #### Factory Method: 
