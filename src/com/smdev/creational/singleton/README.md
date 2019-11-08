@@ -6,7 +6,7 @@ nav_order: 1040
 permalink: /creational/singleton
 ---
 
-# The Singleton Design Pattern (Cloneable)
+# The Singleton Design Pattern
 
 Designed to limit the number of instances to 1 and to control the access to that instance 
 (in serial way via the provided entry/ access point).

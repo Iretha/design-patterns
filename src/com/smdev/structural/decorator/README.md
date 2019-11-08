@@ -13,8 +13,6 @@ The Decorator Pattern is designed to add/ remove responsibilities to objects dyn
 
 ---
 
-The Decorator Pattern is also known as Wrapper.
-
 ## What problems does it solve?
 This is another way of adding additional behavior to objects instead of subclassing them.
 The most important part is, that the additional behavior can be added or removed at runtime.
