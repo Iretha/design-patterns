@@ -13,12 +13,12 @@ import com.smdev.task.task0001.vendingmachine.product.ProductStorage;
  * We use builder to guarantee a consistent state of the vending machine
  */
 public class VendingMachineImpl implements VendingMachine, VendingMachineService, SecuredResource {
-    private SecurityPolicy securityPolicy;
-    private RefundPolicy refundPolicy;
+    private final SecurityPolicy securityPolicy;
+    private final RefundPolicy refundPolicy;
 
-    private CoinCollection machineBalance;
-    private CoinCollection orderBalance;
-    private ProductStorage productStorage;
+    private final CoinCollection machineBalance;
+    private final CoinCollection orderBalance;
+    private final ProductStorage productStorage;
 
     VendingMachineImpl(SecurityPolicy securityPolicy, RefundPolicy refundPolicy) {
         this.securityPolicy = securityPolicy;

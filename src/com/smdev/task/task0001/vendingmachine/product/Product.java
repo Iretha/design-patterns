@@ -16,7 +16,7 @@ public enum Product implements Item {
      * Price in cents
      */
     @Getter
-    private int price;
+    private final int price;
 
     Product(int price) {
         this.price = price;

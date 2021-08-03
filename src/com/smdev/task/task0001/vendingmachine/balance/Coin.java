@@ -33,7 +33,7 @@ public enum Coin implements Item {
      * In cents
      */
     @Getter
-    private int denomination;
+    private final int denomination;
 
     Coin(int denomination) {
         this.denomination = denomination;

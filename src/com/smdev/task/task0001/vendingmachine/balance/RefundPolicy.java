@@ -21,7 +21,7 @@ public abstract class RefundPolicy {
             if (collection == null || collection.isEmpty()) {
                 continue;
             }
-            collection.getItems().forEach((k, v) -> joinedCollection.add(k, v));
+            collection.getItems().forEach(joinedCollection::add);
         }
         return joinedCollection;
     }
