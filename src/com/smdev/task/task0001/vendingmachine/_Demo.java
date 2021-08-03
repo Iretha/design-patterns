@@ -45,7 +45,7 @@ public class _Demo {
         try {
             vm.orderProduct(Product.ICED_TEA, 1);
         } catch (VendingMachineException e) {
-            System.out.println(e);
+            System.err.println(e.getMessage());
         }
 
         vm.insertCoin(Coin.CENTS_1);
@@ -63,7 +63,7 @@ public class _Demo {
         try {
             vm.orderProduct(Product.WATER, 2);
         } catch (VendingMachineException e) {
-            System.out.println(e);
+            System.err.println(e.getMessage());
         }
     }
 }

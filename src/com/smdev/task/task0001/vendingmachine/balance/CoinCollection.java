@@ -33,19 +33,23 @@ public class CoinCollection extends ItemCollection<Coin> {
     }
 
     public void releaseAll() {
-        getItems().forEach((k, v) -> release(k, v));
+        getItems().forEach(this::release);
         this.totalAmount = 0;
     }
 
     public void acquireCollection(CoinCollection collection) {
         Map<Coin, Integer> orderCoins = collection.getItems();
-        orderCoins.forEach((k, v) -> add(k, v));
+        orderCoins.forEach(this::add);
         collection.clearQuantities();
     }
 
     public void releaseCollection(CoinCollection collection) {
         Map<Coin, Integer> refundCoins = collection.getItems();
-        refundCoins.forEach((k, v) -> release(k, v));
+        for (Map.Entry<Coin, Integer> entry : refundCoins.entrySet()) {
+            Coin k = entry.getKey();
+            Integer v = entry.getValue();
+            release(k, v);
+        }
     }
 
     public boolean isEmpty(){
