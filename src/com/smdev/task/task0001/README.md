@@ -25,7 +25,7 @@ We need a vending machine, that:
 * provides service interface for withdrawing coins/ products
 
 ## Problems
-List all problems, that comes to your mind and we need to solve:
+List all problems, that come to your mind, and we need to solve:
 * We should provide multiple products, that can be bought
 * Each product should have a price
 * We should have starting balance, so that we can return change
